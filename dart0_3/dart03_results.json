@@ -1,0 +1,500 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "tasks": [
+      "add",
+      "compose"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ]
+    ],
+    "train_size": 6000,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "reference_steps": 1200,
+    "small_budget_mult": 1.0,
+    "replacement_steps": 250,
+    "transfer_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "block": 1,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 20,
+    "latency_warmup": 30,
+    "latency_iters": 20,
+    "device": "cuda",
+    "out": "dart03_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8613333333333333,
+        "loss": 0.47479195658365886,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.9513333333333334,
+        "loss": 0.18317260233561197,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before_adaptation": {
+        "accuracy": 0.794,
+        "loss": 0.7181801452636719,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_adapt": {
+        "accuracy": 0.8913333333333333,
+        "loss": 0.35670667012532553,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill_adapt": {
+        "accuracy": 0.8913333333333333,
+        "loss": 0.35213726298014325,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "compute": {
+        "budget_steps": 1200,
+        "estimated_small_training_flops": 195644620800.0,
+        "scratch_training_seconds": 6.39252399200268,
+        "dart_adaptation_seconds": 6.384215444999427,
+        "distill_adaptation_seconds": 6.393185832999734,
+        "teacher_target_ff_macs_per_token": 8192,
+        "small_target_ff_macs_per_token": 2048
+      },
+      "latency_ms": {
+        "teacher": -1.3340160369873046,
+        "scratch": -1.286240005493164,
+        "dart_adapt": -1.286400032043457
+      }
+    },
+    {
+      "seed": 2,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8706666666666667,
+        "loss": 0.4132109883626302,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.9033333333333333,
+        "loss": 0.28906659698486326,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before_adaptation": {
+        "accuracy": 0.8593333333333333,
+        "loss": 0.48898661295572915,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_adapt": {
+        "accuracy": 0.9666666666666667,
+        "loss": 0.1177340571085612,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill_adapt": {
+        "accuracy": 0.964,
+        "loss": 0.12131381861368815,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "compute": {
+        "budget_steps": 1200,
+        "estimated_small_training_flops": 195644620800.0,
+        "scratch_training_seconds": 6.418640759999107,
+        "dart_adaptation_seconds": 6.388168842000596,
+        "distill_adaptation_seconds": 6.391543100999115,
+        "teacher_target_ff_macs_per_token": 8192,
+        "small_target_ff_macs_per_token": 2048
+      },
+      "latency_ms": {
+        "teacher": -1.3328895568847656,
+        "scratch": -1.286348819732666,
+        "dart_adapt": -1.2856831550598145
+      }
+    },
+    {
+      "seed": 1,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.434,
+        "loss": 1.3572176717122395,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.49266666666666664,
+        "loss": 1.094356435139974,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before_adaptation": {
+        "accuracy": 0.42866666666666664,
+        "loss": 1.3831560465494792,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_adapt": {
+        "accuracy": 0.5173333333333333,
+        "loss": 1.0775843811035157,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill_adapt": {
+        "accuracy": 0.5146666666666667,
+        "loss": 1.040124471028646,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "compute": {
+        "budget_steps": 1200,
+        "estimated_small_training_flops": 195644620800.0,
+        "scratch_training_seconds": 6.414694569997664,
+        "dart_adaptation_seconds": 6.424779069999204,
+        "distill_adaptation_seconds": 6.428217897999275,
+        "teacher_target_ff_macs_per_token": 8192,
+        "small_target_ff_macs_per_token": 2048
+      },
+      "latency_ms": {
+        "teacher": -1.334988784790039,
+        "scratch": -1.2881407737731934,
+        "dart_adapt": -1.2874239921569823
+      }
+    },
+    {
+      "seed": 2,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.47933333333333333,
+        "loss": 1.1979893900553384,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.4673333333333333,
+        "loss": 1.117661610921224,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before_adaptation": {
+        "accuracy": 0.4786666666666667,
+        "loss": 1.227474365234375,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_adapt": {
+        "accuracy": 0.606,
+        "loss": 0.891977060953776,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill_adapt": {
+        "accuracy": 0.6133333333333333,
+        "loss": 0.8813913167317708,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "compute": {
+        "budget_steps": 1200,
+        "estimated_small_training_flops": 195644620800.0,
+        "scratch_training_seconds": 6.405173011000443,
+        "dart_adaptation_seconds": 6.433656101999077,
+        "distill_adaptation_seconds": 6.41517955600284,
+        "teacher_target_ff_macs_per_token": 8192,
+        "small_target_ff_macs_per_token": 2048
+      },
+      "latency_ms": {
+        "teacher": -1.3359616279602051,
+        "scratch": -1.287936019897461,
+        "dart_adapt": -1.2868096351623535
+      }
+    }
+  ],
+  "summary_all_tasks": {
+    "teacher": {
+      "mean": 0.6613333333333333,
+      "std": 0.23708288908374703
+    },
+    "scratch": {
+      "mean": 0.7036666666666667,
+      "std": 0.25921676900488777
+    },
+    "dart_before_adaptation": {
+      "mean": 0.6401666666666667,
+      "std": 0.21795505822854264
+    },
+    "dart_adapt": {
+      "mean": 0.7453333333333333,
+      "std": 0.21733401499552268
+    },
+    "distill_adapt": {
+      "mean": 0.7458333333333333,
+      "std": 0.21584039027502258
+    }
+  },
+  "summary_by_task": {
+    "add": {
+      "teacher": {
+        "mean": 0.866,
+        "std": 0.006599663291074502
+      },
+      "scratch": {
+        "mean": 0.9273333333333333,
+        "std": 0.033941125496954314
+      },
+      "dart_before_adaptation": {
+        "mean": 0.8266666666666667,
+        "std": 0.04619764303752104
+      },
+      "dart_adapt": {
+        "mean": 0.929,
+        "std": 0.0532687108493866
+      },
+      "distill_adapt": {
+        "mean": 0.9276666666666666,
+        "std": 0.051383092766222445
+      }
+    },
+    "compose": {
+      "teacher": {
+        "mean": 0.45666666666666667,
+        "std": 0.03205550741379016
+      },
+      "scratch": {
+        "mean": 0.48,
+        "std": 0.017913371790059193
+      },
+      "dart_before_adaptation": {
+        "mean": 0.45366666666666666,
+        "std": 0.03535533905932741
+      },
+      "dart_adapt": {
+        "mean": 0.5616666666666666,
+        "std": 0.06269680126520721
+      },
+      "distill_adapt": {
+        "mean": 0.5640000000000001,
+        "std": 0.06976786907707262
+      }
+    }
+  },
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "scratch_before": {
+        "accuracy": 0.05533333333333333,
+        "loss": 2.539937174479167,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.22133333333333333,
+        "loss": 6.086636149088542,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.32666666666666666,
+        "loss": 1.7436715494791666,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.382,
+        "loss": 1.6156982421875,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 400
+    },
+    {
+      "seed": 2,
+      "source_task": "add",
+      "target_task": "compose",
+      "scratch_before": {
+        "accuracy": 0.08066666666666666,
+        "loss": 2.5828553873697917,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.23066666666666666,
+        "loss": 5.148036458333333,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.312,
+        "loss": 1.7448112996419272,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.374,
+        "loss": 1.6041290690104166,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 400
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "scratch_before": {
+        "accuracy": 0.10066666666666667,
+        "loss": 2.4475845133463543,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.10133333333333333,
+        "loss": 8.688004231770833,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.11066666666666666,
+        "loss": 2.3100643107096355,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.09866666666666667,
+        "loss": 2.320337565104167,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 400
+    },
+    {
+      "seed": 2,
+      "source_task": "mul",
+      "target_task": "sub",
+      "scratch_before": {
+        "accuracy": 0.10666666666666667,
+        "loss": 2.511177001953125,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.106,
+        "loss": 9.504888834635416,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.092,
+        "loss": 2.3203230794270833,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.10266666666666667,
+        "loss": 2.3219476725260417,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 400
+    }
+  ],
+  "transfer_summary": {
+    "add->compose": {
+      "scratch_before": {
+        "mean": 0.068,
+        "std": 0.017913371790059203
+      },
+      "dart_before": {
+        "mean": 0.22599999999999998,
+        "std": 0.006599663291074443
+      },
+      "scratch_after": {
+        "mean": 0.31933333333333336,
+        "std": 0.010370899457402693
+      },
+      "dart_after": {
+        "mean": 0.378,
+        "std": 0.005656854249492385
+      }
+    },
+    "mul->sub": {
+      "scratch_before": {
+        "mean": 0.10366666666666667,
+        "std": 0.004242640687119289
+      },
+      "dart_before": {
+        "mean": 0.10366666666666666,
+        "std": 0.0032998316455372214
+      },
+      "scratch_after": {
+        "mean": 0.10133333333333333,
+        "std": 0.013199326582148885
+      },
+      "dart_after": {
+        "mean": 0.10066666666666667,
+        "std": 0.0028284271247461927
+      }
+    }
+  }
+}

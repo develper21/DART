@@ -1,0 +1,287 @@
+{
+  "config": {
+    "seeds": [
+      1
+    ],
+    "tasks": [
+      "add"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ],
+      [
+        "add",
+        "compose"
+      ]
+    ],
+    "train_size": 300,
+    "test_size": 120,
+    "teacher_steps": 20,
+    "reference_steps": 40,
+    "small_budget_mult": 1.0,
+    "replacement_steps": 15,
+    "transfer_steps": 15,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "block": 1,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 3,
+    "latency_warmup": 1,
+    "latency_iters": 3,
+    "device": "cpu",
+    "out": "/mnt/data/dart0_3/smoke_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.4248311360677084,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.34010492960612,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before_adaptation": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.4118220011393228,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_adapt": {
+        "accuracy": 0.09166666666666666,
+        "loss": 2.374627431233724,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill_adapt": {
+        "accuracy": 0.08333333333333333,
+        "loss": 2.3669525146484376,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "compute": {
+        "budget_steps": 40,
+        "estimated_small_training_flops": 6521487360.0,
+        "scratch_training_seconds": 1.0176049379997494,
+        "dart_adaptation_seconds": 1.0229911809997247,
+        "distill_adaptation_seconds": 1.259902876999604,
+        "teacher_target_ff_macs_per_token": 8192,
+        "small_target_ff_macs_per_token": 2048
+      },
+      "latency_ms": {
+        "teacher": null,
+        "scratch": null,
+        "dart_adapt": null
+      }
+    }
+  ],
+  "summary_all_tasks": {
+    "teacher": {
+      "mean": 0.10833333333333334,
+      "std": 0.0
+    },
+    "scratch": {
+      "mean": 0.11666666666666667,
+      "std": 0.0
+    },
+    "dart_before_adaptation": {
+      "mean": 0.10833333333333334,
+      "std": 0.0
+    },
+    "dart_adapt": {
+      "mean": 0.09166666666666666,
+      "std": 0.0
+    },
+    "distill_adapt": {
+      "mean": 0.08333333333333333,
+      "std": 0.0
+    }
+  },
+  "summary_by_task": {
+    "add": {
+      "teacher": {
+        "mean": 0.10833333333333334,
+        "std": 0.0
+      },
+      "scratch": {
+        "mean": 0.11666666666666667,
+        "std": 0.0
+      },
+      "dart_before_adaptation": {
+        "mean": 0.10833333333333334,
+        "std": 0.0
+      },
+      "dart_adapt": {
+        "mean": 0.09166666666666666,
+        "std": 0.0
+      },
+      "distill_adapt": {
+        "mean": 0.08333333333333333,
+        "std": 0.0
+      }
+    }
+  },
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "scratch_before": {
+        "accuracy": 0.1,
+        "loss": 2.4886962890625,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.5110201517740887,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.20833333333333334,
+        "loss": 2.2656494140625,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.2940910339355467,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 15
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "scratch_before": {
+        "accuracy": 0.075,
+        "loss": 2.4031773885091146,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.432813262939453,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.05,
+        "loss": 2.362085723876953,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.3323659261067706,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 15
+    },
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "scratch_before": {
+        "accuracy": 0.1,
+        "loss": 2.4886962890625,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_before": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.5110201517740887,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.20833333333333334,
+        "loss": 2.2656494140625,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart_after": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.2940910339355467,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "transfer_steps": 15
+    }
+  ],
+  "transfer_summary": {
+    "add->compose": {
+      "scratch_before": {
+        "mean": 0.1,
+        "std": 0.0
+      },
+      "dart_before": {
+        "mean": 0.06666666666666667,
+        "std": 0.0
+      },
+      "scratch_after": {
+        "mean": 0.20833333333333334,
+        "std": 0.0
+      },
+      "dart_after": {
+        "mean": 0.10833333333333334,
+        "std": 0.0
+      }
+    },
+    "mul->sub": {
+      "scratch_before": {
+        "mean": 0.075,
+        "std": 0.0
+      },
+      "dart_before": {
+        "mean": 0.10833333333333334,
+        "std": 0.0
+      },
+      "scratch_after": {
+        "mean": 0.05,
+        "std": 0.0
+      },
+      "dart_after": {
+        "mean": 0.11666666666666667,
+        "std": 0.0
+      }
+    }
+  }
+}
