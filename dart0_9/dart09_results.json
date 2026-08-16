@@ -1,0 +1,1476 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "tasks": [
+      "add",
+      "compose"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ]
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "transfer_adaptation_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "residual_rank": 2,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "verifier_batches": 20,
+    "trajectory_batches": 20,
+    "residual_weight": 0.01,
+    "routing_weight": 0.2,
+    "ablation_weight": 0.1,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "batch_size": 256,
+    "latency_warmup": 30,
+    "latency_iters": 30,
+    "device": "cuda",
+    "out": "dart09_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8626666666666667,
+        "loss": 0.46899419657389324,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_final": {
+        "accuracy": 0.7573333333333333,
+        "loss": 0.884298817952474,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.7313333333333333,
+            "downstream_loss": 1.0214909159342447,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.8999891909805208,
+            "attention_ablation_drop": 0.6359999999999999,
+            "residual_fraction": 0.37267080745341613,
+            "score": 0.9704883012546094,
+            "train_seconds": 1.3779961430000185
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.278,
+              "downstream_loss": 1.9437683919270834,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7726337569379582,
+              "attention_ablation_drop": 0.1866666666666667,
+              "residual_fraction": 1.0,
+              "score": 0.44057583132724776,
+              "train_seconds": 1.1693481079992125
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.3526666666666667,
+              "downstream_loss": 1.8311826985677084,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.7962331197303811,
+              "attention_ablation_drop": 0.2606666666666667,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.5285263492881787,
+              "train_seconds": 1.2052506500003801
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.36733333333333335,
+              "downstream_loss": 1.7707437337239584,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.8097609060243381,
+              "attention_ablation_drop": 0.26066666666666666,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.5463830636448835,
+              "train_seconds": 1.2675493900005677
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.7313333333333333,
+              "downstream_loss": 1.0214909159342447,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.8999891909805208,
+              "attention_ablation_drop": 0.6359999999999999,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.9704883012546094,
+              "train_seconds": 1.3779961430000185
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.658,
+              "downstream_loss": 1.180714884440104,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8720220456774107,
+              "attention_ablation_drop": 0.5473333333333333,
+              "residual_fraction": 0.46875,
+              "score": 0.8817569976796583,
+              "train_seconds": 1.277163198999915
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.7726666666666666,
+              "downstream_loss": 0.8353297932942708,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9130452405000489,
+              "attention_ablation_drop": 0.6699999999999999,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.7073333333333334,
+              "downstream_loss": 0.9595320536295573,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.903097213643873,
+              "attention_ablation_drop": 0.6006666666666667,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.7726666666666666,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.7073333333333334,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.7426666666666667,
+            "loss": 0.9296750996907552,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.7886666666666666,
+            "loss": 0.8022563273111979,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.8982819884588631,
+          "adaptation_seconds": 1.971950219000064,
+          "fit_seconds": 1.5451833450006234,
+          "latency_ms": 1.516745630900065
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.7353333333333333,
+            "downstream_loss": 0.9948455505371093,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.8851027825284585,
+            "attention_ablation_drop": 0.6213333333333333,
+            "residual_fraction": 0.37267080745341613,
+            "score": 0.9700443528975303,
+            "train_seconds": 1.4021259169994664
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.2793333333333333,
+              "downstream_loss": 1.9441566162109376,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7726555708087715,
+              "attention_ablation_drop": 0.188,
+              "residual_fraction": 1.0,
+              "score": 0.44204686076807703,
+              "train_seconds": 1.1203017569996518
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.352,
+              "downstream_loss": 1.832190205891927,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.7962622443873466,
+              "attention_ablation_drop": 0.26,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.5277988408862384,
+              "train_seconds": 1.4093222480005352
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.36666666666666664,
+              "downstream_loss": 1.7723557739257811,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.8095145078638726,
+              "attention_ablation_drop": 0.25999999999999995,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.5456004506794571,
+              "train_seconds": 1.406534391000605
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.7353333333333333,
+              "downstream_loss": 0.9948455505371093,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.8851027825284585,
+              "attention_ablation_drop": 0.6213333333333333,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.9700443528975303,
+              "train_seconds": 1.4021259169994664
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.6553333333333333,
+              "downstream_loss": 1.189030517578125,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8793538681966759,
+              "attention_ablation_drop": 0.5493333333333333,
+              "residual_fraction": 0.46875,
+              "score": 0.8807566955168447,
+              "train_seconds": 1.2862557540001944
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.7953333333333333,
+              "downstream_loss": 0.8018571065266927,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.906892659178469,
+              "attention_ablation_drop": 0.6913333333333334,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.7086666666666667,
+              "downstream_loss": 0.9617282307942708,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9049982285157878,
+              "attention_ablation_drop": 0.6086666666666667,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.7953333333333333,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.7086666666666667,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.7446666666666667,
+            "loss": 0.9812586059570313,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.7573333333333333,
+            "loss": 0.884298817952474,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.8852142436911024,
+          "adaptation_seconds": 1.9788551479996386,
+          "fit_seconds": 1.9421170300001904,
+          "latency_ms": 1.5167733510335286
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8673333333333333,
+        "loss": 0.4277922871907552,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_final": {
+        "accuracy": 0.82,
+        "loss": 0.7874235127766928,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.8006666666666666,
+            "downstream_loss": 0.8258962707519532,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.8960962188685939,
+            "attention_ablation_drop": 0.706,
+            "residual_fraction": 0.37267080745341613,
+            "score": 1.0460430401655572,
+            "train_seconds": 1.406565519000651
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.33666666666666667,
+              "downstream_loss": 1.807526102701823,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7560049371603325,
+              "attention_ablation_drop": 0.23399999999999999,
+              "residual_fraction": 1.0,
+              "score": 0.5006500673717226,
+              "train_seconds": 1.168985369999973
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.412,
+              "downstream_loss": 1.6846505126953124,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.76901724317766,
+              "attention_ablation_drop": 0.3093333333333333,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.5872831739776344,
+              "train_seconds": 1.2166942889998609
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.4693333333333333,
+              "downstream_loss": 1.5805126749674479,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.7884528430309279,
+              "attention_ablation_drop": 0.3753333333333333,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.6555881177128682,
+              "train_seconds": 1.2821738470001947
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.8006666666666666,
+              "downstream_loss": 0.8258962707519532,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.8960962188685939,
+              "attention_ablation_drop": 0.706,
+              "residual_fraction": 0.37267080745341613,
+              "score": 1.0460430401655572,
+              "train_seconds": 1.406565519000651
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.7586666666666667,
+              "downstream_loss": 1.0245898640950521,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8716519125101148,
+              "attention_ablation_drop": 0.6693333333333333,
+              "residual_fraction": 0.46875,
+              "score": 0.9945496377128658,
+              "train_seconds": 1.2809278610002366
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.8593333333333333,
+              "downstream_loss": 0.6429718322753907,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9143201108352516,
+              "attention_ablation_drop": 0.7613333333333333,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.8093333333333333,
+              "downstream_loss": 0.6410107828776042,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9350779190417907,
+              "attention_ablation_drop": 0.6973333333333334,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.8593333333333333,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.8093333333333333,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.8046666666666666,
+            "loss": 0.862593739827474,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.8153333333333334,
+            "loss": 0.7958957926432292,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.8919435418243508,
+          "adaptation_seconds": 2.0127150230000552,
+          "fit_seconds": 1.7836518139993132,
+          "latency_ms": 1.5177387237548827
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.838,
+            "downstream_loss": 0.7838807474772136,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.887758930390612,
+            "attention_ablation_drop": 0.742,
+            "residual_fraction": 0.37267080745341613,
+            "score": 1.0853089158032942,
+            "train_seconds": 1.410971695000626
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.336,
+              "downstream_loss": 1.8080506998697916,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7562652716738181,
+              "attention_ablation_drop": 0.23333333333333334,
+              "residual_fraction": 1.0,
+              "score": 0.4999688009410863,
+              "train_seconds": 1.2230077519998304
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.4086666666666667,
+              "downstream_loss": 1.6847981363932292,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.7691607798567831,
+              "attention_ablation_drop": 0.306,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.5836452146467923,
+              "train_seconds": 1.224626258999706
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.476,
+              "downstream_loss": 1.5799460856119791,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.7886033759981229,
+              "attention_ablation_drop": 0.38066666666666665,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.6628182243063072,
+              "train_seconds": 1.3015837009997995
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.838,
+              "downstream_loss": 0.7838807474772136,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.887758930390612,
+              "attention_ablation_drop": 0.742,
+              "residual_fraction": 0.37267080745341613,
+              "score": 1.0853089158032942,
+              "train_seconds": 1.410971695000626
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.758,
+              "downstream_loss": 0.9824394836425782,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8804026095206837,
+              "attention_ablation_drop": 0.662,
+              "residual_fraction": 0.46875,
+              "score": 0.9948997771149797,
+              "train_seconds": 1.30388607399982
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.858,
+              "downstream_loss": 0.6207737528483073,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9116814920626813,
+              "attention_ablation_drop": 0.7593333333333333,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.784,
+              "downstream_loss": 0.6928365885416666,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9389918968759857,
+              "attention_ablation_drop": 0.676,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.858,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.784,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.8073333333333333,
+            "loss": 0.8800547485351562,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.82,
+            "loss": 0.7874235127766928,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.8959777688998957,
+          "adaptation_seconds": 1.9425302949994148,
+          "fit_seconds": 1.8025991130007242,
+          "latency_ms": 1.5187967936197917
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.422,
+        "loss": 1.3741777954101562,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_final": {
+        "accuracy": 0.398,
+        "loss": 1.4679707641601563,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "low_rank",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.39666666666666667,
+            "downstream_loss": 1.4913013305664062,
+            "replace_params": 1024,
+            "replace_macs": 896,
+            "routing_agreement": 0.8951912577922416,
+            "attention_ablation_drop": 0.28733333333333333,
+            "residual_fraction": 0.46875,
+            "score": 0.5990575067692911,
+            "train_seconds": 1.2885793609993925
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.28933333333333333,
+              "downstream_loss": 1.9551388753255208,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.805013552417464,
+              "attention_ablation_drop": 0.164,
+              "residual_fraction": 1.0,
+              "score": 0.4561184570898156,
+              "train_seconds": 1.1675562180007546
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.308,
+              "downstream_loss": 1.873436055501302,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.8206824971818668,
+              "attention_ablation_drop": 0.188,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.4814828914451423,
+              "train_seconds": 1.2396103350001795
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.30333333333333334,
+              "downstream_loss": 1.8442737019856772,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.8195588563882332,
+              "attention_ablation_drop": 0.18266666666666667,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.47654265371766247,
+              "train_seconds": 1.3108513919996767
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.398,
+              "downstream_loss": 1.468417928059896,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.8746104685002051,
+              "attention_ablation_drop": 0.24866666666666667,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.5933458900918797,
+              "train_seconds": 1.420384324999759
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.39666666666666667,
+              "downstream_loss": 1.4913013305664062,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8951912577922416,
+              "attention_ablation_drop": 0.28733333333333333,
+              "residual_fraction": 0.46875,
+              "score": 0.5990575067692911,
+              "train_seconds": 1.2885793609993925
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.4186666666666667,
+              "downstream_loss": 1.403827616373698,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9258246570499901,
+              "attention_ablation_drop": 0.31133333333333335,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.4046666666666667,
+              "downstream_loss": 1.401299336751302,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9326042723329381,
+              "attention_ablation_drop": 0.2813333333333333,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.4186666666666667,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.4046666666666667,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.36333333333333334,
+            "loss": 1.5570910237630209,
+            "params": 15210,
+            "replace_params": 1024,
+            "replace_macs": 896
+          },
+          "post_adapt": {
+            "accuracy": 0.37133333333333335,
+            "loss": 1.5163473714192708,
+            "params": 15210,
+            "replace_params": 1024,
+            "replace_macs": 896
+          },
+          "routing_agreement_after": 0.9049133770785922,
+          "adaptation_seconds": 1.8193839719997413,
+          "fit_seconds": 1.6964011430000028,
+          "latency_ms": 1.4676991780598958
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.4026666666666667,
+            "downstream_loss": 1.4544662475585937,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.9083852775248579,
+            "attention_ablation_drop": 0.28400000000000003,
+            "residual_fraction": 0.37267080745341613,
+            "score": 0.6083008518968103,
+            "train_seconds": 1.3991983320001964
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.28933333333333333,
+              "downstream_loss": 1.955071980794271,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.8049063905323435,
+              "attention_ablation_drop": 0.164,
+              "residual_fraction": 1.0,
+              "score": 0.45609702471279145,
+              "train_seconds": 1.1722050779999336
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.308,
+              "downstream_loss": 1.8742307535807292,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.8204754190512002,
+              "attention_ablation_drop": 0.188,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.481441475819009,
+              "train_seconds": 1.2328993660003107
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.3006666666666667,
+              "downstream_loss": 1.8442208862304688,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.819074697226088,
+              "attention_ablation_drop": 0.18000000000000002,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.47351248855190015,
+              "train_seconds": 1.2977267969999957
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.4026666666666667,
+              "downstream_loss": 1.4544662475585937,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.9083852775248579,
+              "attention_ablation_drop": 0.28400000000000003,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.6083008518968103,
+              "train_seconds": 1.3991983320001964
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.394,
+              "downstream_loss": 1.5149649047851563,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8817599560407733,
+              "attention_ablation_drop": 0.2733333333333333,
+              "residual_fraction": 0.46875,
+              "score": 0.5923045797523309,
+              "train_seconds": 1.2910132659999363
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.402,
+              "downstream_loss": 1.4202802327473958,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9095197964833142,
+              "attention_ablation_drop": 0.29733333333333334,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.4,
+              "downstream_loss": 1.4180440470377604,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9268908410626658,
+              "attention_ablation_drop": 0.2666666666666667,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.402,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.4,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.37333333333333335,
+            "loss": 1.503726094563802,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.398,
+            "loss": 1.4679707641601563,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.8969757166335925,
+          "adaptation_seconds": 1.9357165009996606,
+          "fit_seconds": 1.822432230999766,
+          "latency_ms": 1.5195477803548176
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.4766666666666667,
+        "loss": 1.2034004516601562,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_final": {
+        "accuracy": 0.43866666666666665,
+        "loss": 1.3713551025390625,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.4093333333333333,
+            "downstream_loss": 1.4447500610351562,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.9224714585349068,
+            "attention_ablation_drop": 0.204,
+            "residual_fraction": 0.37267080745341613,
+            "score": 0.6097847547654867,
+            "train_seconds": 1.3985500170001615
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.27,
+              "downstream_loss": 1.9953403116861979,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7539624316540936,
+              "attention_ablation_drop": 0.0826666666666667,
+              "residual_fraction": 1.0,
+              "score": 0.41844156627047485,
+              "train_seconds": 1.1559289910001098
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.292,
+              "downstream_loss": 1.923786397298177,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.7655404525158014,
+              "attention_ablation_drop": 0.07199999999999998,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.44285448251192916,
+              "train_seconds": 1.2234526539996295
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.30533333333333335,
+              "downstream_loss": 1.885894775390625,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.790084856796586,
+              "attention_ablation_drop": 0.08600000000000002,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.4629811871326664,
+              "train_seconds": 1.2874450219997016
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.4093333333333333,
+              "downstream_loss": 1.4447500610351562,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.9224714585349068,
+              "attention_ablation_drop": 0.204,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.6097847547654867,
+              "train_seconds": 1.3985500170001615
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.3973333333333333,
+              "downstream_loss": 1.516917948404948,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8872316700138787,
+              "attention_ablation_drop": 0.19466666666666665,
+              "residual_fraction": 0.46875,
+              "score": 0.5888655892136185,
+              "train_seconds": 1.2919608689999222
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.43466666666666665,
+              "downstream_loss": 1.3827804565429687,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9149413074487279,
+              "attention_ablation_drop": 0.2053333333333333,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.42,
+              "downstream_loss": 1.3659617716471355,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9281431424593304,
+              "attention_ablation_drop": 0.22599999999999998,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.43466666666666665,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.42,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.41533333333333333,
+            "loss": 1.4494554646809896,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.42933333333333334,
+            "loss": 1.3943485717773438,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.9096587695122252,
+          "adaptation_seconds": 1.9420496359998651,
+          "fit_seconds": 1.7256514259997857,
+          "latency_ms": 1.519854990641276
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "downstream_accuracy": 0.41133333333333333,
+            "downstream_loss": 1.4528160807291666,
+            "replace_params": 1288,
+            "replace_macs": 1152,
+            "routing_agreement": 0.9191855059069918,
+            "attention_ablation_drop": 0.186,
+            "residual_fraction": 0.37267080745341613,
+            "score": 0.6093275642399036,
+            "train_seconds": 1.4097140089997993
+          },
+          "all_candidates": [
+            {
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.2693333333333333,
+              "downstream_loss": 1.995573527018229,
+              "replace_params": 480,
+              "replace_macs": 384,
+              "routing_agreement": 0.7538424073688806,
+              "attention_ablation_drop": 0.08199999999999999,
+              "residual_fraction": 1.0,
+              "score": 0.41768422808009886,
+              "train_seconds": 1.2893592649998027
+            },
+            {
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.2926666666666667,
+              "downstream_loss": 1.9229591471354166,
+              "replace_params": 544,
+              "replace_macs": 416,
+              "routing_agreement": 0.766941631680469,
+              "attention_ablation_drop": 0.07266666666666668,
+              "residual_fraction": 0.8823529411764706,
+              "score": 0.4438680516781961,
+              "train_seconds": 1.222075873999529
+            },
+            {
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.30266666666666664,
+              "downstream_loss": 1.8848859252929688,
+              "replace_params": 576,
+              "replace_macs": 448,
+              "routing_agreement": 0.791471469535698,
+              "attention_ablation_drop": 0.08333333333333331,
+              "residual_fraction": 0.8333333333333334,
+              "score": 0.4603251763471554,
+              "train_seconds": 1.2943459950001852
+            },
+            {
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.41133333333333333,
+              "downstream_loss": 1.4528160807291666,
+              "replace_params": 1288,
+              "replace_macs": 1152,
+              "routing_agreement": 0.9191855059069918,
+              "attention_ablation_drop": 0.186,
+              "residual_fraction": 0.37267080745341613,
+              "score": 0.6093275642399036,
+              "train_seconds": 1.4097140089997993
+            },
+            {
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "downstream_accuracy": 0.3953333333333333,
+              "downstream_loss": 1.5211355590820312,
+              "replace_params": 1024,
+              "replace_macs": 896,
+              "routing_agreement": 0.8885665928927085,
+              "attention_ablation_drop": 0.21399999999999997,
+              "residual_fraction": 0.46875,
+              "score": 0.5890659071227178,
+              "train_seconds": 1.2906191089996355
+            },
+            {
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "downstream_accuracy": 0.43266666666666664,
+              "downstream_loss": 1.3515247192382813,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.9165745613972226,
+              "attention_ablation_drop": 0.19999999999999998,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            },
+            {
+              "name": "distilled_mlp_control",
+              "kind": "distillation_control",
+              "eligible": false,
+              "downstream_accuracy": 0.44333333333333336,
+              "downstream_loss": 1.344196329752604,
+              "replace_params": 2592,
+              "replace_macs": 2432,
+              "routing_agreement": 0.920935402425058,
+              "attention_ablation_drop": 0.188,
+              "residual_fraction": 0.18518518518518517,
+              "score": null,
+              "train_seconds": null
+            }
+          ],
+          "neural_controls": {
+            "mlp_control": {
+              "accuracy": 0.43266666666666664,
+              "params": 16778
+            },
+            "distilled_mlp_control": {
+              "accuracy": 0.44333333333333336,
+              "params": 16778
+            }
+          },
+          "pre_adapt": {
+            "accuracy": 0.4226666666666667,
+            "loss": 1.4251900838216145,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "post_adapt": {
+            "accuracy": 0.43866666666666665,
+            "loss": 1.3713551025390625,
+            "params": 15474,
+            "replace_params": 1288,
+            "replace_macs": 1152
+          },
+          "routing_agreement_after": 0.901742615332934,
+          "adaptation_seconds": 1.9437865899999451,
+          "fit_seconds": 1.7783906900003785,
+          "latency_ms": 1.5190016428629558
+        }
+      ]
+    }
+  ],
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "affine_polynomial",
+        "kind": "dart_structured",
+        "eligible": true,
+        "downstream_accuracy": 0.781,
+        "downstream_loss": 0.9429848213195801,
+        "replace_params": 1288,
+        "replace_macs": 1152,
+        "routing_agreement": 0.46975169134542905,
+        "attention_ablation_drop": 0.669,
+        "residual_fraction": 0.37267080745341613,
+        "score": 0.9374074679942578,
+        "train_seconds": 1.4071403230000215
+      },
+      "scratch_after": {
+        "accuracy": 0.3333333333333333,
+        "loss": 1.7735867106119791,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.2853333333333333,
+        "loss": 1.921380859375,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "transfer_gain_points": -4.799999999999999
+    },
+    {
+      "seed": 2,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "affine_polynomial",
+        "kind": "dart_structured",
+        "eligible": true,
+        "downstream_accuracy": 0.7906666666666666,
+        "downstream_loss": 0.9027864685058594,
+        "replace_params": 1288,
+        "replace_macs": 1152,
+        "routing_agreement": 0.41683848203450713,
+        "attention_ablation_drop": 0.6878333333333333,
+        "residual_fraction": 0.37267080745341613,
+        "score": 0.9383748261320733,
+        "train_seconds": 1.365173797999887
+      },
+      "scratch_after": {
+        "accuracy": 0.2866666666666667,
+        "loss": 1.8411885782877604,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.27,
+        "loss": 1.9687197469075521,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "transfer_gain_points": -1.6666666666666663
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "winner": {
+        "name": "affine_polynomial",
+        "kind": "dart_structured",
+        "eligible": true,
+        "downstream_accuracy": 0.8461666666666666,
+        "downstream_loss": 0.5125349388122559,
+        "replace_params": 1288,
+        "replace_macs": 1152,
+        "routing_agreement": 0.48362159355060136,
+        "attention_ablation_drop": 0.6748333333333333,
+        "residual_fraction": 0.37267080745341613,
+        "score": 1.005931448435292,
+        "train_seconds": 1.4153516960004708
+      },
+      "scratch_after": {
+        "accuracy": 0.11133333333333334,
+        "loss": 2.309337910970052,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.09866666666666667,
+        "loss": 2.360281494140625,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "transfer_gain_points": -1.2666666666666673
+    },
+    {
+      "seed": 2,
+      "source_task": "mul",
+      "target_task": "sub",
+      "winner": {
+        "name": "affine_polynomial",
+        "kind": "dart_structured",
+        "eligible": true,
+        "downstream_accuracy": 0.9305,
+        "downstream_loss": 0.40295501708984377,
+        "replace_params": 1288,
+        "replace_macs": 1152,
+        "routing_agreement": 0.46842591899625924,
+        "attention_ablation_drop": 0.7566666666666666,
+        "residual_fraction": 0.37267080745341613,
+        "score": 1.0954089801910905,
+        "train_seconds": 1.42342566500065
+      },
+      "scratch_after": {
+        "accuracy": 0.10066666666666667,
+        "loss": 2.3175757853190104,
+        "params": 39242,
+        "replace_params": 0,
+        "replace_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.09733333333333333,
+        "loss": 2.3444840494791666,
+        "params": 15474,
+        "replace_params": 1288,
+        "replace_macs": 1152
+      },
+      "transfer_gain_points": -0.3333333333333341
+    }
+  ],
+  "summary": {
+    "teacher": {
+      "mean": 0.6571666666666667,
+      "std": 0.2410282755811642
+    },
+    "dart_final": {
+      "mean": 0.6034999999999999,
+      "std": 0.21597625040902235
+    },
+    "winner_frequency": {
+      "affine_polynomial": 7,
+      "low_rank": 1
+    },
+    "transfer": {
+      "add->compose": {
+        "scratch_after": {
+          "mean": 0.31,
+          "std": 0.0329983164553722
+        },
+        "dart_after": {
+          "mean": 0.2776666666666667,
+          "std": 0.010842303978193713
+        },
+        "gain_points": {
+          "mean": -3.2333333333333325,
+          "std": 2.2156012477178484
+        }
+      },
+      "mul->sub": {
+        "scratch_after": {
+          "mean": 0.10600000000000001,
+          "std": 0.0075424723326565106
+        },
+        "dart_after": {
+          "mean": 0.098,
+          "std": 0.0009428090415820675
+        },
+        "gain_points": {
+          "mean": -0.8000000000000007,
+          "std": 0.6599663291074442
+        }
+      }
+    }
+  }
+}
