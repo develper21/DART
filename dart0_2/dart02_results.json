@@ -1,0 +1,482 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "tasks": [
+      "add",
+      "compose"
+    ],
+    "train_size": 4000,
+    "test_size": 1000,
+    "baseline_steps": 400,
+    "scratch_steps": 400,
+    "replacement_steps": 200,
+    "adaptation_steps": [
+      0,
+      100,
+      200,
+      400
+    ],
+    "d_model": 32,
+    "n_heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "block": 1,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 20,
+    "latency_warmup": 30,
+    "latency_iters": 20,
+    "device": "cuda",
+    "out": "dart02_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.578,
+        "loss": 1.3311615905761718,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.515,
+        "loss": 1.4238134155273436,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill": {
+        "accuracy": 0.542,
+        "loss": 1.4249365844726563,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart": {
+        "accuracy": 0.542,
+        "loss": 1.4249365844726563,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "adaptation_curve": [
+        {
+          "steps": 0,
+          "accuracy": 0.542,
+          "loss": 1.4249365844726563,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2816384315490723
+        },
+        {
+          "steps": 100,
+          "accuracy": 0.71,
+          "loss": 0.978617919921875,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2831616401672363
+        },
+        {
+          "steps": 200,
+          "accuracy": 0.787,
+          "loss": 0.7155467224121094,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2858400344848633
+        },
+        {
+          "steps": 400,
+          "accuracy": 0.861,
+          "loss": 0.526856704711914,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2927984237670898
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.672,
+        "loss": 1.2053162231445314,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.536,
+        "loss": 1.4428323974609376,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill": {
+        "accuracy": 0.651,
+        "loss": 1.260811737060547,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart": {
+        "accuracy": 0.651,
+        "loss": 1.260811737060547,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "adaptation_curve": [
+        {
+          "steps": 0,
+          "accuracy": 0.651,
+          "loss": 1.260811737060547,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2822015762329102
+        },
+        {
+          "steps": 100,
+          "accuracy": 0.781,
+          "loss": 0.867052001953125,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2813823699951172
+        },
+        {
+          "steps": 200,
+          "accuracy": 0.857,
+          "loss": 0.611096694946289,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2810751914978027
+        },
+        {
+          "steps": 400,
+          "accuracy": 0.875,
+          "loss": 0.411777702331543,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.285478401184082
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.316,
+        "loss": 1.744652130126953,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.312,
+        "loss": 1.904966033935547,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill": {
+        "accuracy": 0.311,
+        "loss": 1.7559678344726561,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart": {
+        "accuracy": 0.311,
+        "loss": 1.7559678344726561,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "adaptation_curve": [
+        {
+          "steps": 0,
+          "accuracy": 0.311,
+          "loss": 1.7559678344726561,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2869631767272949
+        },
+        {
+          "steps": 100,
+          "accuracy": 0.352,
+          "loss": 1.6412461547851562,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.286348819732666
+        },
+        {
+          "steps": 200,
+          "accuracy": 0.37,
+          "loss": 1.5688632507324218,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2841983795166017
+        },
+        {
+          "steps": 400,
+          "accuracy": 0.428,
+          "loss": 1.386702667236328,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2852224349975585
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.31,
+        "loss": 1.7706931762695313,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.323,
+        "loss": 1.7078822631835937,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill": {
+        "accuracy": 0.316,
+        "loss": 1.7770537109375,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart": {
+        "accuracy": 0.316,
+        "loss": 1.7770537109375,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "adaptation_curve": [
+        {
+          "steps": 0,
+          "accuracy": 0.316,
+          "loss": 1.7770537109375,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.286246395111084
+        },
+        {
+          "steps": 100,
+          "accuracy": 0.335,
+          "loss": 1.6644638671875,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2859392166137695
+        },
+        {
+          "steps": 200,
+          "accuracy": 0.372,
+          "loss": 1.577880157470703,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.287116813659668
+        },
+        {
+          "steps": 400,
+          "accuracy": 0.452,
+          "loss": 1.3432632751464844,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": -1.2844032287597655
+        }
+      ]
+    }
+  ],
+  "summary_by_all_runs": {
+    "teacher": {
+      "accuracy": {
+        "mean": 0.469,
+        "std": 0.18419192888578662
+      },
+      "loss": {
+        "mean": 1.512955780029297,
+        "std": 0.287403890224451
+      },
+      "params": {
+        "mean": 39242,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 8352,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 8192,
+        "std": 0.0
+      }
+    },
+    "scratch": {
+      "accuracy": {
+        "mean": 0.4215,
+        "std": 0.12047821379818013
+      },
+      "loss": {
+        "mean": 1.6198735275268554,
+        "std": 0.23007709143862035
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "distill": {
+      "accuracy": {
+        "mean": 0.455,
+        "std": 0.16935367331908296
+      },
+      "loss": {
+        "mean": 1.55469246673584,
+        "std": 0.2537444704401659
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "dart": {
+      "accuracy": {
+        "mean": 0.455,
+        "std": 0.16935367331908296
+      },
+      "loss": {
+        "mean": 1.55469246673584,
+        "std": 0.2537444704401659
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "adaptation": {
+      "0": {
+        "accuracy": {
+          "mean": 0.455,
+          "std": 0.16935367331908296
+        },
+        "loss": {
+          "mean": 1.55469246673584,
+          "std": 0.2537444704401659
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      },
+      "100": {
+        "accuracy": {
+          "mean": 0.5445,
+          "std": 0.2340007122496283
+        },
+        "loss": {
+          "mean": 1.287844985961914,
+          "std": 0.4240370587515504
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      },
+      "200": {
+        "accuracy": {
+          "mean": 0.5965,
+          "std": 0.2619497407264735
+        },
+        "loss": {
+          "mean": 1.118346706390381,
+          "std": 0.5271579619654221
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      },
+      "400": {
+        "accuracy": {
+          "mean": 0.654,
+          "std": 0.2473661254092807
+        },
+        "loss": {
+          "mean": 0.9171500873565673,
+          "std": 0.519545392999916
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,214 @@
+{
+  "config": {
+    "seeds": [
+      1
+    ],
+    "tasks": [
+      "add"
+    ],
+    "train_size": 500,
+    "test_size": 200,
+    "baseline_steps": 30,
+    "scratch_steps": 30,
+    "replacement_steps": 20,
+    "adaptation_steps": [
+      0,
+      20
+    ],
+    "d_model": 32,
+    "n_heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "block": 1,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 4,
+    "latency_warmup": 2,
+    "latency_iters": 5,
+    "device": "cpu",
+    "out": "/mnt/data/dart0_2/smoke_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.095,
+        "loss": 2.395067596435547,
+        "params": 39242,
+        "target_ff_params": 8352,
+        "target_ff_macs": 8192
+      },
+      "scratch": {
+        "accuracy": 0.09,
+        "loss": 2.3656651306152345,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "distill": {
+        "accuracy": 0.08,
+        "loss": 2.3849557495117186,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "dart": {
+        "accuracy": 0.08,
+        "loss": 2.3849557495117186,
+        "params": 33002,
+        "target_ff_params": 2112,
+        "target_ff_macs": 2048
+      },
+      "adaptation_curve": [
+        {
+          "steps": 0,
+          "accuracy": 0.08,
+          "loss": 2.3849557495117186,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": null
+        },
+        {
+          "steps": 20,
+          "accuracy": 0.1,
+          "loss": 2.3999095153808594,
+          "params": 33002,
+          "ff_params": 2112,
+          "ff_macs": 2048,
+          "latency_ms": null
+        }
+      ]
+    }
+  ],
+  "summary_by_all_runs": {
+    "teacher": {
+      "accuracy": {
+        "mean": 0.095,
+        "std": 0.0
+      },
+      "loss": {
+        "mean": 2.395067596435547,
+        "std": 0.0
+      },
+      "params": {
+        "mean": 39242,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 8352,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 8192,
+        "std": 0.0
+      }
+    },
+    "scratch": {
+      "accuracy": {
+        "mean": 0.09,
+        "std": 0.0
+      },
+      "loss": {
+        "mean": 2.3656651306152345,
+        "std": 0.0
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "distill": {
+      "accuracy": {
+        "mean": 0.08,
+        "std": 0.0
+      },
+      "loss": {
+        "mean": 2.3849557495117186,
+        "std": 0.0
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "dart": {
+      "accuracy": {
+        "mean": 0.08,
+        "std": 0.0
+      },
+      "loss": {
+        "mean": 2.3849557495117186,
+        "std": 0.0
+      },
+      "params": {
+        "mean": 33002,
+        "std": 0.0
+      },
+      "target_ff_params": {
+        "mean": 2112,
+        "std": 0.0
+      },
+      "target_ff_macs": {
+        "mean": 2048,
+        "std": 0.0
+      }
+    },
+    "adaptation": {
+      "0": {
+        "accuracy": {
+          "mean": 0.08,
+          "std": 0.0
+        },
+        "loss": {
+          "mean": 2.3849557495117186,
+          "std": 0.0
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      },
+      "20": {
+        "accuracy": {
+          "mean": 0.1,
+          "std": 0.0
+        },
+        "loss": {
+          "mean": 2.3999095153808594,
+          "std": 0.0
+        },
+        "ff_params": {
+          "mean": 2112,
+          "std": 0.0
+        },
+        "ff_macs": {
+          "mean": 2048,
+          "std": 0.0
+        }
+      }
+    }
+  }
+}
