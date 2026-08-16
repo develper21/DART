@@ -1,0 +1,328 @@
+{
+  "config": {
+    "seeds": [
+      1
+    ],
+    "tasks": [
+      "add"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ],
+      [
+        "add",
+        "compose"
+      ]
+    ],
+    "train_size": 120,
+    "verifier_size": 60,
+    "test_size": 60,
+    "teacher_steps": 6,
+    "operator_fit_steps": 3,
+    "adaptation_steps_per_round": 3,
+    "surgery_rounds": 1,
+    "transfer_adaptation_steps": 3,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "rank": 8,
+    "bottleneck": 32,
+    "block": 1,
+    "operator_fit_lr": 0.001,
+    "lr": 0.0003,
+    "verifier_batches": 1,
+    "complexity_lambda": 0.0001,
+    "intervention_eps": 0.1,
+    "batch_size": 16,
+    "latency_warmup": 1,
+    "latency_iters": 2,
+    "device": "cpu",
+    "out": "/mnt/data/dart0_5/smoke_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.03333333333333333,
+        "loss": 2.6210636138916015,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 0.038661740999941685,
+      "dart_final": {
+        "accuracy": 0.016666666666666666,
+        "loss": 3.085228856404622,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "polynomial",
+            "params": 96,
+            "macs": 64,
+            "train_seconds": 0.005249973999980284,
+            "verifier_accuracy": 0.1875,
+            "verifier_loss": 2.5347065925598145,
+            "intervention_consistency": 1.0,
+            "score": 0.28683380953865484
+          },
+          "all_candidates": [
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "train_seconds": 0.005249973999980284,
+              "verifier_accuracy": 0.1875,
+              "verifier_loss": 2.5347065925598145,
+              "intervention_consistency": 1.0,
+              "score": 0.28683380953865484
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.002675952000004145,
+              "verifier_accuracy": 0.1875,
+              "verifier_loss": 2.5391111373901367,
+              "intervention_consistency": 0.875,
+              "score": 0.275
+            },
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "train_seconds": 0.005239909000010812,
+              "verifier_accuracy": 0.1875,
+              "verifier_loss": 2.5361170768737793,
+              "intervention_consistency": 0.875,
+              "score": 0.2744077358949371
+            },
+            {
+              "name": "signed_affine",
+              "params": 96,
+              "macs": 64,
+              "train_seconds": 0.012514350999936141,
+              "verifier_accuracy": 0.1875,
+              "verifier_loss": 2.5338284969329834,
+              "intervention_consistency": 0.875,
+              "score": 0.2743338095386549
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "train_seconds": 0.005799767999974392,
+              "verifier_accuracy": 0.0625,
+              "verifier_loss": 2.293855667114258,
+              "intervention_consistency": 0.9375,
+              "score": 0.15510315824082646
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "train_seconds": 0.005399816000021929,
+              "verifier_accuracy": 0.0,
+              "verifier_loss": 2.4066967964172363,
+              "intervention_consistency": 1.0,
+              "score": 0.09905790762827514
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.016666666666666666,
+            "loss": 3.183067766825358,
+            "params": 30986,
+            "target_params": 96,
+            "target_macs": 64
+          },
+          "post_adapt": {
+            "accuracy": 0.016666666666666666,
+            "loss": 3.085228856404622,
+            "params": 30986,
+            "target_params": 96,
+            "target_macs": 64
+          },
+          "adaptation_seconds": 0.011608228999989478,
+          "latency_ms": null
+        }
+      ]
+    }
+  ],
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "polynomial",
+        "params": 96,
+        "macs": 64,
+        "train_seconds": 0.005383482000070217,
+        "verifier_accuracy": 0.125,
+        "verifier_loss": 2.727027177810669,
+        "intervention_consistency": 1.0,
+        "score": 0.2243338095386549
+      },
+      "scratch_before": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.507684008280436,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.875923824310303,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      },
+      "scratch_after": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.483251126607259,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.13333333333333333,
+        "loss": 2.7724380493164062,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      }
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "winner": {
+        "name": "signed_affine",
+        "params": 96,
+        "macs": 64,
+        "train_seconds": 0.0054837300000372124,
+        "verifier_accuracy": 0.1875,
+        "verifier_loss": 2.307624101638794,
+        "intervention_consistency": 1.0,
+        "score": 0.28683380953865484
+      },
+      "scratch_before": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.617099571228027,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.08333333333333333,
+        "loss": 3.0076911290486654,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      },
+      "scratch_after": {
+        "accuracy": 0.05,
+        "loss": 2.603456751505534,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.08333333333333333,
+        "loss": 2.9434096018473306,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      }
+    },
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "polynomial",
+        "params": 96,
+        "macs": 64,
+        "train_seconds": 0.0054268559999854915,
+        "verifier_accuracy": 0.125,
+        "verifier_loss": 2.727027177810669,
+        "intervention_consistency": 1.0,
+        "score": 0.2243338095386549
+      },
+      "scratch_before": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.507684008280436,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.875923824310303,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      },
+      "scratch_after": {
+        "accuracy": 0.06666666666666667,
+        "loss": 2.483251126607259,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.13333333333333333,
+        "loss": 2.7724380493164062,
+        "params": 30986,
+        "target_params": 96,
+        "target_macs": 64
+      }
+    }
+  ],
+  "summary": {
+    "teacher": {
+      "mean": 0.03333333333333333,
+      "std": 0.0
+    },
+    "dart_final": {
+      "mean": 0.016666666666666666,
+      "std": 0.0
+    },
+    "winner_frequency": {
+      "polynomial": 1
+    },
+    "transfer": {
+      "add->compose": {
+        "scratch_after": {
+          "mean": 0.06666666666666667,
+          "std": 0.0
+        },
+        "dart_after": {
+          "mean": 0.13333333333333333,
+          "std": 0.0
+        }
+      },
+      "mul->sub": {
+        "scratch_after": {
+          "mean": 0.05,
+          "std": 0.0
+        },
+        "dart_after": {
+          "mean": 0.08333333333333333,
+          "std": 0.0
+        }
+      }
+    }
+  }
+}
