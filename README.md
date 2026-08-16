@@ -52,4 +52,3 @@ python3 dart010.py \
 ```
 
 The JSON records the shared-core parameters, zero-shot held-out accuracy, residual-adapted accuracy, matched MLP control, and the transfer gains.
-# DART
