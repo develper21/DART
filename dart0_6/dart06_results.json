@@ -1,0 +1,1037 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "tasks": [
+      "add",
+      "compose"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ]
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "operator_fit_steps": 300,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "transfer_adaptation_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "trajectory_batches": 20,
+    "verifier_batches": 20,
+    "trajectory_weight": 0.05,
+    "operator_fit_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "batch_size": 256,
+    "latency_warmup": 30,
+    "latency_iters": 30,
+    "device": "cuda",
+    "out": "dart06_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8626666666666667,
+        "loss": 0.46899419657389324,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "teacher_training_seconds": 4.695833756999946,
+      "dart_final": {
+        "accuracy": 0.11266666666666666,
+        "loss": 2.3069835815429687,
+        "params": 1226,
+        "trajectory_params": 96,
+        "trajectory_macs": 192
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "shared_polynomial",
+            "params": 96,
+            "macs": 192,
+            "train_seconds": 0.7188448889999108,
+            "downstream_accuracy": 0.10133333333333333,
+            "downstream_loss": 2.357691202799479,
+            "trajectory_consistency": 0.7013550839902146,
+            "score": 0.1707482361250592
+          },
+          "all_candidates": [
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7188448889999108,
+              "downstream_accuracy": 0.10133333333333333,
+              "downstream_loss": 2.357691202799479,
+              "trajectory_consistency": 0.7013550839902146,
+              "score": 0.1707482361250592
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 1.0914426919998732,
+              "downstream_accuracy": 0.1,
+              "downstream_loss": 2.3325577392578123,
+              "trajectory_consistency": 0.6924573665535223,
+              "score": 0.168540464550429
+            },
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.8481655699999919,
+              "downstream_accuracy": 0.094,
+              "downstream_loss": 2.3227164713541666,
+              "trajectory_consistency": 0.7388059596623938,
+              "score": 0.16688363799959613
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.6522335050001402,
+              "downstream_accuracy": 0.09666666666666666,
+              "downstream_loss": 2.363346476236979,
+              "trajectory_consistency": 0.6946114384773246,
+              "score": 0.1654816362384844
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.22877516700009437,
+              "downstream_accuracy": 0.09733333333333333,
+              "downstream_loss": 2.5539611409505207,
+              "trajectory_consistency": 0.6535618351011742,
+              "score": 0.16268951684345073
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.889682141999856,
+              "downstream_accuracy": 0.08533333333333333,
+              "downstream_loss": 2.30825927734375,
+              "trajectory_consistency": 0.7601893311578748,
+              "score": 0.1601505103462592
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.09466666666666666,
+            "loss": 2.36222509765625,
+            "params": 1226,
+            "trajectory_params": 96,
+            "trajectory_macs": 192
+          },
+          "post_adapt": {
+            "accuracy": 0.10733333333333334,
+            "loss": 2.309429463704427,
+            "params": 1226,
+            "trajectory_params": 96,
+            "trajectory_macs": 192
+          },
+          "refit_seconds": 0.6874885470001573,
+          "adaptation_seconds": 0.6539930139999797,
+          "latency_ms": 0.14882133801778158
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "shared_polynomial",
+            "params": 96,
+            "macs": 192,
+            "train_seconds": 0.7254986770001324,
+            "downstream_accuracy": 0.11533333333333333,
+            "downstream_loss": 2.3212991333007813,
+            "trajectory_consistency": 0.9358495235175752,
+            "score": 0.20819768007779527
+          },
+          "all_candidates": [
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7254986770001324,
+              "downstream_accuracy": 0.11533333333333333,
+              "downstream_loss": 2.3212991333007813,
+              "trajectory_consistency": 0.9358495235175752,
+              "score": 0.20819768007779527
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 0.9295418899998822,
+              "downstream_accuracy": 0.11,
+              "downstream_loss": 2.3164547729492186,
+              "trajectory_consistency": 0.9132300400929373,
+              "score": 0.2006177319043705
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.5518985809999322,
+              "downstream_accuracy": 0.11,
+              "downstream_loss": 2.3233850708007813,
+              "trajectory_consistency": 0.8866540407779194,
+              "score": 0.1980192298018772
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.7883495930000208,
+              "downstream_accuracy": 0.10133333333333333,
+              "downstream_loss": 2.3094630533854166,
+              "trajectory_consistency": 0.7918832357075066,
+              "score": 0.1793199008012224
+            },
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.860394278000058,
+              "downstream_accuracy": 0.09333333333333334,
+              "downstream_loss": 2.3150824788411457,
+              "trajectory_consistency": 0.8238671632020993,
+              "score": 0.1747230916869
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.1831568770001013,
+              "downstream_accuracy": 0.102,
+              "downstream_loss": 2.4040074055989584,
+              "trajectory_consistency": 0.6307542531146839,
+              "score": 0.1650754253114684
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.1,
+            "loss": 2.3178447265625,
+            "params": 1226,
+            "trajectory_params": 96,
+            "trajectory_macs": 192
+          },
+          "post_adapt": {
+            "accuracy": 0.11266666666666666,
+            "loss": 2.3069835815429687,
+            "params": 1226,
+            "trajectory_params": 96,
+            "trajectory_macs": 192
+          },
+          "refit_seconds": 0.6889515230000143,
+          "adaptation_seconds": 0.6929279529999803,
+          "latency_ms": 0.14452053705851237
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8673333333333333,
+        "loss": 0.4277922871907552,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "teacher_training_seconds": 4.531621742000198,
+      "dart_final": {
+        "accuracy": 0.11733333333333333,
+        "loss": 2.305381591796875,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 0.8224381899999571,
+            "downstream_accuracy": 0.10466666666666667,
+            "downstream_loss": 2.307167317708333,
+            "trajectory_consistency": 0.6960317635576144,
+            "score": 0.17327288505578486
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.8224381899999571,
+              "downstream_accuracy": 0.10466666666666667,
+              "downstream_loss": 2.307167317708333,
+              "trajectory_consistency": 0.6960317635576144,
+              "score": 0.17327288505578486
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.8626266339999802,
+              "downstream_accuracy": 0.096,
+              "downstream_loss": 2.3052982584635417,
+              "trajectory_consistency": 0.6949424331566144,
+              "score": 0.16429248721279982
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.22025434900001528,
+              "downstream_accuracy": 0.09466666666666666,
+              "downstream_loss": 2.5682525634765625,
+              "trajectory_consistency": 0.6580785610196259,
+              "score": 0.16047452276862925
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7425991190000332,
+              "downstream_accuracy": 0.09266666666666666,
+              "downstream_loss": 2.3581234130859374,
+              "trajectory_consistency": 0.6771837171048025,
+              "score": 0.15966443276985132
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.6069332859999577,
+              "downstream_accuracy": 0.088,
+              "downstream_loss": 2.372224365234375,
+              "trajectory_consistency": 0.676335873885265,
+              "score": 0.15498741311261177
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 1.0121292670000912,
+              "downstream_accuracy": 0.08333333333333333,
+              "downstream_loss": 2.3367312418619792,
+              "trajectory_consistency": 0.6743425935880264,
+              "score": 0.15006232058721272
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.106,
+            "loss": 2.3103304646809897,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.106,
+            "loss": 2.3047283732096355,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.8253985740000189,
+          "adaptation_seconds": 0.7365633970000545,
+          "latency_ms": 0.21480746269226075
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 0.825699927000187,
+            "downstream_accuracy": 0.10266666666666667,
+            "downstream_loss": 2.3029241943359375,
+            "trajectory_consistency": 0.9620268188940365,
+            "score": 0.19787239058942707
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.825699927000187,
+              "downstream_accuracy": 0.10266666666666667,
+              "downstream_loss": 2.3029241943359375,
+              "trajectory_consistency": 0.9620268188940365,
+              "score": 0.19787239058942707
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.754010204999986,
+              "downstream_accuracy": 0.09533333333333334,
+              "downstream_loss": 2.3564720458984376,
+              "trajectory_consistency": 0.8327324107962801,
+              "score": 0.17788596880566576
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.2086967380000715,
+              "downstream_accuracy": 0.10266666666666667,
+              "downstream_loss": 2.561112589518229,
+              "trajectory_consistency": 0.7211769322104723,
+              "score": 0.1747843598877139
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.6005451339999581,
+              "downstream_accuracy": 0.088,
+              "downstream_loss": 2.3721817220052084,
+              "trajectory_consistency": 0.8295757587813447,
+              "score": 0.17031140160221975
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.8349974009997823,
+              "downstream_accuracy": 0.094,
+              "downstream_loss": 2.303822998046875,
+              "trajectory_consistency": 0.7567929279202652,
+              "score": 0.16847753668916493
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 1.0180286099998739,
+              "downstream_accuracy": 0.07733333333333334,
+              "downstream_loss": 2.338187052408854,
+              "trajectory_consistency": 0.7924123694008388,
+              "score": 0.15586929816849399
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.108,
+            "loss": 2.3058365885416667,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.11733333333333333,
+            "loss": 2.305381591796875,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.8207163050001327,
+          "adaptation_seconds": 0.7392308080002294,
+          "latency_ms": 0.1614506721496582
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.422,
+        "loss": 1.3741777954101562,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "teacher_training_seconds": 4.506328685999961,
+      "dart_final": {
+        "accuracy": 0.25733333333333336,
+        "loss": 2.1342023518880207,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 1.0475980269998217,
+            "downstream_accuracy": 0.26,
+            "downstream_loss": 2.125796915690104,
+            "trajectory_consistency": 0.7165152537912578,
+            "score": 0.33065456741248256
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 1.0475980269998217,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.125796915690104,
+              "trajectory_consistency": 0.7165152537912578,
+              "score": 0.33065456741248256
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 1.0090444590000516,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1262069905598957,
+              "trajectory_consistency": 0.7126667165012045,
+              "score": 0.33006491554725886
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.8271744890002992,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1519548950195313,
+              "trajectory_consistency": 0.703711207140204,
+              "score": 0.32965051510672483
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 1.188873810000132,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1370401407877604,
+              "trajectory_consistency": 0.7011030023459378,
+              "score": 0.3294050281296706
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.7306860990001951,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1550213623046877,
+              "trajectory_consistency": 0.6979795457656536,
+              "score": 0.3291517803006506
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.24909002699996563,
+              "downstream_accuracy": 0.112,
+              "downstream_loss": 2.3961986083984375,
+              "trajectory_consistency": 0.6543108544833223,
+              "score": 0.17743108544833225
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.25733333333333336,
+            "loss": 2.137757303873698,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.25733333333333336,
+            "loss": 2.13326513671875,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.9523287540000638,
+          "adaptation_seconds": 0.7312283369997203,
+          "latency_ms": 0.1593664010365804
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 0.819342529000096,
+            "downstream_accuracy": 0.26,
+            "downstream_loss": 2.1260355631510417,
+            "trajectory_consistency": 0.9629150452892257,
+            "score": 0.3552945465622793
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.819342529000096,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1260355631510417,
+              "trajectory_consistency": 0.9629150452892257,
+              "score": 0.3552945465622793
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.6694164229998023,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1541380208333334,
+              "trajectory_consistency": 0.8536407182504949,
+              "score": 0.3447178975491348
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 0.9654419539997434,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1375044352213544,
+              "trajectory_consistency": 0.8450235355165034,
+              "score": 0.34379708144672716
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.7980169380002735,
+              "downstream_accuracy": 0.26,
+              "downstream_loss": 2.1259738362630207,
+              "trajectory_consistency": 0.7484832026327046,
+              "score": 0.3336465641604089
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7390350210002907,
+              "downstream_accuracy": 0.23733333333333334,
+              "downstream_loss": 2.1502972412109376,
+              "trajectory_consistency": 0.8677055761027417,
+              "score": 0.32338328533631194
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.26126666799973464,
+              "downstream_accuracy": 0.114,
+              "downstream_loss": 2.387538981119792,
+              "trajectory_consistency": 0.7135227589732223,
+              "score": 0.18535227589732223
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.25733333333333336,
+            "loss": 2.133010009765625,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.25733333333333336,
+            "loss": 2.1342023518880207,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.7563474819999101,
+          "adaptation_seconds": 0.8456253320000542,
+          "latency_ms": 0.17445759773254393
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.4766666666666667,
+        "loss": 1.2034004516601562,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "teacher_training_seconds": 4.544967747000101,
+      "dart_final": {
+        "accuracy": 0.27466666666666667,
+        "loss": 2.0888502604166668,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 0.8146455010000864,
+            "downstream_accuracy": 0.2693333333333333,
+            "downstream_loss": 2.1202693684895833,
+            "trajectory_consistency": 0.7278859095429137,
+            "score": 0.34112496632098144
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.8146455010000864,
+              "downstream_accuracy": 0.2693333333333333,
+              "downstream_loss": 2.1202693684895833,
+              "trajectory_consistency": 0.7278859095429137,
+              "score": 0.34112496632098144
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7767924679997122,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.1518429565429686,
+              "trajectory_consistency": 0.7062006979298134,
+              "score": 0.33856613085235243
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 1.0081507690001672,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.1400340576171875,
+              "trajectory_consistency": 0.7039736215130172,
+              "score": 0.33835875671304516
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.5973917290002646,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.1570313720703127,
+              "trajectory_consistency": 0.7023056520798295,
+              "score": 0.33825105759873486
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.8639802810002948,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.1128484293619794,
+              "trajectory_consistency": 0.6998766765617297,
+              "score": 0.33745257821997804
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.19540037800015853,
+              "downstream_accuracy": 0.14066666666666666,
+              "downstream_loss": 2.4066717529296877,
+              "trajectory_consistency": 0.658344975902803,
+              "score": 0.20650116425694698
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.27466666666666667,
+            "loss": 2.0922852986653644,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.27466666666666667,
+            "loss": 2.089701904296875,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.8273451630002455,
+          "adaptation_seconds": 0.7654482890002328,
+          "latency_ms": 0.1749674638112386
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "shared_low_rank_residual",
+            "params": 544,
+            "macs": 1536,
+            "train_seconds": 0.8144403989999773,
+            "downstream_accuracy": 0.2693333333333333,
+            "downstream_loss": 2.118368693033854,
+            "trajectory_consistency": 0.9755746865352657,
+            "score": 0.36589384402021663
+          },
+          "all_candidates": [
+            {
+              "name": "shared_low_rank_residual",
+              "params": 544,
+              "macs": 1536,
+              "train_seconds": 0.8144403989999773,
+              "downstream_accuracy": 0.2693333333333333,
+              "downstream_loss": 2.118368693033854,
+              "trajectory_consistency": 0.9755746865352657,
+              "score": 0.36589384402021663
+            },
+            {
+              "name": "shared_polynomial",
+              "params": 96,
+              "macs": 192,
+              "train_seconds": 0.7469654989999981,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.148863525390625,
+              "trajectory_consistency": 0.8494216530508977,
+              "score": 0.3528882263644608
+            },
+            {
+              "name": "shared_diagonal",
+              "params": 64,
+              "macs": 96,
+              "train_seconds": 0.6226882819996717,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.154210611979167,
+              "trajectory_consistency": 0.8468185501699997,
+              "score": 0.3527023474077519
+            },
+            {
+              "name": "shared_primitive",
+              "params": 67,
+              "macs": 288,
+              "train_seconds": 0.9764552760002516,
+              "downstream_accuracy": 0.26866666666666666,
+              "downstream_loss": 2.1382440185546874,
+              "trajectory_consistency": 0.8312969009545504,
+              "score": 0.3510910846571985
+            },
+            {
+              "name": "shared_mlp",
+              "params": 2112,
+              "macs": 6144,
+              "train_seconds": 0.8458175959999608,
+              "downstream_accuracy": 0.2693333333333333,
+              "downstream_loss": 2.113107625325521,
+              "trajectory_consistency": 0.682726530837866,
+              "score": 0.3364042303142583
+            },
+            {
+              "name": "identity",
+              "params": 0,
+              "macs": 0,
+              "train_seconds": 0.19911873499995636,
+              "downstream_accuracy": 0.13266666666666665,
+              "downstream_loss": 2.400518636067708,
+              "trajectory_consistency": 0.7319837928079361,
+              "score": 0.20586504594746027
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.27466666666666667,
+            "loss": 2.091293212890625,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "post_adapt": {
+            "accuracy": 0.27466666666666667,
+            "loss": 2.0888502604166668,
+            "params": 1674,
+            "trajectory_params": 544,
+            "trajectory_macs": 1536
+          },
+          "refit_seconds": 0.8691039620002812,
+          "adaptation_seconds": 0.7389284269997916,
+          "latency_ms": 0.1592319965362549
+        }
+      ]
+    }
+  ],
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "shared_low_rank_residual",
+        "params": 544,
+        "macs": 1536,
+        "train_seconds": 0.832095438000124,
+        "downstream_accuracy": 0.11316666666666667,
+        "downstream_loss": 2.300457005818685,
+        "trajectory_consistency": 0.8157598461015834,
+        "score": 0.19374569331018174
+      },
+      "scratch_after": {
+        "accuracy": 0.30933333333333335,
+        "loss": 1.7286527709960937,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.276,
+        "loss": 2.102147705078125,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "transfer_gain_points": -3.3333333333333326
+    },
+    {
+      "seed": 2,
+      "source_task": "add",
+      "target_task": "compose",
+      "winner": {
+        "name": "shared_mlp",
+        "params": 2112,
+        "macs": 6144,
+        "train_seconds": 0.8471048910000718,
+        "downstream_accuracy": 0.10516666666666667,
+        "downstream_loss": 2.30176123046875,
+        "trajectory_consistency": 0.7528694519658182,
+        "score": 0.17925185576038688
+      },
+      "scratch_after": {
+        "accuracy": 0.2833333333333333,
+        "loss": 1.8733374633789062,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.258,
+        "loss": 2.109348185221354,
+        "params": 3242,
+        "trajectory_params": 2112,
+        "trajectory_macs": 6144
+      },
+      "transfer_gain_points": -2.533333333333332
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "winner": {
+        "name": "shared_low_rank_residual",
+        "params": 544,
+        "macs": 1536,
+        "train_seconds": 0.7908699360000355,
+        "downstream_accuracy": 0.27016666666666667,
+        "downstream_loss": 1.7911800435384115,
+        "trajectory_consistency": 0.7789363480717424,
+        "score": 0.3470633435071977
+      },
+      "scratch_after": {
+        "accuracy": 0.11333333333333333,
+        "loss": 2.3072126871744794,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.10133333333333333,
+        "loss": 2.3069119059244794,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "transfer_gain_points": -1.1999999999999997
+    },
+    {
+      "seed": 2,
+      "source_task": "mul",
+      "target_task": "sub",
+      "winner": {
+        "name": "shared_low_rank_residual",
+        "params": 544,
+        "macs": 1536,
+        "train_seconds": 0.7328949599996122,
+        "downstream_accuracy": 0.271,
+        "downstream_loss": 1.799883305867513,
+        "trajectory_consistency": 0.7551799279615167,
+        "score": 0.34552103482950847
+      },
+      "scratch_after": {
+        "accuracy": 0.09466666666666666,
+        "loss": 2.31692626953125,
+        "params": 39242,
+        "trajectory_params": 0,
+        "trajectory_macs": 0
+      },
+      "dart_after": {
+        "accuracy": 0.09333333333333334,
+        "loss": 2.316427530924479,
+        "params": 1674,
+        "trajectory_params": 544,
+        "trajectory_macs": 1536
+      },
+      "transfer_gain_points": -0.13333333333333253
+    }
+  ],
+  "summary": {
+    "teacher": {
+      "mean": 0.6571666666666667,
+      "std": 0.2410282755811642
+    },
+    "dart_final": {
+      "mean": 0.1905,
+      "std": 0.08748735358345822
+    },
+    "winner_frequency": {
+      "shared_polynomial": 2,
+      "shared_low_rank_residual": 6
+    },
+    "transfer": {
+      "add->compose": {
+        "scratch_after": {
+          "mean": 0.29633333333333334,
+          "std": 0.01838477631085025
+        },
+        "dart_after": {
+          "mean": 0.267,
+          "std": 0.012727922061357868
+        },
+        "gain_points": {
+          "mean": -2.9333333333333322,
+          "std": 0.5656854249492386
+        }
+      },
+      "mul->sub": {
+        "scratch_after": {
+          "mean": 0.104,
+          "std": 0.013199326582148885
+        },
+        "dart_after": {
+          "mean": 0.09733333333333333,
+          "std": 0.005656854249492376
+        },
+        "gain_points": {
+          "mean": -0.6666666666666661,
+          "std": 0.7542472332656511
+        }
+      }
+    }
+  }
+}
