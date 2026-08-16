@@ -1,0 +1,99 @@
+{
+  "config": {
+    "seed": 7,
+    "train_size": 800,
+    "test_size": 200,
+    "baseline_steps": 60,
+    "scratch_steps": 60,
+    "replacement_steps": 40,
+    "adaptation_steps": 40,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "batch_size": 128,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 5,
+    "cf_batches": 30,
+    "cf_noise": 0.05,
+    "latency_warmup": 2,
+    "latency_iters": 5,
+    "device": "cpu",
+    "out": "/mnt/data/dart0_1/smoke_results.json"
+  },
+  "teacher": {
+    "eval": {
+      "accuracy": 0.09,
+      "loss": 2.385393295288086,
+      "params": 39242,
+      "ff_params": 8352
+    },
+    "runtime": {
+      "latency_ms": null,
+      "peak_cuda_mb": null,
+      "ff_macs_per_token": 8192
+    },
+    "train_seconds": 1.0411756620000006
+  },
+  "scratch": {
+    "eval": {
+      "accuracy": 0.13,
+      "loss": 2.3296437072753906,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": null,
+      "peak_cuda_mb": null,
+      "ff_macs_per_token": 2048
+    },
+    "train_seconds": 1.0542810259999982
+  },
+  "distill": {
+    "eval": {
+      "accuracy": 0.085,
+      "loss": 2.405672912597656,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": null,
+      "peak_cuda_mb": null,
+      "ff_macs_per_token": 2048
+    },
+    "replacement_seconds": 0.17200374200000113,
+    "cf_mse": 0.017541476525366306
+  },
+  "dart": {
+    "eval": {
+      "accuracy": 0.085,
+      "loss": 2.405672912597656,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": null,
+      "peak_cuda_mb": null,
+      "ff_macs_per_token": 2048
+    },
+    "replacement_seconds": 0.17200374200000113,
+    "cf_mse": 0.017541476525366306
+  },
+  "dart_adapt": {
+    "eval": {
+      "accuracy": 0.105,
+      "loss": 2.3619393920898437,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": null,
+      "peak_cuda_mb": null,
+      "ff_macs_per_token": 2048
+    },
+    "adapt_seconds": 0.7693216910000018,
+    "adapt_steps": 40,
+    "cf_mse": 0.017541476525366306
+  }
+}

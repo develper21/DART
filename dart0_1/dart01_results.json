@@ -1,0 +1,99 @@
+{
+  "config": {
+    "seed": 7,
+    "train_size": 12000,
+    "test_size": 3000,
+    "baseline_steps": 1200,
+    "scratch_steps": 1200,
+    "replacement_steps": 400,
+    "adaptation_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "replacement_lr": 0.001,
+    "trace_batches": 50,
+    "cf_batches": 30,
+    "cf_noise": 0.05,
+    "latency_warmup": 30,
+    "latency_iters": 100,
+    "device": "cuda",
+    "out": "dart01_results.json"
+  },
+  "teacher": {
+    "eval": {
+      "accuracy": 0.996,
+      "loss": 0.014728064656257629,
+      "params": 39242,
+      "ff_params": 8352
+    },
+    "runtime": {
+      "latency_ms": 1.3291622924804687,
+      "peak_cuda_mb": 21.4638671875,
+      "ff_macs_per_token": 8192
+    },
+    "train_seconds": 6.9054264730002615
+  },
+  "scratch": {
+    "eval": {
+      "accuracy": 0.9956666666666667,
+      "loss": 0.015445005337397257,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": 1.2878848266601564,
+      "peak_cuda_mb": 21.732421875,
+      "ff_macs_per_token": 2048
+    },
+    "train_seconds": 6.5377063550004095
+  },
+  "distill": {
+    "eval": {
+      "accuracy": 0.9746666666666667,
+      "loss": 0.08050791422526042,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": 1.285498809814453,
+      "peak_cuda_mb": 21.88427734375,
+      "ff_macs_per_token": 2048
+    },
+    "replacement_seconds": 1.1226507870014757,
+    "cf_mse": 0.012272620806470513
+  },
+  "dart": {
+    "eval": {
+      "accuracy": 0.9746666666666667,
+      "loss": 0.08050791422526042,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": 1.2883932495117187,
+      "peak_cuda_mb": 22.0185546875,
+      "ff_macs_per_token": 2048
+    },
+    "replacement_seconds": 1.1226507870014757,
+    "cf_mse": 0.012272620806470513
+  },
+  "dart_adapt": {
+    "eval": {
+      "accuracy": 0.9963333333333333,
+      "loss": 0.013804470211267472,
+      "params": 33002,
+      "ff_params": 2112
+    },
+    "runtime": {
+      "latency_ms": 1.2862054443359374,
+      "peak_cuda_mb": 22.287109375,
+      "ff_macs_per_token": 2048
+    },
+    "adapt_seconds": 2.185234632001084,
+    "adapt_steps": 400,
+    "cf_mse": 0.012272620806470513
+  }
+}
