@@ -1,0 +1,11 @@
+{
+  "status": "hypothesis_not_demonstrated",
+  "baseline_accuracy": 0.372,
+  "replacement_accuracy": 0.332,
+  "accuracy_drop": 0.04,
+  "old_ff_params": 8352,
+  "replacement_params": 812,
+  "parameter_ratio": 0.0972,
+  "counterfactual_mse": 0.030962,
+  "note": "This is a small CPU smoke experiment. The result is evidence for rejection of this candidate, not a conclusion that DART is false."
+}
