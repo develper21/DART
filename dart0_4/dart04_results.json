@@ -1,0 +1,860 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "tasks": [
+      "add",
+      "compose"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ]
+    ],
+    "train_size": 6000,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "operator_fit_steps": 250,
+    "operator_fit_lr": 0.001,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "rank": 8,
+    "block": 1,
+    "intervention_eps": 0.1,
+    "intervention_directions": 4,
+    "trace_rows": 10000,
+    "trace_batches": 20,
+    "directional_weight": 1.0,
+    "complexity_lambda": 0.0001,
+    "transfer_adaptation_steps": 400,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "latency_warmup": 30,
+    "latency_iters": 30,
+    "device": "cuda",
+    "out": "dart04_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8646666666666667,
+        "loss": 0.4633232727050781,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 4.634150974001386,
+      "dart_final": {
+        "accuracy": 0.8873333333333333,
+        "loss": 0.32167208099365235,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.02152029052376747,
+          "candidate_directional_mse": 0.017725907266139984,
+          "candidate_score": 0.04039303954908101,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.8368431329727173,
+              "directional_mse": 0.433306485414505,
+              "score": 1.2707418824922851
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6756176948547363,
+              "directional_mse": 0.38815736770629883,
+              "score": 1.0644412530223804
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.07083284854888916,
+              "directional_mse": 0.0452355295419693,
+              "score": 0.11701047046258332
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.036613915115594864,
+              "directional_mse": 0.03425440937280655,
+              "score": 0.07191126588156706
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.02152029052376747,
+              "directional_mse": 0.017725907266139984,
+              "score": 0.04039303954908101
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.7813333333333333,
+            "loss": 0.7495100504557292,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.8733333333333333,
+            "loss": 0.36337585957845053,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4680746714274089
+        },
+        {
+          "round": 1,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.008699976839125156,
+          "candidate_directional_mse": 0.008558528497815132,
+          "candidate_score": 0.018405347096113838,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.8232437372207642,
+              "directional_mse": 0.3935738503932953,
+              "score": 1.2174098517191223
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6214994192123413,
+              "directional_mse": 0.3151523768901825,
+              "score": 0.9373179865638689
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.0627766102552414,
+              "directional_mse": 0.03658356890082359,
+              "score": 0.10030227152778985
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.026034802198410034,
+              "directional_mse": 0.02389373816549778,
+              "score": 0.050971481757073465
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.008699976839125156,
+              "directional_mse": 0.008558528497815132,
+              "score": 0.018405347096113838
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.8586666666666667,
+            "loss": 0.4135670267740885,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.8873333333333333,
+            "loss": 0.32167208099365235,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4673919677734375
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.8873333333333333,
+        "loss": 0.3571451314290365,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 4.3807165420003,
+      "dart_final": {
+        "accuracy": 0.928,
+        "loss": 0.21726392110188802,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.017669951543211937,
+          "candidate_directional_mse": 0.014513963833451271,
+          "candidate_score": 0.03333075713583676,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.815525233745575,
+              "directional_mse": 0.4341910183429718,
+              "score": 1.2503085161936096
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6653487682342529,
+              "directional_mse": 0.3784821033477783,
+              "score": 1.0444970620433764
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.07561039179563522,
+              "directional_mse": 0.043737564235925674,
+              "score": 0.12029004840328576
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.034739620983600616,
+              "directional_mse": 0.029653891921043396,
+              "score": 0.06543645429780966
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.017669951543211937,
+              "directional_mse": 0.014513963833451271,
+              "score": 0.03333075713583676
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.8806666666666667,
+            "loss": 0.4155491689046224,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.9013333333333333,
+            "loss": 0.270661387125651,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4675626118977865
+        },
+        {
+          "round": 1,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.011649633757770061,
+          "candidate_directional_mse": 0.010386403650045395,
+          "candidate_score": 0.023182879166989006,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.820033073425293,
+              "directional_mse": 0.39994433522224426,
+              "score": 1.2205696727526
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6816605925559998,
+              "directional_mse": 0.3614565134048462,
+              "score": 1.0437832964221911
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.06742553412914276,
+              "directional_mse": 0.034239761531353,
+              "score": 0.10260738803222062
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.026043236255645752,
+              "directional_mse": 0.021060818806290627,
+              "score": 0.04814699645510203
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.011649633757770061,
+              "directional_mse": 0.010386403650045395,
+              "score": 0.023182879166989006
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.8953333333333333,
+            "loss": 0.3127088394165039,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.928,
+            "loss": 0.21726392110188802,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4717578887939453
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.42866666666666664,
+        "loss": 1.3247095336914063,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 4.392036261000612,
+      "dart_final": {
+        "accuracy": 0.486,
+        "loss": 1.0723524576822916,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.011295568197965622,
+          "candidate_directional_mse": 0.011130808852612972,
+          "candidate_score": 0.023573218809752144,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.8566192984580994,
+              "directional_mse": 0.4197766184806824,
+              "score": 1.2769881810438446
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6950792670249939,
+              "directional_mse": 0.3556782603263855,
+              "score": 1.0514237178127246
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.05254236236214638,
+              "directional_mse": 0.0345899872481823,
+              "score": 0.08807444198205354
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.024380670860409737,
+              "directional_mse": 0.024925472214818,
+              "score": 0.05034908446839339
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.011295568197965622,
+              "directional_mse": 0.011130808852612972,
+              "score": 0.023573218809752144
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.4246666666666667,
+            "loss": 1.3460851033528647,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.47533333333333333,
+            "loss": 1.1601040547688801,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4748565673828125
+        },
+        {
+          "round": 1,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.007416296284645796,
+          "candidate_directional_mse": 0.007976672612130642,
+          "candidate_score": 0.016539810655949987,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.907331645488739,
+              "directional_mse": 0.43758150935173035,
+              "score": 1.3455054189455322
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.7269908785820007,
+              "directional_mse": 0.36969178915023804,
+              "score": 1.097348858193584
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.0420638769865036,
+              "directional_mse": 0.0272944625467062,
+              "score": 0.07030043190493467
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.023298373445868492,
+              "directional_mse": 0.023751061409711838,
+              "score": 0.04809237624874598
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.007416296284645796,
+              "directional_mse": 0.007976672612130642,
+              "score": 0.016539810655949987
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.462,
+            "loss": 1.1822308959960937,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.486,
+            "loss": 1.0723524576822916,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4716234842936198
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "task": "compose",
+      "teacher": {
+        "accuracy": 0.4846666666666667,
+        "loss": 1.183842753092448,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 4.440543102999072,
+      "dart_final": {
+        "accuracy": 0.5773333333333334,
+        "loss": 0.9565740865071615,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.008710969239473343,
+          "candidate_directional_mse": 0.009116695262491703,
+          "candidate_score": 0.018974506261138595,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.8034163117408752,
+              "directional_mse": 0.42731061577796936,
+              "score": 1.2313191916239075
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6595346331596375,
+              "directional_mse": 0.3874746859073639,
+              "score": 1.0476755095283465
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.03764946386218071,
+              "directional_mse": 0.02765309438109398,
+              "score": 0.06624465061499955
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.024597885087132454,
+              "directional_mse": 0.026220116764307022,
+              "score": 0.05186094324460513
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.008710969239473343,
+              "directional_mse": 0.009116695262491703,
+              "score": 0.018974506261138595
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.492,
+            "loss": 1.2137120157877603,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.5413333333333333,
+            "loss": 1.0166611938476562,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4710783640543619
+        },
+        {
+          "round": 1,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.005673328880220652,
+          "candidate_directional_mse": 0.006145096383988857,
+          "candidate_score": 0.01296526702338306,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 0.8099853992462158,
+              "directional_mse": 0.41452330350875854,
+              "score": 1.2251009668600372
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 0.6463258862495422,
+              "directional_mse": 0.34090080857276917,
+              "score": 0.9878928852836565
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.04542713612318039,
+              "directional_mse": 0.0259684007614851,
+              "score": 0.07233762925639035
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.01856498420238495,
+              "directional_mse": 0.01881028339266777,
+              "score": 0.03841820898821837
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.005673328880220652,
+              "directional_mse": 0.006145096383988857,
+              "score": 0.01296526702338306
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.5326666666666666,
+            "loss": 1.0415941569010416,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.5773333333333334,
+            "loss": 0.9565740865071615,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": 1.4717269897460938
+        }
+      ]
+    }
+  ],
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.020770804956555367,
+        "directional_mse": 0.018085261806845665,
+        "score": 0.040002908522574585
+      },
+      "scratch_before": {
+        "accuracy": 0.058,
+        "loss": 2.5704512939453124,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.232,
+        "loss": 5.041449625651041,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.30733333333333335,
+        "loss": 1.9090658569335937,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.39866666666666667,
+        "loss": 1.4710439453125,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    },
+    {
+      "seed": 2,
+      "source_task": "add",
+      "target_task": "compose",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.02085341326892376,
+        "directional_mse": 0.016832176595926285,
+        "score": 0.0388324316240236
+      },
+      "scratch_before": {
+        "accuracy": 0.09866666666666667,
+        "loss": 2.466884724934896,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.24533333333333332,
+        "loss": 5.337035400390625,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.2986666666666667,
+        "loss": 1.879195515950521,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.36466666666666664,
+        "loss": 1.5816719767252605,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.022153228521347046,
+        "directional_mse": 0.019733387976884842,
+        "score": 0.04303345825740544
+      },
+      "scratch_before": {
+        "accuracy": 0.108,
+        "loss": 2.4938645426432293,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.098,
+        "loss": 11.324795572916667,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.11733333333333333,
+        "loss": 2.3093638509114585,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.10333333333333333,
+        "loss": 2.315732564290365,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    },
+    {
+      "seed": 2,
+      "source_task": "mul",
+      "target_task": "sub",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.015976078808307648,
+        "directional_mse": 0.015253538265824318,
+        "score": 0.03237645883330552
+      },
+      "scratch_before": {
+        "accuracy": 0.088,
+        "loss": 2.535177286783854,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.11133333333333334,
+        "loss": 9.6299814453125,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.09933333333333333,
+        "loss": 2.318968485514323,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.09533333333333334,
+        "loss": 2.3240680338541666,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    }
+  ],
+  "summary": {
+    "teacher": {
+      "mean": 0.6663333333333333,
+      "std": 0.24335525015453802
+    },
+    "dart_final": {
+      "mean": 0.7196666666666667,
+      "std": 0.2208874357206839
+    },
+    "transfer": {
+      "add->compose": {
+        "scratch_after": {
+          "mean": 0.30300000000000005,
+          "std": 0.006128258770283404
+        },
+        "dart_after": {
+          "mean": 0.38166666666666665,
+          "std": 0.024041630560342638
+        }
+      },
+      "mul->sub": {
+        "scratch_after": {
+          "mean": 0.10833333333333334,
+          "std": 0.012727922061357857
+        },
+        "dart_after": {
+          "mean": 0.09933333333333333,
+          "std": 0.005656854249492376
+        }
+      }
+    }
+  }
+}

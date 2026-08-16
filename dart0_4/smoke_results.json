@@ -1,0 +1,296 @@
+{
+  "config": {
+    "seeds": [
+      1
+    ],
+    "tasks": [
+      "add"
+    ],
+    "transfer_pairs": [
+      [
+        "add",
+        "compose"
+      ],
+      [
+        "mul",
+        "sub"
+      ],
+      [
+        "add",
+        "compose"
+      ]
+    ],
+    "train_size": 300,
+    "test_size": 120,
+    "teacher_steps": 20,
+    "adaptation_steps_per_round": 15,
+    "surgery_rounds": 1,
+    "operator_fit_steps": 10,
+    "operator_fit_lr": 0.001,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "bottleneck": 32,
+    "rank": 8,
+    "block": 1,
+    "intervention_eps": 0.1,
+    "intervention_directions": 4,
+    "trace_rows": 500,
+    "trace_batches": 3,
+    "directional_weight": 1.0,
+    "complexity_lambda": 0.0001,
+    "transfer_adaptation_steps": 15,
+    "batch_size": 256,
+    "lr": 0.0003,
+    "latency_warmup": 1,
+    "latency_iters": 3,
+    "device": "cpu",
+    "out": "/mnt/data/dart0_4/smoke_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "task": "add",
+      "teacher": {
+        "accuracy": 0.09166666666666666,
+        "loss": 2.39329350789388,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "teacher_training_seconds": 1.0735303699993892,
+      "dart_final": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.376994832356771,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "rounds": [
+        {
+          "round": 0,
+          "candidate": "small_mlp",
+          "candidate_params": 2112,
+          "candidate_macs": 2048,
+          "candidate_value_mse": 0.07333508878946304,
+          "candidate_directional_mse": 0.029834607616066933,
+          "candidate_score": 0.10431653816470353,
+          "all_candidates": [
+            {
+              "name": "diagonal_affine",
+              "params": 64,
+              "macs": 32,
+              "value_mse": 1.0606226921081543,
+              "directional_mse": 0.5195109248161316,
+              "score": 1.5807258810293487
+            },
+            {
+              "name": "polynomial",
+              "params": 96,
+              "macs": 64,
+              "value_mse": 1.0398974418640137,
+              "directional_mse": 0.5118338465690613,
+              "score": 1.5523974788944201
+            },
+            {
+              "name": "low_rank",
+              "params": 544,
+              "macs": 512,
+              "value_mse": 0.1577446609735489,
+              "directional_mse": 0.05665348842740059,
+              "score": 0.21534024177267433
+            },
+            {
+              "name": "linear",
+              "params": 1056,
+              "macs": 1024,
+              "value_mse": 0.3019965589046478,
+              "directional_mse": 0.15778665244579315,
+              "score": 0.4608261527436066
+            },
+            {
+              "name": "small_mlp",
+              "params": 2112,
+              "macs": 2048,
+              "value_mse": 0.07333508878946304,
+              "directional_mse": 0.029834607616066933,
+              "score": 0.10431653816470353
+            }
+          ],
+          "pre_adapt": {
+            "accuracy": 0.09166666666666666,
+            "loss": 2.3790369669596356,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "post_adapt": {
+            "accuracy": 0.11666666666666667,
+            "loss": 2.376994832356771,
+            "params": 33002,
+            "target_params": 2112,
+            "target_macs": 2048
+          },
+          "latency_ms": null
+        }
+      ]
+    }
+  ],
+  "transfer_records": [
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.061137761920690536,
+        "directional_mse": 0.02995927445590496,
+        "score": 0.09224387813576905
+      },
+      "scratch_before": {
+        "accuracy": 0.058333333333333334,
+        "loss": 2.5654932657877603,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.354570007324219,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.18333333333333332,
+        "loss": 2.251672108968099,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.18333333333333332,
+        "loss": 2.153656768798828,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    },
+    {
+      "seed": 1,
+      "source_task": "mul",
+      "target_task": "sub",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.06255146861076355,
+        "directional_mse": 0.03206106647849083,
+        "score": 0.09575937684842793
+      },
+      "scratch_before": {
+        "accuracy": 0.10833333333333334,
+        "loss": 2.6097986857096354,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.13333333333333333,
+        "loss": 2.4063817342122396,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.1,
+        "loss": 2.4187583923339844,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.125,
+        "loss": 2.347828420003255,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    },
+    {
+      "seed": 1,
+      "source_task": "add",
+      "target_task": "compose",
+      "operator": {
+        "name": "small_mlp",
+        "params": 2112,
+        "macs": 2048,
+        "value_mse": 0.061137761920690536,
+        "directional_mse": 0.02995927445590496,
+        "score": 0.09224387813576905
+      },
+      "scratch_before": {
+        "accuracy": 0.058333333333333334,
+        "loss": 2.5654932657877603,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_before": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.354570007324219,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      },
+      "scratch_after": {
+        "accuracy": 0.18333333333333332,
+        "loss": 2.251672108968099,
+        "params": 39242,
+        "target_params": 8352,
+        "target_macs": 8192
+      },
+      "dart_after": {
+        "accuracy": 0.18333333333333332,
+        "loss": 2.153656768798828,
+        "params": 33002,
+        "target_params": 2112,
+        "target_macs": 2048
+      }
+    }
+  ],
+  "summary": {
+    "teacher": {
+      "mean": 0.09166666666666666,
+      "std": 0.0
+    },
+    "dart_final": {
+      "mean": 0.11666666666666667,
+      "std": 0.0
+    },
+    "transfer": {
+      "add->compose": {
+        "scratch_after": {
+          "mean": 0.18333333333333332,
+          "std": 0.0
+        },
+        "dart_after": {
+          "mean": 0.18333333333333332,
+          "std": 0.0
+        }
+      },
+      "mul->sub": {
+        "scratch_after": {
+          "mean": 0.1,
+          "std": 0.0
+        },
+        "dart_after": {
+          "mean": 0.125,
+          "std": 0.0
+        }
+      }
+    }
+  }
+}
