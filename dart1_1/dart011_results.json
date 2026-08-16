@@ -1,0 +1,997 @@
+{
+  "config": {
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "seeds": [
+      1,
+      2
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "transfer_adaptation_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "task_dim": 4,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "verifier_batches": 20,
+    "code_weight": 0.05,
+    "routing_weight": 0.2,
+    "ablation_weight": 0.1,
+    "core_fit_lr": 0.001,
+    "code_lr": 0.003,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "batch_size": 256,
+    "device": "cuda",
+    "out": "dart011_results.json"
+  },
+  "records": [
+    {
+      "holdout_task": "sub",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.6109444444444444,
+            "avg_routing": 0.44629196252814474,
+            "avg_ablation_drop": 0.4383888888888889,
+            "shared_core_params": 1128,
+            "shared_core_macs": 1024,
+            "conditioner_params": 320,
+            "total_task_code_params": 12,
+            "task_code_fraction": 0.00821917808219178,
+            "replace_params": 1460,
+            "replace_macs": 1024,
+            "score": 0.7429020792936776,
+            "task_accuracies": [
+              0.6735,
+              0.32966666666666666,
+              0.8296666666666667
+            ],
+            "task_routing": [
+              0.420183039835723,
+              0.4908504983088916,
+              0.4278423494398196
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.634426419999727
+          },
+          "all_candidates": [
+            {
+              "avg_accuracy": 0.35155555555555557,
+              "avg_routing": 0.45320291334583723,
+              "avg_ablation_drop": 0.21044444444444443,
+              "shared_core_params": 320,
+              "shared_core_macs": 256,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.018404907975460124,
+              "replace_params": 652,
+              "replace_macs": 256,
+              "score": 0.4616721795574668,
+              "task_accuracies": [
+                0.3408333333333333,
+                0.26666666666666666,
+                0.44716666666666666
+              ],
+              "task_routing": [
+                0.4047529126205253,
+                0.4994518674460458,
+                0.45540395997094063
+              ],
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.18478591100029
+            },
+            {
+              "avg_accuracy": 0.39899999999999997,
+              "avg_routing": 0.4518733246287741,
+              "avg_ablation_drop": 0.24533333333333332,
+              "shared_core_params": 384,
+              "shared_core_macs": 288,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.01675977653631285,
+              "replace_params": 716,
+              "replace_macs": 288,
+              "score": 0.5124125018482125,
+              "task_accuracies": [
+                0.38316666666666666,
+                0.2925,
+                0.5213333333333333
+              ],
+              "task_routing": [
+                0.4044746201471199,
+                0.4970843591318651,
+                0.4540609946073373
+              ],
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.344644466000318
+            },
+            {
+              "avg_accuracy": 0.4041666666666667,
+              "avg_routing": 0.45037707310563896,
+              "avg_ablation_drop": 0.25155555555555553,
+              "shared_core_params": 416,
+              "shared_core_macs": 320,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.016042780748663103,
+              "replace_params": 748,
+              "replace_macs": 320,
+              "score": 0.5179336239075651,
+              "task_accuracies": [
+                0.3845,
+                0.298,
+                0.53
+              ],
+              "task_routing": [
+                0.4044448150214892,
+                0.4912451285808234,
+                0.4554412757146042
+              ],
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.140218366999761
+            },
+            {
+              "avg_accuracy": 0.6109444444444444,
+              "avg_routing": 0.44629196252814474,
+              "avg_ablation_drop": 0.4383888888888889,
+              "shared_core_params": 1128,
+              "shared_core_macs": 1024,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.00821917808219178,
+              "replace_params": 1460,
+              "replace_macs": 1024,
+              "score": 0.7429020792936776,
+              "task_accuracies": [
+                0.6735,
+                0.32966666666666666,
+                0.8296666666666667
+              ],
+              "task_routing": [
+                0.420183039835723,
+                0.4908504983088916,
+                0.4278423494398196
+              ],
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.634426419999727
+            },
+            {
+              "avg_accuracy": 0.549611111111111,
+              "avg_routing": 0.46250108623582636,
+              "avg_ablation_drop": 0.4065,
+              "shared_core_params": 864,
+              "shared_core_macs": 768,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.010033444816053512,
+              "replace_params": 1196,
+              "replace_macs": 768,
+              "score": 0.6815508987469179,
+              "task_accuracies": [
+                0.5565,
+                0.324,
+                0.7683333333333333
+              ],
+              "task_routing": [
+                0.4197800109875385,
+                0.49950368917371896,
+                0.46821955854622166
+              ],
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.1079825479992
+            },
+            {
+              "avg_accuracy": 0.6682777777777777,
+              "avg_routing": 0.45107981251457546,
+              "avg_ablation_drop": 0.5276111111111111,
+              "shared_core_params": 2432,
+              "shared_core_macs": 2304,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.004341534008683068,
+              "replace_params": 2764,
+              "replace_macs": 2304,
+              "score": 0.8102452950999742,
+              "task_accuracies": [
+                0.7541666666666667,
+                0.3586666666666667,
+                0.892
+              ],
+              "task_routing": [
+                0.41413157105553927,
+                0.4926026681207538,
+                0.4465051983674333
+              ],
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "fit_seconds": 3.8556657919998543
+            }
+          ],
+          "meta_pre_accuracy": [
+            0.6515,
+            0.32866666666666666,
+            0.8306666666666667
+          ],
+          "meta_post_accuracy": [
+            0.7565,
+            0.3476666666666667,
+            0.9175
+          ],
+          "meta_routing_after": [
+            0.8790394582557904,
+            0.7486448670051462,
+            0.8302903638522853
+          ]
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.6125,
+            "avg_routing": 0.4594092177060714,
+            "avg_ablation_drop": 0.4864444444444444,
+            "shared_core_params": 1128,
+            "shared_core_macs": 1024,
+            "conditioner_params": 320,
+            "total_task_code_params": 12,
+            "task_code_fraction": 0.00821917808219178,
+            "replace_params": 1460,
+            "replace_macs": 1024,
+            "score": 0.7518866414403742,
+            "task_accuracies": [
+              0.6561666666666667,
+              0.3475,
+              0.8338333333333333
+            ],
+            "task_routing": [
+              0.418737912646221,
+              0.49957288581386944,
+              0.45991685465812376
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.214843716001269
+          },
+          "all_candidates": [
+            {
+              "avg_accuracy": 0.35038888888888886,
+              "avg_routing": 0.4537879874763607,
+              "avg_ablation_drop": 0.21,
+              "shared_core_params": 320,
+              "shared_core_macs": 256,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.018404907975460124,
+              "replace_params": 652,
+              "replace_macs": 256,
+              "score": 0.46057808327246036,
+              "task_accuracies": [
+                0.3428333333333333,
+                0.2653333333333333,
+                0.443
+              ],
+              "task_routing": [
+                0.4023148870109471,
+                0.5015392194882157,
+                0.45750985592991933
+              ],
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.21727703400029
+            },
+            {
+              "avg_accuracy": 0.39511111111111114,
+              "avg_routing": 0.4509086295165545,
+              "avg_ablation_drop": 0.2421111111111111,
+              "shared_core_params": 384,
+              "shared_core_macs": 288,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.01675977653631285,
+              "replace_params": 716,
+              "replace_macs": 288,
+              "score": 0.5080084517146576,
+              "task_accuracies": [
+                0.37983333333333336,
+                0.28833333333333333,
+                0.5171666666666667
+              ],
+              "task_routing": [
+                0.4004937958928002,
+                0.49654033145221055,
+                0.4556917612046528
+              ],
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.4025433890001295
+            },
+            {
+              "avg_accuracy": 0.4027777777777778,
+              "avg_routing": 0.4504071774543995,
+              "avg_ablation_drop": 0.25194444444444447,
+              "shared_core_params": 416,
+              "shared_core_macs": 320,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.016042780748663103,
+              "replace_params": 748,
+              "replace_macs": 320,
+              "score": 0.5165896447773172,
+              "task_accuracies": [
+                0.37833333333333335,
+                0.295,
+                0.535
+              ],
+              "task_routing": [
+                0.40322540703507825,
+                0.49497634667932605,
+                0.45301977864879417
+              ],
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.6606206920005206
+            },
+            {
+              "avg_accuracy": 0.6125,
+              "avg_routing": 0.4594092177060714,
+              "avg_ablation_drop": 0.4864444444444444,
+              "shared_core_params": 1128,
+              "shared_core_macs": 1024,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.00821917808219178,
+              "replace_params": 1460,
+              "replace_macs": 1024,
+              "score": 0.7518866414403742,
+              "task_accuracies": [
+                0.6561666666666667,
+                0.3475,
+                0.8338333333333333
+              ],
+              "task_routing": [
+                0.418737912646221,
+                0.49957288581386944,
+                0.45991685465812376
+              ],
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.214843716001269
+            },
+            {
+              "avg_accuracy": 0.5535555555555556,
+              "avg_routing": 0.44821978067654217,
+              "avg_ablation_drop": 0.42055555555555557,
+              "shared_core_params": 864,
+              "shared_core_macs": 768,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.010033444816053512,
+              "replace_params": 1196,
+              "replace_macs": 768,
+              "score": 0.6840446376350611,
+              "task_accuracies": [
+                0.5681666666666667,
+                0.32266666666666666,
+                0.7698333333333334
+              ],
+              "task_routing": [
+                0.4085464639456362,
+                0.4921362188987937,
+                0.4439766591851966
+              ],
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.7938028999997186
+            },
+            {
+              "avg_accuracy": 0.6813888888888889,
+              "avg_routing": 0.45178914512092005,
+              "avg_ablation_drop": 0.5217777777777778,
+              "shared_core_params": 2432,
+              "shared_core_macs": 2304,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.004341534008683068,
+              "replace_params": 2764,
+              "replace_macs": 2304,
+              "score": 0.8229149393990209,
+              "task_accuracies": [
+                0.7718333333333334,
+                0.37766666666666665,
+                0.8946666666666667
+              ],
+              "task_routing": [
+                0.4126962936337117,
+                0.49473356795656387,
+                0.44793757377248455
+              ],
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "fit_seconds": 3.595438694999757
+            }
+          ],
+          "meta_pre_accuracy": [
+            0.6393333333333333,
+            0.3476666666666667,
+            0.8655
+          ],
+          "meta_post_accuracy": [
+            0.7278333333333333,
+            0.36433333333333334,
+            0.932
+          ],
+          "meta_routing_after": [
+            0.8646008459061999,
+            0.8037459489149867,
+            0.8069827616129545
+          ]
+        }
+      ],
+      "meta_teacher_accuracies": [
+        0.9,
+        0.5185,
+        0.996
+      ],
+      "heldout_teacher": {
+        "accuracy": 0.14666666666666667,
+        "loss": 2.2803296915690106,
+        "params": 39242
+      },
+      "zero_shot_centroid": {
+        "accuracy": 0.094,
+        "loss": 2.9764113362630207,
+        "params": 15318
+      },
+      "zero_shot_zero_code": {
+        "accuracy": 0.09466666666666666,
+        "loss": 2.901004150390625,
+        "params": 15318
+      },
+      "after_tiny_code_adaptation": {
+        "accuracy": 0.118,
+        "loss": 2.6835646565755207,
+        "params": 15318
+      },
+      "matched_mlp_control": {
+        "accuracy": 0.18833333333333332,
+        "loss": 2.207493677775065,
+        "params": 16622
+      },
+      "shared_core_params": 808,
+      "shared_conditioner_params": 320,
+      "task_code_dim": 4,
+      "task_code_params_total": 12,
+      "zero_shot_gain_centroid_points": -5.266666666666667,
+      "zero_shot_gain_zero_code_points": -5.2,
+      "tiny_code_adaptation_gain_points": -2.866666666666667,
+      "vs_mlp_control_points": -7.033333333333333
+    },
+    {
+      "holdout_task": "sub",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.5831111111111111,
+            "avg_routing": 0.4822304867272076,
+            "avg_ablation_drop": 0.41238888888888886,
+            "shared_core_params": 1128,
+            "shared_core_macs": 1024,
+            "conditioner_params": 320,
+            "total_task_code_params": 12,
+            "task_code_fraction": 0.00821917808219178,
+            "replace_params": 1460,
+            "replace_macs": 1024,
+            "score": 0.7196564508001569,
+            "task_accuracies": [
+              0.651,
+              0.3478333333333333,
+              0.7505
+            ],
+            "task_routing": [
+              0.47613508751922284,
+              0.46322121999610816,
+              0.5073351526662917
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.131145772000309
+          },
+          "all_candidates": [
+            {
+              "avg_accuracy": 0.3381111111111111,
+              "avg_routing": 0.47566268470120077,
+              "avg_ablation_drop": 0.19594444444444442,
+              "shared_core_params": 320,
+              "shared_core_macs": 256,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.018404907975460124,
+              "replace_params": 652,
+              "replace_macs": 256,
+              "score": 0.451269689384095,
+              "task_accuracies": [
+                0.28833333333333333,
+                0.32466666666666666,
+                0.4013333333333333
+              ],
+              "task_routing": [
+                0.45762528500173105,
+                0.4606346892832383,
+                0.5087280798186329
+              ],
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.203527584000767
+            },
+            {
+              "avg_accuracy": 0.359,
+              "avg_routing": 0.47441937037268594,
+              "avg_ablation_drop": 0.2287777777777778,
+              "shared_core_params": 384,
+              "shared_core_macs": 288,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.01675977653631285,
+              "replace_params": 716,
+              "replace_macs": 288,
+              "score": 0.47526615544143935,
+              "task_accuracies": [
+                0.314,
+                0.32233333333333336,
+                0.44066666666666665
+              ],
+              "task_routing": [
+                0.45593578066860035,
+                0.4636523871543075,
+                0.50366994329515
+              ],
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.4119226290004008
+            },
+            {
+              "avg_accuracy": 0.3725,
+              "avg_routing": 0.4737075791549567,
+              "avg_ablation_drop": 0.25127777777777777,
+              "shared_core_params": 416,
+              "shared_core_macs": 320,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.016042780748663103,
+              "replace_params": 748,
+              "replace_macs": 320,
+              "score": 0.4909052806729843,
+              "task_accuracies": [
+                0.3408333333333333,
+                0.3265,
+                0.45016666666666666
+              ],
+              "task_routing": [
+                0.4579863330413547,
+                0.46617902685425194,
+                0.49695737756926345
+              ],
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.6048248459992465
+            },
+            {
+              "avg_accuracy": 0.5831111111111111,
+              "avg_routing": 0.4822304867272076,
+              "avg_ablation_drop": 0.41238888888888886,
+              "shared_core_params": 1128,
+              "shared_core_macs": 1024,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.00821917808219178,
+              "replace_params": 1460,
+              "replace_macs": 1024,
+              "score": 0.7196564508001569,
+              "task_accuracies": [
+                0.651,
+                0.3478333333333333,
+                0.7505
+              ],
+              "task_routing": [
+                0.47613508751922284,
+                0.46322121999610816,
+                0.5073351526662917
+              ],
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.131145772000309
+            },
+            {
+              "avg_accuracy": 0.5507777777777778,
+              "avg_routing": 0.48066393800849017,
+              "avg_ablation_drop": 0.3815,
+              "shared_core_params": 864,
+              "shared_core_macs": 768,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.010033444816053512,
+              "replace_params": 1196,
+              "replace_macs": 768,
+              "score": 0.6838501357681175,
+              "task_accuracies": [
+                0.5856666666666667,
+                0.34833333333333333,
+                0.7183333333333334
+              ],
+              "task_routing": [
+                0.4740885519361865,
+                0.4658376658689384,
+                0.5020655962203456
+              ],
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.793499374000021
+            },
+            {
+              "avg_accuracy": 0.6625555555555556,
+              "avg_routing": 0.48724743846913265,
+              "avg_ablation_drop": 0.4955,
+              "shared_core_params": 2432,
+              "shared_core_macs": 2304,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.004341534008683068,
+              "replace_params": 2764,
+              "replace_macs": 2304,
+              "score": 0.8085454869575524,
+              "task_accuracies": [
+                0.7611666666666667,
+                0.379,
+                0.8475
+              ],
+              "task_routing": [
+                0.48358709955582113,
+                0.4565670875066871,
+                0.5215881283448898
+              ],
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "fit_seconds": 4.125389492999602
+            }
+          ],
+          "meta_pre_accuracy": [
+            0.6473333333333333,
+            0.3473333333333333,
+            0.7938333333333333
+          ],
+          "meta_post_accuracy": [
+            0.7148333333333333,
+            0.36983333333333335,
+            0.866
+          ],
+          "meta_routing_after": [
+            0.8515516477831906,
+            0.8054568812334052,
+            0.8784136850806855
+          ]
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.6002222222222222,
+            "avg_routing": 0.48619895923874684,
+            "avg_ablation_drop": 0.4202222222222222,
+            "shared_core_params": 1128,
+            "shared_core_macs": 1024,
+            "conditioner_params": 320,
+            "total_task_code_params": 12,
+            "task_code_fraction": 0.00821917808219178,
+            "replace_params": 1460,
+            "replace_macs": 1024,
+            "score": 0.7383445897469091,
+            "task_accuracies": [
+              0.6345,
+              0.3526666666666667,
+              0.8135
+            ],
+            "task_routing": [
+              0.4736289249873938,
+              0.46349511065780996,
+              0.5214728420710368
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.07906376399842
+          },
+          "all_candidates": [
+            {
+              "avg_accuracy": 0.33944444444444444,
+              "avg_routing": 0.47376484928094126,
+              "avg_ablation_drop": 0.2136111111111111,
+              "shared_core_params": 320,
+              "shared_core_macs": 256,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.018404907975460124,
+              "replace_params": 652,
+              "replace_macs": 256,
+              "score": 0.45399012230004315,
+              "task_accuracies": [
+                0.2866666666666667,
+                0.3253333333333333,
+                0.4063333333333333
+              ],
+              "task_routing": [
+                0.4527600930690417,
+                0.46205447017891155,
+                0.5064799845948705
+              ],
+              "name": "identity",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.467299804000504
+            },
+            {
+              "avg_accuracy": 0.3606666666666667,
+              "avg_routing": 0.47342195168242995,
+              "avg_ablation_drop": 0.2312777777777778,
+              "shared_core_params": 384,
+              "shared_core_macs": 288,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.01675977653631285,
+              "replace_params": 716,
+              "replace_macs": 288,
+              "score": 0.4769833383700549,
+              "task_accuracies": [
+                0.31766666666666665,
+                0.32133333333333336,
+                0.443
+              ],
+              "task_routing": [
+                0.4555481998968297,
+                0.45866429160145905,
+                0.5060533635490011
+              ],
+              "name": "diagonal",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.817930264998722
+            },
+            {
+              "avg_accuracy": 0.37216666666666665,
+              "avg_routing": 0.47338017147476186,
+              "avg_ablation_drop": 0.25094444444444447,
+              "shared_core_params": 416,
+              "shared_core_macs": 320,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.016042780748663103,
+              "replace_params": 748,
+              "replace_macs": 320,
+              "score": 0.4904731324702786,
+              "task_accuracies": [
+                0.3388333333333333,
+                0.32566666666666666,
+                0.452
+              ],
+              "task_routing": [
+                0.45284234671474166,
+                0.4638570480392457,
+                0.5034411196702983
+              ],
+              "name": "polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.928147145001276
+            },
+            {
+              "avg_accuracy": 0.6002222222222222,
+              "avg_routing": 0.48619895923874684,
+              "avg_ablation_drop": 0.4202222222222222,
+              "shared_core_params": 1128,
+              "shared_core_macs": 1024,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.00821917808219178,
+              "replace_params": 1460,
+              "replace_macs": 1024,
+              "score": 0.7383445897469091,
+              "task_accuracies": [
+                0.6345,
+                0.3526666666666667,
+                0.8135
+              ],
+              "task_routing": [
+                0.4736289249873938,
+                0.46349511065780996,
+                0.5214728420710368
+              ],
+              "name": "affine_polynomial",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 4.07906376399842
+            },
+            {
+              "avg_accuracy": 0.5546666666666666,
+              "avg_routing": 0.47426939711222665,
+              "avg_ablation_drop": 0.3914444444444445,
+              "shared_core_params": 864,
+              "shared_core_macs": 768,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.010033444816053512,
+              "replace_params": 1196,
+              "replace_macs": 768,
+              "score": 0.687454560922198,
+              "task_accuracies": [
+                0.5741666666666667,
+                0.3556666666666667,
+                0.7341666666666666
+              ],
+              "task_routing": [
+                0.47781665259830247,
+                0.45589367810004006,
+                0.4890978606383374
+              ],
+              "name": "low_rank",
+              "kind": "dart_structured",
+              "eligible": true,
+              "fit_seconds": 3.746543686998848
+            },
+            {
+              "avg_accuracy": 0.6661111111111111,
+              "avg_routing": 0.4836571886379738,
+              "avg_ablation_drop": 0.49522222222222223,
+              "shared_core_params": 2432,
+              "shared_core_macs": 2304,
+              "conditioner_params": 320,
+              "total_task_code_params": 12,
+              "task_code_fraction": 0.004341534008683068,
+              "replace_params": 2764,
+              "replace_macs": 2304,
+              "score": 0.8113552147690983,
+              "task_accuracies": [
+                0.7426666666666667,
+                0.37166666666666665,
+                0.884
+              ],
+              "task_routing": [
+                0.4854492688855559,
+                0.46165122246402934,
+                0.5038710745643362
+              ],
+              "name": "mlp_control",
+              "kind": "neural_control",
+              "eligible": false,
+              "fit_seconds": 3.6076556030002394
+            }
+          ],
+          "meta_pre_accuracy": [
+            0.6366666666666667,
+            0.363,
+            0.7755
+          ],
+          "meta_post_accuracy": [
+            0.7338333333333333,
+            0.36716666666666664,
+            0.861
+          ],
+          "meta_routing_after": [
+            0.8950773733316738,
+            0.7602823623740665,
+            0.8425502595602734
+          ]
+        }
+      ],
+      "meta_teacher_accuracies": [
+        0.8931666666666667,
+        0.4985,
+        0.971
+      ],
+      "heldout_teacher": {
+        "accuracy": 0.18733333333333332,
+        "loss": 2.1751314697265625,
+        "params": 39242
+      },
+      "zero_shot_centroid": {
+        "accuracy": 0.106,
+        "loss": 2.7975552978515625,
+        "params": 15318
+      },
+      "zero_shot_zero_code": {
+        "accuracy": 0.10533333333333333,
+        "loss": 2.7790255940755206,
+        "params": 15318
+      },
+      "after_tiny_code_adaptation": {
+        "accuracy": 0.10066666666666667,
+        "loss": 2.6650668131510415,
+        "params": 15318
+      },
+      "matched_mlp_control": {
+        "accuracy": 0.278,
+        "loss": 1.978942128499349,
+        "params": 16622
+      },
+      "shared_core_params": 808,
+      "shared_conditioner_params": 320,
+      "task_code_dim": 4,
+      "task_code_params_total": 12,
+      "zero_shot_gain_centroid_points": -8.133333333333333,
+      "zero_shot_gain_zero_code_points": -8.2,
+      "tiny_code_adaptation_gain_points": -8.666666666666666,
+      "vs_mlp_control_points": -17.733333333333334
+    }
+  ],
+  "summary": {
+    "holdout_transfer": {
+      "sub": {
+        "teacher": 0.16699999999999998,
+        "zero_shot_centroid": 0.1,
+        "zero_shot_zero_code": 0.1,
+        "adapted": 0.10933333333333334,
+        "mlp_control": 0.2331666666666667,
+        "zero_shot_gain_centroid_points": -6.699999999999999,
+        "zero_shot_gain_zero_code_points": -6.699999999999999,
+        "tiny_code_adaptation_gain_points": -5.766666666666667,
+        "vs_mlp_control_points": -12.383333333333333,
+        "shared_core_params": 808,
+        "shared_conditioner_params": 320,
+        "task_code_dim": 4
+      }
+    }
+  }
+}
