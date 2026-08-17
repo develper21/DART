@@ -1,0 +1,947 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 120,
+    "target_theta_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "separate_control_steps": 200,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "fit_batch_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "mlp_width": 64,
+    "theta_delta": 0.25,
+    "theta_l2": 0.0005,
+    "theta_lr": 0.01,
+    "rule_delta": 0.1,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "max_theta_stability": 0.75,
+    "min_theta_permutation_gap": 0.01,
+    "min_rule_causal_fidelity": 0.2,
+    "min_random_graph_gap": 0.02,
+    "max_shared_vs_separate_gap": 0.03,
+    "rule_weight": 0.35,
+    "permutation_weight": 0.25,
+    "random_graph_weight": 0.25,
+    "shared_parity_weight": 0.25,
+    "complexity_lambda": 1e-05,
+    "lr": 0.0003,
+    "core_fit_lr": 0.001,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "device": "cuda",
+    "out": "dart021_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "low_rank",
+          "diagonal"
+        ],
+        "source_avg": 0.40888888888888886,
+        "source_worst": 0.2693333333333333,
+        "theta_stability": 0.019201785636444885,
+        "rule_causal_fidelity": 0.6826699376106262,
+        "theta_permutation_gap": 0.0,
+        "random_graph_gap": 0.08577777777777773,
+        "separate_graph_avg": 0.41488888888888886,
+        "shared_vs_separate_gap": 0.006000000000000005,
+        "task_acc": [
+          0.296,
+          0.2693333333333333,
+          0.6613333333333333
+        ],
+        "permutation_matrix": [
+          [
+            0.296,
+            0.2886666666666667,
+            0.29
+          ],
+          [
+            0.26866666666666666,
+            0.2693333333333333,
+            0.268
+          ],
+          [
+            0.6713333333333333,
+            0.6666666666666666,
+            0.6613333333333333
+          ]
+        ],
+        "eligible": false,
+        "score": 0.6616678114970524
+      },
+      "candidates": [
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.3791111111111111,
+          "source_worst": 0.25733333333333336,
+          "theta_stability": 0.019359126997490723,
+          "rule_causal_fidelity": 0.4867071807384491,
+          "theta_permutation_gap": 0.006555555555555592,
+          "random_graph_gap": 0.055333333333333345,
+          "separate_graph_avg": 0.48844444444444446,
+          "shared_vs_separate_gap": 0.10933333333333334,
+          "task_acc": [
+            0.302,
+            0.25733333333333336,
+            0.578
+          ],
+          "permutation_matrix": [
+            [
+              0.302,
+              0.316,
+              0.32266666666666666
+            ],
+            [
+              0.2733333333333333,
+              0.25733333333333336,
+              0.25933333333333336
+            ],
+            [
+              0.5113333333333333,
+              0.5526666666666666,
+              0.578
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5285375132584572
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.40888888888888886,
+          "source_worst": 0.2693333333333333,
+          "theta_stability": 0.019201785636444885,
+          "rule_causal_fidelity": 0.6826699376106262,
+          "theta_permutation_gap": 0.0,
+          "random_graph_gap": 0.08577777777777773,
+          "separate_graph_avg": 0.41488888888888886,
+          "shared_vs_separate_gap": 0.006000000000000005,
+          "task_acc": [
+            0.296,
+            0.2693333333333333,
+            0.6613333333333333
+          ],
+          "permutation_matrix": [
+            [
+              0.296,
+              0.2886666666666667,
+              0.29
+            ],
+            [
+              0.26866666666666666,
+              0.2693333333333333,
+              0.268
+            ],
+            [
+              0.6713333333333333,
+              0.6666666666666666,
+              0.6613333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6616678114970524
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.37133333333333335,
+          "source_worst": 0.218,
+          "theta_stability": 0.02358642282585303,
+          "rule_causal_fidelity": 0.6194201856851578,
+          "theta_permutation_gap": 0.0032222222222222374,
+          "random_graph_gap": 0.07400000000000007,
+          "separate_graph_avg": 0.3635555555555556,
+          "shared_vs_separate_gap": -0.007777777777777772,
+          "task_acc": [
+            0.30533333333333335,
+            0.218,
+            0.5906666666666667
+          ],
+          "permutation_matrix": [
+            [
+              0.30533333333333335,
+              0.2853333333333333,
+              0.2786666666666667
+            ],
+            [
+              0.22266666666666668,
+              0.218,
+              0.21466666666666667
+            ],
+            [
+              0.604,
+              0.6033333333333334,
+              0.5906666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.605815953878694
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.4195555555555555,
+          "source_worst": 0.2813333333333333,
+          "theta_stability": 0.01578007312491536,
+          "rule_causal_fidelity": 0.5107433497905731,
+          "theta_permutation_gap": 0.013444444444444426,
+          "random_graph_gap": 0.09377777777777774,
+          "separate_graph_avg": 0.504,
+          "shared_vs_separate_gap": 0.08444444444444449,
+          "task_acc": [
+            0.312,
+            0.2813333333333333,
+            0.6653333333333333
+          ],
+          "permutation_matrix": [
+            [
+              0.312,
+              0.32666666666666666,
+              0.332
+            ],
+            [
+              0.28,
+              0.2813333333333333,
+              0.2786666666666667
+            ],
+            [
+              0.5666666666666667,
+              0.6526666666666666,
+              0.6653333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5949501724267007
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.4048888888888889,
+          "source_worst": 0.25533333333333336,
+          "theta_stability": 0.023394427883128326,
+          "rule_causal_fidelity": 0.6037630438804626,
+          "theta_permutation_gap": 0.0033333333333332993,
+          "random_graph_gap": 0.08044444444444443,
+          "separate_graph_avg": 0.4328888888888889,
+          "shared_vs_separate_gap": 0.02799999999999997,
+          "task_acc": [
+            0.272,
+            0.25533333333333336,
+            0.6873333333333334
+          ],
+          "permutation_matrix": [
+            [
+              0.272,
+              0.268,
+              0.2713333333333333
+            ],
+            [
+              0.252,
+              0.25533333333333336,
+              0.25
+            ],
+            [
+              0.6906666666666667,
+              0.6773333333333333,
+              0.6873333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6240503986914953
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.3708888888888889,
+          "source_worst": 0.21933333333333332,
+          "theta_stability": 0.02384442960222562,
+          "rule_causal_fidelity": 0.6247860193252563,
+          "theta_permutation_gap": 0.0013333333333332975,
+          "random_graph_gap": 0.06955555555555554,
+          "separate_graph_avg": 0.3662222222222222,
+          "shared_vs_separate_gap": -0.004666666666666652,
+          "task_acc": [
+            0.304,
+            0.21933333333333332,
+            0.5893333333333334
+          ],
+          "permutation_matrix": [
+            [
+              0.304,
+              0.29133333333333333,
+              0.2786666666666667
+            ],
+            [
+              0.22266666666666668,
+              0.21933333333333332,
+              0.21533333333333332
+            ],
+            [
+              0.6073333333333333,
+              0.602,
+              0.5893333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6056662178749508
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.42111111111111105,
+          "source_worst": 0.2793333333333333,
+          "theta_stability": 0.010230406808356443,
+          "rule_causal_fidelity": 0.5807120651006699,
+          "theta_permutation_gap": 0.012111111111111017,
+          "random_graph_gap": 0.0948888888888888,
+          "separate_graph_avg": 0.4924444444444444,
+          "shared_vs_separate_gap": 0.07133333333333336,
+          "task_acc": [
+            0.352,
+            0.2793333333333333,
+            0.632
+          ],
+          "permutation_matrix": [
+            [
+              0.352,
+              0.36866666666666664,
+              0.4
+            ],
+            [
+              0.2733333333333333,
+              0.2793333333333333,
+              0.276
+            ],
+            [
+              0.5473333333333333,
+              0.5886666666666667,
+              0.632
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6242170005630121
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.3895555555555556,
+          "source_worst": 0.24133333333333334,
+          "theta_stability": 0.010284016374498606,
+          "rule_causal_fidelity": 0.5487863719463348,
+          "theta_permutation_gap": 0.0045555555555555904,
+          "random_graph_gap": 0.06955555555555559,
+          "separate_graph_avg": 0.43955555555555553,
+          "shared_vs_separate_gap": 0.04999999999999993,
+          "task_acc": [
+            0.30933333333333335,
+            0.24133333333333334,
+            0.618
+          ],
+          "permutation_matrix": [
+            [
+              0.30933333333333335,
+              0.318,
+              0.32
+            ],
+            [
+              0.25066666666666665,
+              0.24133333333333334,
+              0.23866666666666667
+            ],
+            [
+              0.5653333333333334,
+              0.6173333333333333,
+              0.618
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5815585635145507
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.3715555555555556,
+          "source_worst": 0.20466666666666666,
+          "theta_stability": 0.021253223647363484,
+          "rule_causal_fidelity": 0.5747079849243164,
+          "theta_permutation_gap": 0.0145555555555556,
+          "random_graph_gap": 0.07133333333333336,
+          "separate_graph_avg": 0.3651111111111111,
+          "shared_vs_separate_gap": -0.006444444444444475,
+          "task_acc": [
+            0.312,
+            0.20466666666666666,
+            0.598
+          ],
+          "permutation_matrix": [
+            [
+              0.312,
+              0.29533333333333334,
+              0.2853333333333333
+            ],
+            [
+              0.20933333333333334,
+              0.20466666666666666,
+              0.18933333333333333
+            ],
+            [
+              0.5653333333333334,
+              0.5973333333333334,
+              0.598
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5925555725012887
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.13333333333333333,
+        "dart_zero": 0.10866666666666666,
+        "dart_adapted": 0.11533333333333333,
+        "theta_permutation_control": 0.10933333333333334,
+        "mlp_control": 0.472,
+        "gain_zero": -2.466666666666667,
+        "gain_adapt": -1.8000000000000003,
+        "vs_mlp_adapt": -35.666666666666664,
+        "theta": [
+          0.48297470808029175,
+          0.2451196312904358
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.652,
+        "dart_adapted": 0.7013333333333334,
+        "theta_permutation_control": 0.6526666666666666,
+        "mlp_control": 0.9993333333333333,
+        "gain_zero": -34.73333333333333,
+        "gain_adapt": -29.799999999999994,
+        "vs_mlp_adapt": -29.799999999999994,
+        "theta": [
+          0.5949715971946716,
+          0.8401473164558411
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "motif": "residual_parallel",
+        "nodes": [
+          "polynomial",
+          "diagonal"
+        ],
+        "source_avg": 0.3562222222222222,
+        "source_worst": 0.28,
+        "theta_stability": 0.011364673419545094,
+        "rule_causal_fidelity": 0.6342238187789917,
+        "theta_permutation_gap": -0.004111111111111121,
+        "random_graph_gap": 0.05244444444444446,
+        "separate_graph_avg": 0.35155555555555557,
+        "shared_vs_separate_gap": -0.004666666666666652,
+        "task_acc": [
+          0.32866666666666666,
+          0.28,
+          0.46
+        ],
+        "permutation_matrix": [
+          [
+            0.32866666666666666,
+            0.3406666666666667,
+            0.31933333333333336
+          ],
+          [
+            0.278,
+            0.28,
+            0.274
+          ],
+          [
+            0.4726666666666667,
+            0.47733333333333333,
+            0.46
+          ]
+        ],
+        "eligible": false,
+        "score": 0.5886638921282027
+      },
+      "candidates": [
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.44177777777777777,
+          "source_worst": 0.306,
+          "theta_stability": 0.015101554493109385,
+          "rule_causal_fidelity": 0.3668639063835144,
+          "theta_permutation_gap": 0.01055555555555554,
+          "random_graph_gap": 0.11333333333333334,
+          "separate_graph_avg": 0.472,
+          "shared_vs_separate_gap": 0.030222222222222206,
+          "task_acc": [
+            0.4786666666666667,
+            0.306,
+            0.5406666666666666
+          ],
+          "permutation_matrix": [
+            [
+              0.4786666666666667,
+              0.4533333333333333,
+              0.492
+            ],
+            [
+              0.30933333333333335,
+              0.306,
+              0.32133333333333336
+            ],
+            [
+              0.51,
+              0.5013333333333333,
+              0.5406666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5845368116786746
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.36200000000000004,
+          "source_worst": 0.29733333333333334,
+          "theta_stability": 0.024861759040504694,
+          "rule_causal_fidelity": 0.6433727443218231,
+          "theta_permutation_gap": -0.005111111111111066,
+          "random_graph_gap": 0.03511111111111115,
+          "separate_graph_avg": 0.4264444444444444,
+          "shared_vs_separate_gap": 0.06444444444444436,
+          "task_acc": [
+            0.332,
+            0.29733333333333334,
+            0.45666666666666667
+          ],
+          "permutation_matrix": [
+            [
+              0.332,
+              0.3426666666666667,
+              0.32866666666666666
+            ],
+            [
+              0.30333333333333334,
+              0.29733333333333334,
+              0.298
+            ],
+            [
+              0.4573333333333333,
+              0.4726666666666667,
+              0.45666666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.572469349401527
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.35600000000000004,
+          "source_worst": 0.27466666666666667,
+          "theta_stability": 0.027620643998185795,
+          "rule_causal_fidelity": 0.6024821698665619,
+          "theta_permutation_gap": -0.006999999999999951,
+          "random_graph_gap": 0.06022222222222229,
+          "separate_graph_avg": 0.35155555555555557,
+          "shared_vs_separate_gap": -0.004444444444444473,
+          "task_acc": [
+            0.3353333333333333,
+            0.27466666666666667,
+            0.458
+          ],
+          "permutation_matrix": [
+            [
+              0.3353333333333333,
+              0.3466666666666667,
+              0.326
+            ],
+            [
+              0.2846666666666667,
+              0.27466666666666667,
+              0.2773333333333333
+            ],
+            [
+              0.4646666666666667,
+              0.4786666666666667,
+              0.458
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5785543150088522
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.39511111111111114,
+          "source_worst": 0.29,
+          "theta_stability": 0.009025069108853737,
+          "rule_causal_fidelity": 0.5124435722827911,
+          "theta_permutation_gap": 0.0020000000000000018,
+          "random_graph_gap": 0.0626666666666667,
+          "separate_graph_avg": 0.5115555555555557,
+          "shared_vs_separate_gap": 0.11644444444444452,
+          "task_acc": [
+            0.37466666666666665,
+            0.29,
+            0.5206666666666667
+          ],
+          "permutation_matrix": [
+            [
+              0.37466666666666665,
+              0.3586666666666667,
+              0.37266666666666665
+            ],
+            [
+              0.2946666666666667,
+              0.29,
+              0.2926666666666667
+            ],
+            [
+              0.5113333333333333,
+              0.5286666666666666,
+              0.5206666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5524619169656436
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.36933333333333335,
+          "source_worst": 0.2966666666666667,
+          "theta_stability": 0.034369055181741714,
+          "rule_causal_fidelity": 0.6209046542644501,
+          "theta_permutation_gap": 0.0021111111111110636,
+          "random_graph_gap": 0.050222222222222224,
+          "separate_graph_avg": 0.41288888888888886,
+          "shared_vs_separate_gap": 0.043555555555555514,
+          "task_acc": [
+            0.37266666666666665,
+            0.2966666666666667,
+            0.43866666666666665
+          ],
+          "permutation_matrix": [
+            [
+              0.37266666666666665,
+              0.3626666666666667,
+              0.36333333333333334
+            ],
+            [
+              0.302,
+              0.2966666666666667,
+              0.3006666666666667
+            ],
+            [
+              0.44533333333333336,
+              0.42933333333333334,
+              0.43866666666666665
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5827444067703353
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.3564444444444444,
+          "source_worst": 0.278,
+          "theta_stability": 0.016009839562078316,
+          "rule_causal_fidelity": 0.6149765849113464,
+          "theta_permutation_gap": -0.006222222222222296,
+          "random_graph_gap": 0.05333333333333329,
+          "separate_graph_avg": 0.35800000000000004,
+          "shared_vs_separate_gap": 0.0015555555555556433,
+          "task_acc": [
+            0.3293333333333333,
+            0.278,
+            0.462
+          ],
+          "permutation_matrix": [
+            [
+              0.3293333333333333,
+              0.34933333333333333,
+              0.32
+            ],
+            [
+              0.2826666666666667,
+              0.278,
+              0.2733333333333333
+            ],
+            [
+              0.4673333333333333,
+              0.48333333333333334,
+              0.462
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5814551380523045
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "source_avg": 0.3988888888888889,
+          "source_worst": 0.276,
+          "theta_stability": 0.009947541790703932,
+          "rule_causal_fidelity": 0.4806361645460129,
+          "theta_permutation_gap": 0.005666666666666709,
+          "random_graph_gap": 0.06911111111111112,
+          "separate_graph_avg": 0.486,
+          "shared_vs_separate_gap": 0.08711111111111108,
+          "task_acc": [
+            0.4513333333333333,
+            0.276,
+            0.4693333333333333
+          ],
+          "permutation_matrix": [
+            [
+              0.4513333333333333,
+              0.418,
+              0.446
+            ],
+            [
+              0.28733333333333333,
+              0.276,
+              0.29
+            ],
+            [
+              0.4713333333333333,
+              0.44666666666666666,
+              0.4693333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.55496821314666
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "source_avg": 0.3711111111111111,
+          "source_worst": 0.29733333333333334,
+          "theta_stability": 0.014907323444883028,
+          "rule_causal_fidelity": 0.5642772018909454,
+          "theta_permutation_gap": 0.0007777777777777661,
+          "random_graph_gap": 0.04488888888888887,
+          "separate_graph_avg": 0.4275555555555555,
+          "shared_vs_separate_gap": 0.05644444444444441,
+          "task_acc": [
+            0.37133333333333335,
+            0.29733333333333334,
+            0.44466666666666665
+          ],
+          "permutation_matrix": [
+            [
+              0.37133333333333335,
+              0.364,
+              0.368
+            ],
+            [
+              0.2966666666666667,
+              0.29733333333333334,
+              0.29533333333333334
+            ],
+            [
+              0.45,
+              0.448,
+              0.44466666666666665
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5598136873284977
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "source_avg": 0.3562222222222222,
+          "source_worst": 0.28,
+          "theta_stability": 0.011364673419545094,
+          "rule_causal_fidelity": 0.6342238187789917,
+          "theta_permutation_gap": -0.004111111111111121,
+          "random_graph_gap": 0.05244444444444446,
+          "separate_graph_avg": 0.35155555555555557,
+          "shared_vs_separate_gap": -0.004666666666666652,
+          "task_acc": [
+            0.32866666666666666,
+            0.28,
+            0.46
+          ],
+          "permutation_matrix": [
+            [
+              0.32866666666666666,
+              0.3406666666666667,
+              0.31933333333333336
+            ],
+            [
+              0.278,
+              0.28,
+              0.274
+            ],
+            [
+              0.4726666666666667,
+              0.47733333333333333,
+              0.46
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5886638921282027
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.118,
+        "dart_zero": 0.094,
+        "dart_adapted": 0.09933333333333333,
+        "theta_permutation_control": 0.094,
+        "mlp_control": 0.17266666666666666,
+        "gain_zero": -2.3999999999999995,
+        "gain_adapt": -1.8666666666666665,
+        "vs_mlp_adapt": -7.333333333333333,
+        "theta": [
+          0.4925318658351898,
+          1.366234302520752
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.7306666666666667,
+        "dart_adapted": 0.7253333333333334,
+        "theta_permutation_control": 0.73,
+        "mlp_control": 0.998,
+        "gain_zero": -26.73333333333333,
+        "gain_adapt": -27.266666666666662,
+        "vs_mlp_adapt": -27.266666666666662,
+        "theta": [
+          0.6825005412101746,
+          1.2692023515701294
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.12566666666666665,
+        "dart_zero": 0.10133333333333333,
+        "dart_adapted": 0.10733333333333334,
+        "theta_permutation_control": 0.10166666666666667,
+        "mlp_control": 0.3223333333333333,
+        "gain_zero": -2.433333333333333,
+        "gain_adapt": -1.8333333333333335,
+        "vs_mlp_adapt": -21.5
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.6913333333333334,
+        "dart_adapted": 0.7133333333333334,
+        "theta_permutation_control": 0.6913333333333334,
+        "mlp_control": 0.9986666666666666,
+        "gain_zero": -30.733333333333327,
+        "gain_adapt": -28.533333333333328,
+        "vs_mlp_adapt": -28.533333333333328
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.38255555555555554,
+      "avg_theta_stability": 0.01528322952799499,
+      "avg_rule_causal_fidelity": 0.658446878194809,
+      "avg_theta_permutation_gap": -0.0020555555555555605,
+      "avg_random_graph_gap": 0.0691111111111111,
+      "avg_separate_graph_accuracy": 0.38322222222222224,
+      "avg_shared_vs_separate_gap": 0.0006666666666666765
+    }
+  }
+}
