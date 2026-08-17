@@ -1,0 +1,450 @@
+{
+  "config": {
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "seeds": [
+      1,
+      2
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 100,
+    "meta_theta_adapt_steps": 200,
+    "target_theta_fit_steps": 400,
+    "surgery_rounds": 2,
+    "transfer_control_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "theta_dim": 4,
+    "rel_samples_per_task": 2048,
+    "rel_directions": 4,
+    "intervention_eps": 0.05,
+    "relational_weight": 0.5,
+    "causal_weight": 0.5,
+    "directional_weight": 0.5,
+    "theta_l2": 0.001,
+    "theta_stability_weight": 0.25,
+    "theta_lr": 0.01,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "batch_size": 256,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "device": "cuda",
+    "structured_families": [
+      "affine_polynomial",
+      "low_rank",
+      "polynomial",
+      "diagonal"
+    ],
+    "target_theta_seed": 1234,
+    "out": "dart014_results.json"
+  },
+  "records": [
+    {
+      "holdout_task": "sub",
+      "contrast_task": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9986666666666667,
+          "loss": 0.00633340581258138,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.7586666666666667,
+          "loss": 0.5910282389322916,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.7586666666666667,
+          "loss": 0.5910282389322916,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.9946666666666667,
+          "loss": 0.03509755102793376,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -24.0,
+        "theta_adaptation_gain_points": -24.0,
+        "vs_mlp_zero_points": -23.599999999999998,
+        "vs_mlp_adapt_points": -23.599999999999998,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.27466666666666667,
+            "avg_relational_agreement": 0.3581582901308922,
+            "avg_causal_agreement": 0.9835096255647479,
+            "shared_core_params": 256,
+            "shared_core_macs": 128,
+            "theta_dim": 4,
+            "score": 0.9449457169059972,
+            "task_accuracies": [
+              0.24533333333333332,
+              0.21733333333333332,
+              0.36133333333333334
+            ],
+            "theta_stability": 0.0,
+            "name": "diagonal",
+            "kind": "dart_factorized",
+            "eligible": true,
+            "fit_seconds": 5.270601839998562
+          },
+          "meta_pre_accuracy": [
+            0.2495,
+            0.19933333333333333,
+            0.3785
+          ],
+          "meta_post_accuracy": [
+            0.2495,
+            0.19933333333333333,
+            0.3785
+          ],
+          "source_theta_stability": 0.0
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.27466666666666667,
+            "avg_relational_agreement": 0.3581582901308922,
+            "avg_causal_agreement": 0.9835096255647479,
+            "shared_core_params": 256,
+            "shared_core_macs": 128,
+            "theta_dim": 4,
+            "score": 0.9449457169059972,
+            "task_accuracies": [
+              0.24533333333333332,
+              0.21733333333333332,
+              0.36133333333333334
+            ],
+            "theta_stability": 0.0,
+            "name": "diagonal",
+            "kind": "dart_factorized",
+            "eligible": true,
+            "fit_seconds": 4.9771972769995045
+          },
+          "meta_pre_accuracy": [
+            0.2495,
+            0.19933333333333333,
+            0.3785
+          ],
+          "meta_post_accuracy": [
+            0.2495,
+            0.19933333333333333,
+            0.3785
+          ],
+          "source_theta_stability": 0.0
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": {
+          "accuracy": 0.15333333333333332,
+          "loss": 2.249048909505208,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.10266666666666667,
+          "loss": 2.378822998046875,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.10266666666666667,
+          "loss": 2.378822998046875,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.13266666666666665,
+          "loss": 2.297472900390625,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -5.0666666666666655,
+        "theta_adaptation_gain_points": -5.0666666666666655,
+        "vs_mlp_zero_points": -2.9999999999999987,
+        "vs_mlp_adapt_points": -2.9999999999999987,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9986666666666667,
+          "loss": 0.00633340581258138,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.7586666666666667,
+          "loss": 0.5910282389322916,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.7586666666666667,
+          "loss": 0.5910282389322916,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.9946666666666667,
+          "loss": 0.03509755102793376,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -24.0,
+        "theta_adaptation_gain_points": -24.0,
+        "vs_mlp_zero_points": -23.599999999999998,
+        "vs_mlp_adapt_points": -23.599999999999998,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "shared_core_params": 256,
+      "shared_core_macs": 128,
+      "conditioner_params": 0,
+      "task_code_params": 4
+    },
+    {
+      "holdout_task": "sub",
+      "contrast_task": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9993333333333333,
+          "loss": 0.0028297539949417114,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.732,
+          "loss": 0.8658210042317709,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.732,
+          "loss": 0.8658210042317709,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.996,
+          "loss": 0.04000686613718669,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -26.73333333333333,
+        "theta_adaptation_gain_points": -26.73333333333333,
+        "vs_mlp_zero_points": -26.400000000000002,
+        "vs_mlp_adapt_points": -26.400000000000002,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.3104444444444444,
+            "avg_relational_agreement": 0.36182038182661835,
+            "avg_causal_agreement": 0.9850168132932928,
+            "shared_core_params": 256,
+            "shared_core_macs": 128,
+            "theta_dim": 4,
+            "score": 0.9833081343959105,
+            "task_accuracies": [
+              0.29,
+              0.2733333333333333,
+              0.368
+            ],
+            "theta_stability": 0.0,
+            "name": "diagonal",
+            "kind": "dart_factorized",
+            "eligible": true,
+            "fit_seconds": 5.020347999998194
+          },
+          "meta_pre_accuracy": [
+            0.3155,
+            0.2755,
+            0.35583333333333333
+          ],
+          "meta_post_accuracy": [
+            0.3155,
+            0.2755,
+            0.35583333333333333
+          ],
+          "source_theta_stability": 0.0
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.3104444444444444,
+            "avg_relational_agreement": 0.36182038182661835,
+            "avg_causal_agreement": 0.9850168132932928,
+            "shared_core_params": 256,
+            "shared_core_macs": 128,
+            "theta_dim": 4,
+            "score": 0.9833081343959105,
+            "task_accuracies": [
+              0.29,
+              0.2733333333333333,
+              0.368
+            ],
+            "theta_stability": 0.0,
+            "name": "diagonal",
+            "kind": "dart_factorized",
+            "eligible": true,
+            "fit_seconds": 5.01196439100022
+          },
+          "meta_pre_accuracy": [
+            0.3155,
+            0.2755,
+            0.35583333333333333
+          ],
+          "meta_post_accuracy": [
+            0.3155,
+            0.2755,
+            0.35583333333333333
+          ],
+          "source_theta_stability": 0.0
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": {
+          "accuracy": 0.118,
+          "loss": 2.3057735595703126,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.11133333333333334,
+          "loss": 2.4035865885416667,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.11133333333333334,
+          "loss": 2.4035865885416667,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.11866666666666667,
+          "loss": 2.3178858642578124,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -0.6666666666666654,
+        "theta_adaptation_gain_points": -0.6666666666666654,
+        "vs_mlp_zero_points": -0.7333333333333331,
+        "vs_mlp_adapt_points": -0.7333333333333331,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9993333333333333,
+          "loss": 0.0028297539949417114,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.732,
+          "loss": 0.8658210042317709,
+          "params": 14442
+        },
+        "dart_theta_adapted": {
+          "accuracy": 0.732,
+          "loss": 0.8658210042317709,
+          "params": 14442
+        },
+        "mlp_control": {
+          "accuracy": 0.996,
+          "loss": 0.04000686613718669,
+          "params": 16298
+        },
+        "zero_shot_gain_points": -26.73333333333333,
+        "theta_adaptation_gain_points": -26.73333333333333,
+        "vs_mlp_zero_points": -26.400000000000002,
+        "vs_mlp_adapt_points": -26.400000000000002,
+        "theta": [
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "shared_core_params": 256,
+      "shared_core_macs": 128,
+      "conditioner_params": 0,
+      "task_code_params": 4
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.13566666666666666,
+        "dart_zero_shot": 0.10700000000000001,
+        "dart_theta_adapted": 0.10700000000000001,
+        "mlp_control": 0.12566666666666665,
+        "zero_shot_gain_points": -2.8666666666666654,
+        "theta_adaptation_gain_points": -2.8666666666666654,
+        "vs_mlp_zero_points": -1.8666666666666658,
+        "vs_mlp_adapt_points": -1.8666666666666658,
+        "shared_core_params": 256,
+        "shared_core_macs": 128,
+        "theta_dim": 4
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.999,
+        "dart_zero_shot": 0.7453333333333334,
+        "dart_theta_adapted": 0.7453333333333334,
+        "mlp_control": 0.9953333333333334,
+        "zero_shot_gain_points": -25.366666666666667,
+        "theta_adaptation_gain_points": -25.366666666666667,
+        "vs_mlp_zero_points": -25.0,
+        "vs_mlp_adapt_points": -25.0
+      }
+    }
+  }
+}
