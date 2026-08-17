@@ -1,0 +1,241 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 120,
+    "target_theta_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "bottleneck_dim": 4,
+    "rel_dim": 12,
+    "iis_topk": 4,
+    "theta_delta": 0.25,
+    "theta_l2": 0.0005,
+    "theta_lr": 0.01,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "min_theta_effect": 0.02,
+    "max_theta_stability": 0.75,
+    "min_bottleneck_sufficiency": 0.7,
+    "min_causal_necessity": 0.001,
+    "min_contrast_specificity": 0.05,
+    "min_interface_invariance": 0.3,
+    "fit_batch_samples": 512,
+    "bottleneck_fit_samples": 512,
+    "effect_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "mlp_width": 64,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 1e-05,
+    "device": "cuda",
+    "out": "dart018_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "triple": [
+          "stats_proj",
+          "diagonal",
+          "affine"
+        ],
+        "theta": [
+          [
+            0.8975828886032104
+          ],
+          [
+            -0.11437978595495224
+          ],
+          [
+            0.47070059180259705
+          ]
+        ],
+        "source_avg": 0.33955555555555555,
+        "source_worst": 0.286,
+        "theta_stability": 0.011784158647060394,
+        "theta_effect": 104.36849975585938,
+        "iis_related": 0.9774274031321207,
+        "iis_contrast": 0.9907208283742269,
+        "contrast_specificity": -0.013293425242106194,
+        "bottleneck_sufficiency": 1.8740685375145594,
+        "causal_necessity": 0.0001223236322402954,
+        "selected_indices": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "task_acc": [
+          0.286,
+          0.29533333333333334,
+          0.43733333333333335
+        ],
+        "eligible": false,
+        "score": 21.774366927219994,
+        "diagnosis": [
+          "S fail: selected bottleneck features are not causally necessary",
+          "E fail: representation not contrast-specific"
+        ]
+      },
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.12133333333333333,
+        "dart_zero": 0.12333333333333334,
+        "dart_adapted": 0.12333333333333334,
+        "mlp_control": 0.446,
+        "gain_zero": 0.20000000000000018,
+        "gain_adapt": 0.20000000000000018,
+        "vs_mlp_adapt": -32.266666666666666,
+        "theta": [
+          0.402842253446579
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.6573333333333333,
+        "dart_adapted": 0.7573333333333333,
+        "mlp_control": 0.9993333333333333,
+        "gain_zero": -34.199999999999996,
+        "gain_adapt": -24.2,
+        "vs_mlp_adapt": -24.2,
+        "theta": [
+          -0.8452043533325195
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "triple": [
+          "stats_proj",
+          "diagonal",
+          "affine"
+        ],
+        "theta": [
+          [
+            0.3984825015068054
+          ],
+          [
+            0.024650929495692253
+          ],
+          [
+            0.8350752592086792
+          ]
+        ],
+        "source_avg": 0.38911111111111113,
+        "source_worst": 0.32066666666666666,
+        "theta_stability": 0.006021830563743909,
+        "theta_effect": 63.91790771484375,
+        "iis_related": 0.9999555548032125,
+        "iis_contrast": 0.9995543758074442,
+        "contrast_specificity": 0.0004011789957683032,
+        "bottleneck_sufficiency": 1.2553689479033359,
+        "causal_necessity": -0.002318449318408966,
+        "selected_indices": [
+          1,
+          0,
+          2,
+          3
+        ],
+        "task_acc": [
+          0.41533333333333333,
+          0.32066666666666666,
+          0.43133333333333335
+        ],
+        "eligible": false,
+        "score": 13.61432570968933,
+        "diagnosis": [
+          "S fail: selected bottleneck features are not causally necessary",
+          "E fail: representation not contrast-specific"
+        ]
+      },
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.21733333333333332,
+        "dart_zero": 0.13466666666666666,
+        "dart_adapted": 0.138,
+        "mlp_control": 0.438,
+        "gain_zero": -8.266666666666666,
+        "gain_adapt": -7.933333333333331,
+        "vs_mlp_adapt": -30.0,
+        "theta": [
+          -0.1322738379240036
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.7293333333333333,
+        "dart_adapted": 0.6653333333333333,
+        "mlp_control": 0.998,
+        "gain_zero": -26.86666666666667,
+        "gain_adapt": -33.266666666666666,
+        "vs_mlp_adapt": -33.266666666666666,
+        "theta": [
+          0.023459700867533684
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.16933333333333334,
+        "dart_zero": 0.129,
+        "dart_adapted": 0.13066666666666668,
+        "mlp_control": 0.442,
+        "gain_zero": -4.033333333333333,
+        "gain_adapt": -3.8666666666666654,
+        "vs_mlp_adapt": -31.133333333333333
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.6933333333333334,
+        "dart_adapted": 0.7113333333333334,
+        "mlp_control": 0.9986666666666666,
+        "gain_zero": -30.53333333333333,
+        "gain_adapt": -28.733333333333334,
+        "vs_mlp_adapt": -28.733333333333334
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.36433333333333334,
+      "avg_theta_effect": 84.14320373535156,
+      "avg_theta_stability": 0.008902994605402151,
+      "avg_iis_related": 0.9886914789676666,
+      "avg_contrast_specificity": -0.006446123123168945,
+      "avg_bottleneck_sufficiency": 1.5647187427089477,
+      "avg_causal_necessity": -0.0010980628430843353
+    }
+  }
+}
