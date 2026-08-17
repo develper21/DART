@@ -1,0 +1,361 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 120,
+    "target_theta_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "fit_batch_samples": 512,
+    "effect_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "rel_dim": 12,
+    "mlp_width": 64,
+    "theta_delta": 0.25,
+    "theta_l2": 0.0005,
+    "theta_lr": 0.01,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "min_theta_effect": 0.02,
+    "max_theta_stability": 0.75,
+    "min_swap_margin": 0.05,
+    "swap_weight": 0.5,
+    "complexity_lambda": 1e-05,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "lr": 0.0003,
+    "core_fit_lr": 0.001,
+    "device": "cuda",
+    "out": "dart019_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "triple": [
+          "raw_proj",
+          "affine_polynomial",
+          "affine"
+        ],
+        "source_avg": 0.6366666666666667,
+        "source_worst": 0.372,
+        "theta_stability": 0.003956456979115804,
+        "theta_effect": 80.164794921875,
+        "swap_fidelity": 0.3482157190640767,
+        "random_swap_fidelity": 0.7798834840456644,
+        "swap_margin": -0.4316677649815877,
+        "task_acc": [
+          0.7126666666666667,
+          0.372,
+          0.8253333333333334
+        ],
+        "eligible": false,
+        "score": 0.4057927841758729
+      },
+      "candidates": [
+        {
+          "triple": [
+            "diff_proj",
+            "affine_polynomial",
+            "linear"
+          ],
+          "source_avg": 0.5546666666666666,
+          "source_worst": 0.33,
+          "theta_stability": 0.006009298066298167,
+          "theta_effect": 77.21061706542969,
+          "swap_fidelity": 0.3131406207879384,
+          "random_swap_fidelity": 0.6842290957768759,
+          "swap_margin": -0.37108847498893743,
+          "task_acc": [
+            0.5386666666666666,
+            0.33,
+            0.7953333333333333
+          ],
+          "eligible": false,
+          "score": 0.35984242917219794
+        },
+        {
+          "triple": [
+            "product_proj",
+            "polynomial",
+            "affine"
+          ],
+          "source_avg": 0.5151111111111111,
+          "source_worst": 0.304,
+          "theta_stability": 0.025047391653060913,
+          "theta_effect": 56.52534866333008,
+          "swap_fidelity": 0.39192155996958417,
+          "random_swap_fidelity": 0.8042853673299154,
+          "swap_margin": -0.41236380736033124,
+          "task_acc": [
+            0.5113333333333333,
+            0.304,
+            0.73
+          ],
+          "eligible": false,
+          "score": 0.2985292074309454
+        },
+        {
+          "triple": [
+            "stats_proj",
+            "diagonal",
+            "affine"
+          ],
+          "source_avg": 0.4275555555555555,
+          "source_worst": 0.2946666666666667,
+          "theta_stability": 0.005144733935594559,
+          "theta_effect": 108.72817993164062,
+          "swap_fidelity": 0.38647783795992535,
+          "random_swap_fidelity": 0.5647426744302114,
+          "swap_margin": -0.17826483647028607,
+          "task_acc": [
+            0.36733333333333335,
+            0.2946666666666667,
+            0.6206666666666667
+          ],
+          "eligible": false,
+          "score": 0.32934313732041254
+        },
+        {
+          "triple": [
+            "raw_proj",
+            "affine_polynomial",
+            "affine"
+          ],
+          "source_avg": 0.6366666666666667,
+          "source_worst": 0.372,
+          "theta_stability": 0.003956456979115804,
+          "theta_effect": 80.164794921875,
+          "swap_fidelity": 0.3482157190640767,
+          "random_swap_fidelity": 0.7798834840456644,
+          "swap_margin": -0.4316677649815877,
+          "task_acc": [
+            0.7126666666666667,
+            0.372,
+            0.8253333333333334
+          ],
+          "eligible": false,
+          "score": 0.4057927841758729
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.12666666666666668,
+        "dart_zero": 0.124,
+        "dart_adapted": 0.116,
+        "mlp_control": 0.4013333333333333,
+        "gain_zero": -0.26666666666666783,
+        "gain_adapt": -1.066666666666667,
+        "vs_mlp_adapt": -28.53333333333333,
+        "theta": [
+          -0.29325827956199646
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.7233333333333334,
+        "dart_adapted": 0.8106666666666666,
+        "mlp_control": 0.9993333333333333,
+        "gain_zero": -27.59999999999999,
+        "gain_adapt": -18.866666666666664,
+        "vs_mlp_adapt": -18.866666666666664,
+        "theta": [
+          -0.9859746098518372
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "triple": [
+          "raw_proj",
+          "affine_polynomial",
+          "affine"
+        ],
+        "source_avg": 0.6871111111111111,
+        "source_worst": 0.4046666666666667,
+        "theta_stability": 0.008621126413345337,
+        "theta_effect": 35.671531677246094,
+        "swap_fidelity": 0.2732505798339844,
+        "random_swap_fidelity": 0.7200859785079956,
+        "swap_margin": -0.44683539867401123,
+        "task_acc": [
+          0.786,
+          0.4046666666666667,
+          0.8706666666666667
+        ],
+        "eligible": false,
+        "score": 0.4486534117741055
+      },
+      "candidates": [
+        {
+          "triple": [
+            "diff_proj",
+            "affine_polynomial",
+            "linear"
+          ],
+          "source_avg": 0.5277777777777778,
+          "source_worst": 0.36,
+          "theta_stability": 0.005190275609493256,
+          "theta_effect": 62.27224349975586,
+          "swap_fidelity": 0.30608004331588745,
+          "random_swap_fidelity": 0.6552297671635946,
+          "swap_margin": -0.34914972384770715,
+          "task_acc": [
+            0.5493333333333333,
+            0.36,
+            0.674
+          ],
+          "eligible": false,
+          "score": 0.3439229158539242
+        },
+        {
+          "triple": [
+            "product_proj",
+            "polynomial",
+            "affine"
+          ],
+          "source_avg": 0.5615555555555556,
+          "source_worst": 0.38066666666666665,
+          "theta_stability": 0.018481334050496418,
+          "theta_effect": 30.017791748046875,
+          "swap_fidelity": 0.23280036449432373,
+          "random_swap_fidelity": 0.6597579518953959,
+          "swap_margin": -0.42695758740107215,
+          "task_acc": [
+            0.622,
+            0.38066666666666665,
+            0.682
+          ],
+          "eligible": false,
+          "score": 0.3376767618550195
+        },
+        {
+          "triple": [
+            "stats_proj",
+            "diagonal",
+            "affine"
+          ],
+          "source_avg": 0.4066666666666667,
+          "source_worst": 0.33066666666666666,
+          "theta_stability": 0.0034235691030820212,
+          "theta_effect": 76.56690979003906,
+          "swap_fidelity": 0.2553486426671346,
+          "random_swap_fidelity": 0.5727500518163046,
+          "swap_margin": -0.31740140914917,
+          "task_acc": [
+            0.41933333333333334,
+            0.33066666666666666,
+            0.47
+          ],
+          "eligible": false,
+          "score": 0.23888596209208168
+        },
+        {
+          "triple": [
+            "raw_proj",
+            "affine_polynomial",
+            "affine"
+          ],
+          "source_avg": 0.6871111111111111,
+          "source_worst": 0.4046666666666667,
+          "theta_stability": 0.008621126413345337,
+          "theta_effect": 35.671531677246094,
+          "swap_fidelity": 0.2732505798339844,
+          "random_swap_fidelity": 0.7200859785079956,
+          "swap_margin": -0.44683539867401123,
+          "task_acc": [
+            0.786,
+            0.4046666666666667,
+            0.8706666666666667
+          ],
+          "eligible": false,
+          "score": 0.4486534117741055
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.14533333333333334,
+        "dart_zero": 0.13533333333333333,
+        "dart_adapted": 0.13666666666666666,
+        "mlp_control": 0.30266666666666664,
+        "gain_zero": -1.0000000000000009,
+        "gain_adapt": -0.8666666666666684,
+        "vs_mlp_adapt": -16.599999999999998,
+        "theta": [
+          -0.21678978204727173
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.5906666666666667,
+        "dart_adapted": 0.65,
+        "mlp_control": 0.998,
+        "gain_zero": -40.733333333333334,
+        "gain_adapt": -34.8,
+        "vs_mlp_adapt": -34.8,
+        "theta": [
+          -0.5543597340583801
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.136,
+        "dart_zero": 0.12966666666666665,
+        "dart_adapted": 0.12633333333333333,
+        "mlp_control": 0.352,
+        "gain_zero": -0.6333333333333344,
+        "gain_adapt": -0.9666666666666677,
+        "vs_mlp_adapt": -22.566666666666663
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.657,
+        "dart_adapted": 0.7303333333333333,
+        "mlp_control": 0.9986666666666666,
+        "gain_zero": -34.166666666666664,
+        "gain_adapt": -26.83333333333333,
+        "vs_mlp_adapt": -26.83333333333333
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.661888888888889,
+      "avg_theta_effect": 57.91816329956055,
+      "avg_theta_stability": 0.00628879169623057,
+      "avg_swap_fidelity": 0.3107331494490305,
+      "avg_random_swap_fidelity": 0.74998473127683,
+      "avg_swap_margin": -0.43925158182779944
+    }
+  }
+}
