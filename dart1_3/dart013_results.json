@@ -1,0 +1,406 @@
+{
+  "config": {
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "seeds": [
+      1,
+      2
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "transfer_adaptation_steps": 400,
+    "transfer_control_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "rel_samples_per_task": 2048,
+    "rel_directions": 4,
+    "intervention_eps": 0.05,
+    "relational_weight": 0.5,
+    "causal_weight": 0.5,
+    "directional_weight": 0.5,
+    "interaction_weight": 0.25,
+    "routing_weight": 0.2,
+    "ablation_weight": 0.1,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "signature_report_probes": 64,
+    "batch_size": 256,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "verifier_batches": 20,
+    "device": "cuda",
+    "out": "dart013_results.json"
+  },
+  "records": [
+    {
+      "holdout_task": "sub",
+      "contrast_task": "sort",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "low_rank",
+            "avg_accuracy": 0.3026666666666667,
+            "avg_routing": 0.459889067290959,
+            "avg_ablation_drop": 0.15433333333333335,
+            "avg_relational_agreement": 0.6885232471346524,
+            "avg_causal_agreement": 0.2695333871407541,
+            "shared_core_params": 544,
+            "shared_core_macs": 512,
+            "replace_params": 544,
+            "replace_macs": 512,
+            "score": 0.8884760520164289,
+            "task_accuracies": [
+              0.2781666666666667,
+              0.245,
+              0.38483333333333336
+            ],
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 3.041339123999933
+          },
+          "meta_pre_accuracy": [
+            0.2781666666666667,
+            0.245,
+            0.38483333333333336
+          ],
+          "meta_post_accuracy": [
+            0.47483333333333333,
+            0.314,
+            0.6378333333333334
+          ],
+          "meta_relational_agreement": [
+            0.5937611656482221,
+            0.5153684440474819,
+            0.5155395791152435
+          ],
+          "adaptation_seconds": 7.2942997769969224
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "affine_polynomial",
+            "avg_accuracy": 0.31716666666666665,
+            "avg_routing": 0.46794480142272527,
+            "avg_ablation_drop": 0.18155555555555555,
+            "avg_relational_agreement": 0.7722749987967151,
+            "avg_causal_agreement": 0.2074466402204426,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "replace_params": 808,
+            "replace_macs": 768,
+            "score": 0.9181024221236403,
+            "task_accuracies": [
+              0.284,
+              0.22866666666666666,
+              0.43883333333333335
+            ],
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.290063028001896
+          },
+          "meta_pre_accuracy": [
+            0.284,
+            0.22866666666666666,
+            0.43883333333333335
+          ],
+          "meta_post_accuracy": [
+            0.5995,
+            0.3195,
+            0.7423333333333333
+          ],
+          "meta_relational_agreement": [
+            0.5964191404408193,
+            0.4281709503742736,
+            0.47531285021912695
+          ],
+          "adaptation_seconds": 8.320254500998999
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": {
+          "accuracy": 0.11266666666666666,
+          "loss": 2.3244033203125,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.10666666666666667,
+          "loss": 2.5282372233072916,
+          "params": 14994
+        },
+        "mlp_control": {
+          "accuracy": 0.108,
+          "loss": 2.3254766642252602,
+          "params": 16298
+        },
+        "gain_points": -0.5999999999999992,
+        "vs_mlp_points": -0.13333333333333253,
+        "signature": [
+          0.5225694179534912,
+          0.34341228008270264,
+          0.109375,
+          0.125,
+          0.078125,
+          0.046875,
+          0.125,
+          0.078125,
+          0.09375,
+          0.078125,
+          0.109375,
+          0.15625
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9986666666666667,
+          "loss": 0.005060358683268229,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.606,
+          "loss": 1.0817474060058594,
+          "params": 14994
+        },
+        "mlp_control": {
+          "accuracy": 0.994,
+          "loss": 0.04763122240702311,
+          "params": 16298
+        },
+        "gain_points": -39.26666666666667,
+        "vs_mlp_points": -38.800000000000004,
+        "signature": [
+          0.1163194477558136,
+          0.13669049739837646,
+          0.453125,
+          0.25,
+          0.15625,
+          0.09375,
+          0.03125,
+          0.015625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "shared_core_params": 808,
+      "shared_core_macs": 768,
+      "conditioner_params": 0,
+      "task_code_params": 0
+    },
+    {
+      "holdout_task": "sub",
+      "contrast_task": "sort",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "name": "affine_polynomial",
+            "avg_accuracy": 0.3265,
+            "avg_routing": 0.4977394041055096,
+            "avg_ablation_drop": 0.18544444444444444,
+            "avg_relational_agreement": 0.7826978473571005,
+            "avg_causal_agreement": 0.21742461910164743,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "replace_params": 808,
+            "replace_macs": 768,
+            "score": 0.9439839786032145,
+            "task_accuracies": [
+              0.30416666666666664,
+              0.23633333333333334,
+              0.439
+            ],
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.112838699998974
+          },
+          "meta_pre_accuracy": [
+            0.30416666666666664,
+            0.23633333333333334,
+            0.439
+          ],
+          "meta_post_accuracy": [
+            0.5641666666666667,
+            0.3455,
+            0.7505
+          ],
+          "meta_relational_agreement": [
+            0.5209396985341616,
+            0.6030874744376769,
+            0.6617457589574172
+          ],
+          "adaptation_seconds": 7.6970001549998415
+        },
+        {
+          "round": 1,
+          "winner": {
+            "name": "low_rank",
+            "avg_accuracy": 0.3416666666666667,
+            "avg_routing": 0.4809203305816279,
+            "avg_ablation_drop": 0.20011111111111113,
+            "avg_relational_agreement": 0.6919529715937397,
+            "avg_causal_agreement": 0.27520205758872707,
+            "shared_core_params": 544,
+            "shared_core_macs": 512,
+            "replace_params": 544,
+            "replace_macs": 512,
+            "score": 0.9408092799058705,
+            "task_accuracies": [
+              0.312,
+              0.25533333333333336,
+              0.45766666666666667
+            ],
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 3.051344600000448
+          },
+          "meta_pre_accuracy": [
+            0.312,
+            0.25533333333333336,
+            0.45766666666666667
+          ],
+          "meta_post_accuracy": [
+            0.46166666666666667,
+            0.3426666666666667,
+            0.678
+          ],
+          "meta_relational_agreement": [
+            0.5403618035564411,
+            0.5480282485545197,
+            0.6559969118088075
+          ],
+          "adaptation_seconds": 7.334720943999855
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": {
+          "accuracy": 0.15266666666666667,
+          "loss": 2.2754484049479164,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.09866666666666667,
+          "loss": 2.499912882486979,
+          "params": 14730
+        },
+        "mlp_control": {
+          "accuracy": 0.12466666666666666,
+          "loss": 2.2998871663411458,
+          "params": 16298
+        },
+        "gain_points": -5.4,
+        "vs_mlp_points": -2.5999999999999996,
+        "signature": [
+          0.5225694179534912,
+          0.34341228008270264,
+          0.109375,
+          0.125,
+          0.078125,
+          0.046875,
+          0.125,
+          0.078125,
+          0.09375,
+          0.078125,
+          0.109375,
+          0.15625
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": {
+          "accuracy": 0.9993333333333333,
+          "loss": 0.0026579316953818004,
+          "params": 39242
+        },
+        "dart_zero_shot": {
+          "accuracy": 0.7053333333333334,
+          "loss": 0.9516162109375,
+          "params": 14730
+        },
+        "mlp_control": {
+          "accuracy": 0.9913333333333333,
+          "loss": 0.04354061698913574,
+          "params": 16298
+        },
+        "gain_points": -29.39999999999999,
+        "vs_mlp_points": -28.59999999999999,
+        "signature": [
+          0.1163194477558136,
+          0.13669049739837646,
+          0.453125,
+          0.25,
+          0.15625,
+          0.09375,
+          0.03125,
+          0.015625,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "shared_core_params": 544,
+      "shared_core_macs": 512,
+      "conditioner_params": 0,
+      "task_code_params": 0
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.13266666666666665,
+        "dart_zero_shot": 0.10266666666666667,
+        "mlp_control": 0.11633333333333333,
+        "gain_points": -3.0,
+        "vs_mlp_points": -1.366666666666666,
+        "shared_core_params": 676,
+        "shared_core_macs": 640,
+        "conditioner_params": 0,
+        "task_code_params": 0
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.999,
+        "dart_zero_shot": 0.6556666666666666,
+        "mlp_control": 0.9926666666666666,
+        "gain_points": -34.33333333333333,
+        "vs_mlp_points": -33.699999999999996
+      }
+    }
+  }
+}
