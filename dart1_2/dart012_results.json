@@ -1,0 +1,319 @@
+{
+  "config": {
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "seeds": [
+      1,
+      2
+    ],
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "adaptation_steps_per_round": 400,
+    "surgery_rounds": 2,
+    "transfer_adaptation_steps": 400,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "bottleneck": 32,
+    "signature_probes": 64,
+    "trajectory_start": 0,
+    "trajectory_end": 3,
+    "verifier_batches": 20,
+    "routing_weight": 0.2,
+    "ablation_weight": 0.1,
+    "core_fit_lr": 0.001,
+    "signature_lr": 0.001,
+    "lr": 0.0003,
+    "complexity_lambda": 0.0001,
+    "batch_size": 256,
+    "device": "cuda",
+    "out": "dart012_results.json"
+  },
+  "records": [
+    {
+      "holdout_task": "sub",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.5725555555555556,
+            "avg_routing": 0.4513734771086007,
+            "avg_ablation_drop": 0.42666666666666664,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "conditioner_params": 2720,
+            "replace_params": 3528,
+            "replace_macs": 1920,
+            "score": 0.7046800406615749,
+            "task_accuracies": [
+              0.639,
+              0.32566666666666666,
+              0.753
+            ],
+            "task_routing": [
+              0.41688751339035734,
+              0.45266312259381764,
+              0.4845697953416272
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 3.969960559003084
+          },
+          "meta_pre_accuracy": [
+            0.6536666666666666,
+            0.31733333333333336,
+            0.7945
+          ],
+          "meta_post_accuracy": [
+            0.7466666666666667,
+            0.326,
+            0.828
+          ],
+          "meta_routing_after": [
+            0.8440230136701247,
+            0.7909999859984199,
+            0.8674960698878279
+          ]
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.5957222222222223,
+            "avg_routing": 0.45544627531386017,
+            "avg_ablation_drop": 0.4488333333333333,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "conditioner_params": 2720,
+            "replace_params": 3528,
+            "replace_macs": 1920,
+            "score": 0.7308779336359601,
+            "task_accuracies": [
+              0.6805,
+              0.3245,
+              0.7821666666666667
+            ],
+            "task_routing": [
+              0.4245218618030441,
+              0.4481914389983317,
+              0.4936255251402047
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 3.9912713220001024
+          },
+          "meta_pre_accuracy": [
+            0.6636666666666666,
+            0.3238333333333333,
+            0.7981666666666667
+          ],
+          "meta_post_accuracy": [
+            0.7478333333333333,
+            0.33416666666666667,
+            0.8333333333333334
+          ],
+          "meta_routing_after": [
+            0.8271278748707906,
+            0.7692394357484278,
+            0.8672255153470034
+          ]
+        }
+      ],
+      "meta_teacher_accuracies": [
+        0.8951666666666667,
+        0.4635,
+        0.9375
+      ],
+      "heldout_teacher": {
+        "accuracy": 0.126,
+        "loss": 2.3000176798502605,
+        "params": 39242
+      },
+      "zero_shot_behavior": {
+        "accuracy": 0.10266666666666667,
+        "loss": 3.5714776611328123,
+        "params": 17714
+      },
+      "after_signature_conditioner_adaptation": {
+        "accuracy": 0.10266666666666667,
+        "loss": 3.5714776611328123,
+        "params": 17714
+      },
+      "matched_mlp_control": {
+        "accuracy": 0.183,
+        "loss": 2.2005576629638672,
+        "params": 19018
+      },
+      "shared_core_params": 808,
+      "shared_conditioner_params": 2720,
+      "signature_dim": 18,
+      "signature_probe_count": 64,
+      "zero_shot_gain_points": -2.333333333333333,
+      "adapted_gain_points": -2.333333333333333,
+      "vs_mlp_control_points": -8.033333333333333
+    },
+    {
+      "holdout_task": "sub",
+      "meta_tasks": [
+        "add",
+        "compose",
+        "mul"
+      ],
+      "rounds": [
+        {
+          "round": 0,
+          "winner": {
+            "avg_accuracy": 0.5771666666666666,
+            "avg_routing": 0.46818371336478065,
+            "avg_ablation_drop": 0.42516666666666664,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "conditioner_params": 2720,
+            "replace_params": 3528,
+            "replace_macs": 1920,
+            "score": 0.7125031990239218,
+            "task_accuracies": [
+              0.6818333333333333,
+              0.3365,
+              0.7131666666666666
+            ],
+            "task_routing": [
+              0.4342529926022571,
+              0.48458537294661796,
+              0.4857127745454669
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.217307805000019
+          },
+          "meta_pre_accuracy": [
+            0.6661666666666667,
+            0.33716666666666667,
+            0.7198333333333333
+          ],
+          "meta_post_accuracy": [
+            0.738,
+            0.3495,
+            0.7755
+          ],
+          "meta_routing_after": [
+            0.8464972439169672,
+            0.8240182043647756,
+            0.8655898956171922
+          ]
+        },
+        {
+          "round": 1,
+          "winner": {
+            "avg_accuracy": 0.5789444444444445,
+            "avg_routing": 0.4798041468207127,
+            "avg_ablation_drop": 0.4095,
+            "shared_core_params": 808,
+            "shared_core_macs": 768,
+            "conditioner_params": 2720,
+            "replace_params": 3528,
+            "replace_macs": 1920,
+            "score": 0.7150383968262195,
+            "task_accuracies": [
+              0.6621666666666667,
+              0.3385,
+              0.7361666666666666
+            ],
+            "task_routing": [
+              0.4582159130957657,
+              0.48488614388997586,
+              0.4963103834763965
+            ],
+            "name": "affine_polynomial",
+            "kind": "dart_structured",
+            "eligible": true,
+            "fit_seconds": 4.112967356002628
+          },
+          "meta_pre_accuracy": [
+            0.6778333333333333,
+            0.3478333333333333,
+            0.6908333333333333
+          ],
+          "meta_post_accuracy": [
+            0.7366666666666667,
+            0.35533333333333333,
+            0.794
+          ],
+          "meta_routing_after": [
+            0.858102863190552,
+            0.8329814491637039,
+            0.805395496101366
+          ]
+        }
+      ],
+      "meta_teacher_accuracies": [
+        0.9061666666666667,
+        0.4538333333333333,
+        0.9518333333333333
+      ],
+      "heldout_teacher": {
+        "accuracy": 0.11666666666666667,
+        "loss": 2.2861097412109377,
+        "params": 39242
+      },
+      "zero_shot_behavior": {
+        "accuracy": 0.10333333333333333,
+        "loss": 3.3416962483723958,
+        "params": 17714
+      },
+      "after_signature_conditioner_adaptation": {
+        "accuracy": 0.10333333333333333,
+        "loss": 3.3416962483723958,
+        "params": 17714
+      },
+      "matched_mlp_control": {
+        "accuracy": 0.1825,
+        "loss": 2.2120324605305988,
+        "params": 19018
+      },
+      "shared_core_params": 808,
+      "shared_conditioner_params": 2720,
+      "signature_dim": 18,
+      "signature_probe_count": 64,
+      "zero_shot_gain_points": -1.3333333333333335,
+      "adapted_gain_points": -1.3333333333333335,
+      "vs_mlp_control_points": -7.916666666666666
+    }
+  ],
+  "summary": {
+    "holdout_transfer": {
+      "sub": {
+        "teacher": 0.12133333333333333,
+        "zero_shot_behavior": 0.10300000000000001,
+        "adapted": 0.10300000000000001,
+        "mlp_control": 0.18275,
+        "zero_shot_gain_points": -1.8333333333333333,
+        "adapted_gain_points": -1.8333333333333333,
+        "vs_mlp_control_points": -7.975,
+        "shared_core_params": 808,
+        "shared_conditioner_params": 2720,
+        "signature_dim": 18,
+        "signature_probe_count": 64
+      }
+    }
+  }
+}
