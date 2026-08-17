@@ -1,0 +1,194 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 120,
+    "target_theta_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "typed_dim": 8,
+    "theta_delta": 0.25,
+    "theta_l2": 0.0005,
+    "theta_lr": 0.01,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "min_theta_effect": 0.02,
+    "max_theta_stability": 0.75,
+    "min_interface_invariance": 0.6,
+    "theta_effect_weight": 0.2,
+    "interface_weight": 0.2,
+    "complexity_lambda": 1e-05,
+    "fit_batch_samples": 512,
+    "effect_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "mlp_width": 64,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "device": "cuda",
+    "out": "dart017_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": "affine_polynomial",
+      "eligible": true,
+      "source_avg": 0.4942222222222222,
+      "source_worst": 0.3233333333333333,
+      "theta_effect": 80.43881416320801,
+      "theta_stability": 0.01435061451047659,
+      "interface_invariance": 0.6153508027394613,
+      "source_theta": [
+        [
+          0.4892602860927582,
+          1.1850320100784302
+        ],
+        [
+          0.5451706647872925,
+          1.0215651988983154
+        ],
+        [
+          0.5250018239021301,
+          1.1370700597763062
+        ]
+      ],
+      "core_params": 2088,
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.11866666666666667,
+        "dart_zero": 0.094,
+        "dart_adapted": 0.09333333333333334,
+        "mlp_control": 0.138,
+        "gain_zero": -2.466666666666667,
+        "gain_adapt": -2.533333333333333,
+        "vs_mlp_adapt": -4.466666666666668,
+        "theta": [
+          0.308175653219223,
+          -0.1985243409872055
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.7366666666666667,
+        "dart_adapted": 0.7393333333333333,
+        "mlp_control": 1.0,
+        "gain_zero": -26.26666666666666,
+        "gain_adapt": -26.0,
+        "vs_mlp_adapt": -26.06666666666667,
+        "theta": [
+          0.37330543994903564,
+          -0.12158557027578354
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "winner": "low_rank",
+      "eligible": true,
+      "source_avg": 0.45955555555555555,
+      "source_worst": 0.31,
+      "theta_effect": 73.18418502807617,
+      "theta_stability": 0.04025430170198282,
+      "interface_invariance": 0.6580598553021749,
+      "source_theta": [
+        [
+          0.11983361840248108,
+          0.4709101915359497
+        ],
+        [
+          0.4233839511871338,
+          1.610613226890564
+        ],
+        [
+          0.6334784030914307,
+          1.1739269495010376
+        ]
+      ],
+      "core_params": 1824,
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.15333333333333332,
+        "dart_zero": 0.10333333333333333,
+        "dart_adapted": 0.10733333333333334,
+        "mlp_control": 0.46,
+        "gain_zero": -4.999999999999999,
+        "gain_adapt": -4.599999999999999,
+        "vs_mlp_adapt": -35.266666666666666,
+        "theta": [
+          0.4540261924266815,
+          0.24491247534751892
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.8106666666666666,
+        "dart_adapted": 0.8553333333333333,
+        "mlp_control": 0.9986666666666667,
+        "gain_zero": -18.733333333333334,
+        "gain_adapt": -14.266666666666673,
+        "vs_mlp_adapt": -14.333333333333343,
+        "theta": [
+          0.33978205919265747,
+          0.13965775072574615
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.136,
+        "dart_zero": 0.09866666666666667,
+        "dart_adapted": 0.10033333333333333,
+        "mlp_control": 0.29900000000000004,
+        "gain_zero": -3.733333333333333,
+        "gain_adapt": -3.566666666666666,
+        "vs_mlp_adapt": -19.866666666666667
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.7736666666666667,
+        "dart_adapted": 0.7973333333333332,
+        "mlp_control": 0.9993333333333334,
+        "gain_zero": -22.499999999999996,
+        "gain_adapt": -20.133333333333336,
+        "vs_mlp_adapt": -20.200000000000006
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.47688888888888886,
+      "avg_theta_effect": 76.81149959564209,
+      "avg_theta_stability": 0.027302458106229704,
+      "avg_interface_invariance": 0.6367053290208181
+    }
+  }
+}
