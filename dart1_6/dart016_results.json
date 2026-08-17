@@ -1,0 +1,195 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "theta_fit_steps": 120,
+    "target_theta_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "rel_directions": 4,
+    "theta_delta": 0.25,
+    "theta_l2": 0.0005,
+    "theta_lr": 0.01,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "min_theta_effect": 0.02,
+    "max_theta_stability": 0.75,
+    "theta_effect_weight": 0.25,
+    "complexity_lambda": 1e-05,
+    "fit_batch_samples": 512,
+    "effect_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "mlp_width": 64,
+    "core_fit_lr": 0.001,
+    "lr": 0.0003,
+    "device": "cuda",
+    "out": "dart016_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": [
+        "affine_polynomial",
+        "polynomial"
+      ],
+      "eligible": true,
+      "source_avg": 0.3933333333333333,
+      "source_worst": 0.24533333333333332,
+      "theta_effect": 105.31168746948242,
+      "theta_stability": 0.013657881257434687,
+      "source_theta": [
+        [
+          0.8492851257324219,
+          0.7876296043395996
+        ],
+        [
+          0.796969473361969,
+          0.8916700482368469
+        ],
+        [
+          0.7468997836112976,
+          1.0426257848739624
+        ]
+      ],
+      "core_params": 904,
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.12866666666666668,
+        "dart_zero": 0.114,
+        "dart_adapted": 0.09666666666666666,
+        "mlp_control": 0.252,
+        "gain_zero": -1.4666666666666675,
+        "gain_adapt": -3.2000000000000015,
+        "vs_mlp_adapt": -15.533333333333331,
+        "theta": [
+          0.2921590805053711,
+          0.6558836698532104
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.8353333333333334,
+        "dart_adapted": 0.8653333333333333,
+        "mlp_control": 0.9993333333333333,
+        "gain_zero": -16.39999999999999,
+        "gain_adapt": -13.4,
+        "vs_mlp_adapt": -13.4,
+        "theta": [
+          0.4543472230434418,
+          0.050659310072660446
+        ]
+      }
+    },
+    {
+      "seed": 2,
+      "winner": [
+        "affine_polynomial",
+        "polynomial"
+      ],
+      "eligible": true,
+      "source_avg": 0.424,
+      "source_worst": 0.302,
+      "theta_effect": 101.78054809570312,
+      "theta_stability": 0.010815171292051673,
+      "source_theta": [
+        [
+          0.8057708740234375,
+          1.0441547632217407
+        ],
+        [
+          0.881921648979187,
+          0.9905266165733337
+        ],
+        [
+          0.7940148115158081,
+          0.785993754863739
+        ]
+      ],
+      "core_params": 904,
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.13466666666666666,
+        "dart_zero": 0.10866666666666666,
+        "dart_adapted": 0.112,
+        "mlp_control": 0.4846666666666667,
+        "gain_zero": -2.5999999999999996,
+        "gain_adapt": -2.2666666666666653,
+        "vs_mlp_adapt": -37.26666666666667,
+        "theta": [
+          0.3155301511287689,
+          0.11716774106025696
+        ]
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.748,
+        "dart_adapted": 0.79,
+        "mlp_control": 0.998,
+        "gain_zero": -25.0,
+        "gain_adapt": -20.799999999999997,
+        "vs_mlp_adapt": -20.799999999999997,
+        "theta": [
+          0.28363627195358276,
+          0.028130101040005684
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.13166666666666665,
+        "dart_zero": 0.11133333333333334,
+        "dart_adapted": 0.10433333333333333,
+        "mlp_control": 0.36833333333333335,
+        "gain_zero": -2.0333333333333337,
+        "gain_adapt": -2.7333333333333334,
+        "vs_mlp_adapt": -26.400000000000002
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.7916666666666667,
+        "dart_adapted": 0.8276666666666667,
+        "mlp_control": 0.9986666666666666,
+        "gain_zero": -20.699999999999996,
+        "gain_adapt": -17.099999999999998,
+        "vs_mlp_adapt": -17.099999999999998
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.4086666666666666,
+      "avg_theta_effect": 103.54611778259277,
+      "avg_theta_stability": 0.01223652627474318
+    }
+  }
+}
