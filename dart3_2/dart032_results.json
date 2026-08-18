@@ -1,0 +1,119 @@
+{
+  "version": "DART-3.2",
+  "parent_version": "DART-3.1",
+  "protocol": {
+    "joint_source_primitive_training": true,
+    "balanced_source_selection": true,
+    "same_state_source_program_necessity": true,
+    "same_state_target_program_necessity": true,
+    "teacher_counterfactual_fidelity": true,
+    "target_train_validation_test_split": true,
+    "untouched_target_test": true,
+    "deterministic_probe_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher": 1.0,
+      "dart_zero": 0.23900000005960464,
+      "dart_program": 0.14499999582767487,
+      "program_validation": 0.976250022649765,
+      "program_permutation_control": 0.7156666815280914,
+      "random_program_control": 0.754666656255722
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 1.0,
+      "dart_program": 0.5086666643619537
+    }
+  },
+  "source": {
+    "avg_source_program_necessity": 0.0390625,
+    "avg_source_program_counterfactual_fidelity": 0.0,
+    "avg_target_program_necessity": 0.6375000104308128,
+    "avg_target_program_counterfactual_fidelity": 0.6996311119789156,
+    "avg_program_length": 2.0
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "program": [
+          "difference",
+          "swap"
+        ],
+        "program_length": 2,
+        "source_base_scores": [
+          0.5073333382606506,
+          0.5413333177566528,
+          0.4959999918937683
+        ],
+        "source_program_scores": [
+          0.9026666283607483,
+          0.5999999642372131,
+          0.5719999670982361
+        ],
+        "source_program_necessity": 0.046875,
+        "source_program_counterfactual_fidelity": 0.0,
+        "target_program_necessity": 0.6333333477377892,
+        "target_program_counterfactual_fidelity": 0.6914834147010179
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 1.0,
+          "dart_zero": 0.20866666734218597,
+          "dart_program": 0.140666663646698,
+          "program_validation": 0.9800000190734863,
+          "program_permutation_control": 0.5433333516120911,
+          "random_program_control": 0.9440000057220459
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.4673333168029785
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "program": [
+          "difference",
+          "negate"
+        ],
+        "program_length": 2,
+        "source_base_scores": [
+          0.5080000162124634,
+          0.5119999647140503,
+          0.5360000133514404
+        ],
+        "source_program_scores": [
+          0.9006666541099548,
+          0.5859999656677246,
+          0.6146666407585144
+        ],
+        "source_program_necessity": 0.03125,
+        "source_program_counterfactual_fidelity": 0.0,
+        "target_program_necessity": 0.6416666731238365,
+        "target_program_counterfactual_fidelity": 0.7077788092568131
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 1.0,
+          "dart_zero": 0.2693333327770233,
+          "dart_program": 0.14933332800865173,
+          "program_validation": 0.9725000262260437,
+          "program_permutation_control": 0.8880000114440918,
+          "random_program_control": 0.5653333067893982
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.550000011920929
+        }
+      }
+    }
+  ]
+}
