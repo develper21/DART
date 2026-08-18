@@ -1,0 +1,95 @@
+{
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.9899166524410248,
+      "dart_zero": 0.2316666692495346,
+      "dart_program": 0.3733333349227905,
+      "program_permutation_control": 0.2199999988079071,
+      "random_program_control": 0.2329999953508377
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 1.0,
+      "dart_program": 0.43066665530204773
+    }
+  },
+  "source": {
+    "avg_accuracy": 1.0,
+    "avg_program_necessity": 0.0,
+    "avg_program_length": 1.0
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial"
+        ],
+        "program": [
+          "shift"
+        ],
+        "source_avg": 1.0,
+        "source_task_accs": [
+          0.984666645526886,
+          0.11866666376590729,
+          0.3226666748523712
+        ],
+        "program_necessity": 0.0
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 1.0,
+          "dart_zero": 0.23333333432674408,
+          "dart_program": 0.37533333897590637,
+          "program_permutation_control": 0.21199999749660492,
+          "random_program_control": 0.23799999058246613
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.43199998140335083
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial",
+          "low_rank"
+        ],
+        "program": [
+          "scale"
+        ],
+        "source_avg": 1.0,
+        "source_task_accs": [
+          1.0,
+          0.1313333362340927,
+          0.3166666626930237
+        ],
+        "program_necessity": 0.0
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.9798333048820496,
+          "dart_zero": 0.23000000417232513,
+          "dart_program": 0.3713333308696747,
+          "program_permutation_control": 0.2280000001192093,
+          "random_program_control": 0.2280000001192093
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.42933332920074463
+        }
+      }
+    }
+  ]
+}
