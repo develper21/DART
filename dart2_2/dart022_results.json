@@ -1,0 +1,4695 @@
+{
+  "config": {
+    "seeds": [
+      1,
+      2
+    ],
+    "all_tasks": [
+      "add",
+      "compose",
+      "mul",
+      "sub"
+    ],
+    "holdout_tasks": [
+      "sub"
+    ],
+    "contrast_tasks": [
+      "sort"
+    ],
+    "teacher_steps": 800,
+    "core_fit_steps": 300,
+    "operator_fit_steps": 120,
+    "target_operator_fit_steps": 400,
+    "transfer_control_steps": 400,
+    "separate_control_steps": 200,
+    "train_size": 6000,
+    "verifier_size": 1500,
+    "test_size": 1500,
+    "rel_samples_per_task": 2048,
+    "fit_batch_samples": 512,
+    "d_model": 32,
+    "heads": 2,
+    "d_ff": 128,
+    "depth": 3,
+    "rank": 8,
+    "batch_size": 256,
+    "mlp_width": 64,
+    "operator_delta": 0.1,
+    "operator_l2": 0.0005,
+    "operator_lr": 0.01,
+    "min_avg_source_acc": 0.3,
+    "min_worst_source_acc": 0.22,
+    "max_operator_stability": 0.75,
+    "min_operator_specificity": 0.01,
+    "min_operator_effect": 0.02,
+    "min_rule_causal_fidelity": 0.2,
+    "min_random_graph_gap": 0.02,
+    "max_shared_vs_separate_gap": 0.03,
+    "rule_weight": 0.3,
+    "operator_weight": 0.25,
+    "random_graph_weight": 0.25,
+    "operator_effect_weight": 0.15,
+    "shared_parity_weight": 0.25,
+    "complexity_lambda": 1e-05,
+    "lr": 0.0003,
+    "core_fit_lr": 0.001,
+    "trajectory_start": 0,
+    "trajectory_end": 1,
+    "device": "cuda",
+    "out": "dart022_results.json"
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial"
+        ],
+        "operator_mode": "difference",
+        "source_avg": 0.5777777777777778,
+        "source_worst": 0.33266666666666667,
+        "operator_stability": 0.011948122332493464,
+        "operator_effect": 0.00434328072393934,
+        "rule_causal_fidelity": 0.26620085537433624,
+        "operator_specificity": 0.009777777777777885,
+        "random_graph_gap": 0.22555555555555562,
+        "separate_graph_avg": 0.6575555555555556,
+        "shared_vs_separate_gap": 0.07977777777777773,
+        "task_acc": [
+          0.6186666666666667,
+          0.33266666666666667,
+          0.782
+        ],
+        "operator_permutation_matrix": [
+          [
+            0.6186666666666667,
+            0.6113333333333333,
+            0.6146666666666667
+          ],
+          [
+            0.3373333333333333,
+            0.33266666666666667,
+            0.3406666666666667
+          ],
+          [
+            0.77,
+            0.734,
+            0.782
+          ]
+        ],
+        "eligible": false,
+        "score": 0.6880184153875586
+      },
+      "candidates": [
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5448888888888889,
+          "source_worst": 0.31733333333333336,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.19296903908252716,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.17177777777777775,
+          "separate_graph_avg": 0.6802222222222222,
+          "shared_vs_separate_gap": 0.1353333333333333,
+          "task_acc": [
+            0.5426666666666666,
+            0.31733333333333336,
+            0.7746666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5426666666666666,
+              0.5426666666666666,
+              0.5426666666666666
+            ],
+            [
+              0.31733333333333336,
+              0.31733333333333336,
+              0.31733333333333336
+            ],
+            [
+              0.7746666666666666,
+              0.7746666666666666,
+              0.7746666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.602730711724758
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5611111111111111,
+          "source_worst": 0.3393333333333333,
+          "operator_stability": 0.011989590401450792,
+          "operator_effect": 0.01177222654223442,
+          "rule_causal_fidelity": 0.13748309016227722,
+          "operator_specificity": 0.004111111111111065,
+          "random_graph_gap": 0.17955555555555552,
+          "separate_graph_avg": 0.6788888888888889,
+          "shared_vs_separate_gap": 0.11777777777777776,
+          "task_acc": [
+            0.5353333333333333,
+            0.3393333333333333,
+            0.8086666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5353333333333333,
+              0.546,
+              0.536
+            ],
+            [
+              0.3273333333333333,
+              0.3393333333333333,
+              0.3253333333333333
+            ],
+            [
+              0.8086666666666666,
+              0.7986666666666666,
+              0.8086666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6114340943633516
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5466666666666666,
+          "source_worst": 0.3233333333333333,
+          "operator_stability": 0.004790016838038961,
+          "operator_effect": 0.011798257939517498,
+          "rule_causal_fidelity": 0.12444087117910385,
+          "operator_specificity": 0.0006666666666667043,
+          "random_graph_gap": 0.17999999999999994,
+          "separate_graph_avg": 0.6853333333333333,
+          "shared_vs_separate_gap": 0.13866666666666672,
+          "task_acc": [
+            0.502,
+            0.3233333333333333,
+            0.8146666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.502,
+              0.4806666666666667,
+              0.502
+            ],
+            [
+              0.32466666666666666,
+              0.3233333333333333,
+              0.32466666666666666
+            ],
+            [
+              0.814,
+              0.83,
+              0.8146666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5871086667113254
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5777777777777778,
+          "source_worst": 0.33266666666666667,
+          "operator_stability": 0.011948122332493464,
+          "operator_effect": 0.00434328072393934,
+          "rule_causal_fidelity": 0.26620085537433624,
+          "operator_specificity": 0.009777777777777885,
+          "random_graph_gap": 0.22555555555555562,
+          "separate_graph_avg": 0.6575555555555556,
+          "shared_vs_separate_gap": 0.07977777777777773,
+          "task_acc": [
+            0.6186666666666667,
+            0.33266666666666667,
+            0.782
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6186666666666667,
+              0.6113333333333333,
+              0.6146666666666667
+            ],
+            [
+              0.3373333333333333,
+              0.33266666666666667,
+              0.3406666666666667
+            ],
+            [
+              0.77,
+              0.734,
+              0.782
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6880184153875586
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5433333333333333,
+          "source_worst": 0.342,
+          "operator_stability": 0.01456993849327167,
+          "operator_effect": 0.012235489363471666,
+          "rule_causal_fidelity": 0.23767738789319992,
+          "operator_specificity": 0.003777777777777769,
+          "random_graph_gap": 0.17777777777777776,
+          "separate_graph_avg": 0.6564444444444445,
+          "shared_vs_separate_gap": 0.11311111111111116,
+          "task_acc": [
+            0.5446666666666666,
+            0.342,
+            0.7433333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5446666666666666,
+              0.5406666666666666,
+              0.5513333333333333
+            ],
+            [
+              0.3333333333333333,
+              0.342,
+              0.3293333333333333
+            ],
+            [
+              0.7426666666666667,
+              0.74,
+              0.7433333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6244229842169251
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5551111111111111,
+          "source_worst": 0.318,
+          "operator_stability": 0.006896587399144967,
+          "operator_effect": 0.012296417417625586,
+          "rule_causal_fidelity": 0.3101900964975357,
+          "operator_specificity": -0.00011111111111106187,
+          "random_graph_gap": 0.17777777777777776,
+          "separate_graph_avg": 0.6746666666666666,
+          "shared_vs_separate_gap": 0.11955555555555553,
+          "task_acc": [
+            0.5693333333333334,
+            0.318,
+            0.778
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5693333333333334,
+              0.57,
+              0.57
+            ],
+            [
+              0.31333333333333335,
+              0.318,
+              0.31733333333333336
+            ],
+            [
+              0.7813333333333333,
+              0.7793333333333333,
+              0.778
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6553803804507934
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.508,
+          "source_worst": 0.31733333333333336,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.15815868973731995,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.13711111111111113,
+          "separate_graph_avg": 0.6268888888888889,
+          "shared_vs_separate_gap": 0.11888888888888893,
+          "task_acc": [
+            0.486,
+            0.31733333333333336,
+            0.7206666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.486,
+              0.486,
+              0.486
+            ],
+            [
+              0.31733333333333336,
+              0.31733333333333336,
+              0.31733333333333336
+            ],
+            [
+              0.7206666666666667,
+              0.7206666666666667,
+              0.7206666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5538031624767515
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5057777777777778,
+          "source_worst": 0.3393333333333333,
+          "operator_stability": 0.008584947480509678,
+          "operator_effect": 0.011946418012181917,
+          "rule_causal_fidelity": 0.10210369527339935,
+          "operator_specificity": -0.009888888888888836,
+          "random_graph_gap": 0.12644444444444447,
+          "separate_graph_avg": 0.6546666666666666,
+          "shared_vs_separate_gap": 0.14888888888888885,
+          "task_acc": [
+            0.508,
+            0.3393333333333333,
+            0.67
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.508,
+              0.5086666666666667,
+              0.5053333333333333
+            ],
+            [
+              0.3413333333333333,
+              0.3393333333333333,
+              0.34
+            ],
+            [
+              0.6986666666666667,
+              0.7,
+              0.67
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5239175157282916
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5124444444444444,
+          "source_worst": 0.31266666666666665,
+          "operator_stability": 0.005834222227955858,
+          "operator_effect": 0.011933917179703712,
+          "rule_causal_fidelity": 0.12375296652317047,
+          "operator_specificity": -0.002888888888888941,
+          "random_graph_gap": 0.13555555555555548,
+          "separate_graph_avg": 0.6524444444444445,
+          "shared_vs_separate_gap": 0.14000000000000012,
+          "task_acc": [
+            0.4686666666666667,
+            0.31266666666666665,
+            0.756
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4686666666666667,
+              0.4686666666666667,
+              0.476
+            ],
+            [
+              0.31666666666666665,
+              0.31266666666666665,
+              0.306
+            ],
+            [
+              0.7626666666666667,
+              0.762,
+              0.756
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5433270886450177
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.4988888888888889,
+          "source_worst": 0.33066666666666666,
+          "operator_stability": 0.014096944515282908,
+          "operator_effect": 0.004017997222642104,
+          "rule_causal_fidelity": 0.24072834849357605,
+          "operator_specificity": -0.005555555555555591,
+          "random_graph_gap": 0.15244444444444438,
+          "separate_graph_avg": 0.6557777777777778,
+          "shared_vs_separate_gap": 0.1568888888888889,
+          "task_acc": [
+            0.53,
+            0.33066666666666666,
+            0.636
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.53,
+              0.5313333333333333,
+              0.5433333333333333
+            ],
+            [
+              0.3353333333333333,
+              0.33066666666666666,
+              0.322
+            ],
+            [
+              0.6406666666666667,
+              0.654,
+              0.636
+            ]
+          ],
+          "eligible": false,
+          "score": 0.563010093020358
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5153333333333333,
+          "source_worst": 0.33,
+          "operator_stability": 0.02609339201201995,
+          "operator_effect": 0.012228324078023434,
+          "rule_causal_fidelity": 0.2876989245414734,
+          "operator_specificity": -0.0030000000000000027,
+          "random_graph_gap": 0.13311111111111107,
+          "separate_graph_avg": 0.646,
+          "shared_vs_separate_gap": 0.1306666666666667,
+          "task_acc": [
+            0.4666666666666667,
+            0.33,
+            0.7493333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4666666666666667,
+              0.4693333333333333,
+              0.4573333333333333
+            ],
+            [
+              0.326,
+              0.33,
+              0.31933333333333336
+            ],
+            [
+              0.768,
+              0.77,
+              0.7493333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.59713837041859
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5095555555555555,
+          "source_worst": 0.3233333333333333,
+          "operator_stability": 0.011774178749571243,
+          "operator_effect": 0.012453208677470684,
+          "rule_causal_fidelity": 0.18481731414794922,
+          "operator_specificity": -0.00622222222222224,
+          "random_graph_gap": 0.12777777777777777,
+          "separate_graph_avg": 0.6022222222222222,
+          "shared_vs_separate_gap": 0.09266666666666667,
+          "task_acc": [
+            0.5,
+            0.3233333333333333,
+            0.7053333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5,
+              0.502,
+              0.5
+            ],
+            [
+              0.32,
+              0.3233333333333333,
+              0.326
+            ],
+            [
+              0.7253333333333334,
+              0.7213333333333334,
+              0.7053333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5678909533237831
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.4197777777777778,
+          "source_worst": 0.27,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.12400387972593307,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.03622222222222221,
+          "separate_graph_avg": 0.43822222222222224,
+          "shared_vs_separate_gap": 0.01844444444444443,
+          "task_acc": [
+            0.37333333333333335,
+            0.27,
+            0.616
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.37333333333333335,
+              0.37333333333333335,
+              0.37333333333333335
+            ],
+            [
+              0.27,
+              0.27,
+              0.27
+            ],
+            [
+              0.616,
+              0.616,
+              0.616
+            ]
+          ],
+          "eligible": false,
+          "score": 0.45970338614000217
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.42288888888888887,
+          "source_worst": 0.2693333333333333,
+          "operator_stability": 0.028194375336170197,
+          "operator_effect": 0.011724980548024178,
+          "rule_causal_fidelity": -0.030351126566529274,
+          "operator_specificity": 0.00788888888888889,
+          "random_graph_gap": 0.04288888888888892,
+          "separate_graph_avg": 0.4235555555555555,
+          "shared_vs_separate_gap": 0.0006666666666666488,
+          "task_acc": [
+            0.366,
+            0.2693333333333333,
+            0.6333333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.366,
+              0.398,
+              0.36533333333333334
+            ],
+            [
+              0.252,
+              0.2693333333333333,
+              0.24933333333333332
+            ],
+            [
+              0.6333333333333333,
+              0.592,
+              0.6333333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.42635007577891154
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.4177777777777778,
+          "source_worst": 0.26466666666666666,
+          "operator_stability": 0.015611005326112112,
+          "operator_effect": 0.01177394762635231,
+          "rule_causal_fidelity": -0.01431915070861578,
+          "operator_specificity": 0.00500000000000006,
+          "random_graph_gap": 0.06288888888888894,
+          "separate_graph_avg": 0.4073333333333333,
+          "shared_vs_separate_gap": -0.010444444444444478,
+          "task_acc": [
+            0.37066666666666664,
+            0.26466666666666666,
+            0.618
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.37066666666666664,
+              0.406,
+              0.38333333333333336
+            ],
+            [
+              0.242,
+              0.26466666666666666,
+              0.25266666666666665
+            ],
+            [
+              0.6426666666666667,
+              0.55,
+              0.618
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4305003469313682
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.434,
+          "source_worst": 0.306,
+          "operator_stability": 0.012340030167251825,
+          "operator_effect": 0.0025140217039734125,
+          "rule_causal_fidelity": 0.31603170931339264,
+          "operator_specificity": 0.019777777777777783,
+          "random_graph_gap": 0.061111111111111116,
+          "separate_graph_avg": 0.43755555555555553,
+          "shared_vs_separate_gap": 0.003555555555555534,
+          "task_acc": [
+            0.3913333333333333,
+            0.306,
+            0.6046666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.3913333333333333,
+              0.38133333333333336,
+              0.3933333333333333
+            ],
+            [
+              0.22666666666666666,
+              0.306,
+              0.294
+            ],
+            [
+              0.6353333333333333,
+              0.5546666666666666,
+              0.6046666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5467999493829471
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.41444444444444445,
+          "source_worst": 0.24533333333333332,
+          "operator_stability": 0.03575207766455909,
+          "operator_effect": 0.012549009794990221,
+          "rule_causal_fidelity": 0.1317008794285357,
+          "operator_specificity": -0.0003333333333332966,
+          "random_graph_gap": 0.029777777777777792,
+          "separate_graph_avg": 0.4335555555555555,
+          "shared_vs_separate_gap": 0.01911111111111108,
+          "task_acc": [
+            0.362,
+            0.24533333333333332,
+            0.636
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.362,
+              0.37533333333333335,
+              0.3626666666666667
+            ],
+            [
+              0.24066666666666667,
+              0.24533333333333332,
+              0.24
+            ],
+            [
+              0.6353333333333333,
+              0.6346666666666667,
+              0.636
+            ]
+          ],
+          "eligible": false,
+          "score": 0.456700393075587
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.42844444444444446,
+          "source_worst": 0.272,
+          "operator_stability": 0.051875814174612365,
+          "operator_effect": 0.012463794089853764,
+          "rule_causal_fidelity": 0.06782890297472477,
+          "operator_specificity": 0.009000000000000008,
+          "random_graph_gap": 0.04822222222222222,
+          "separate_graph_avg": 0.4484444444444444,
+          "shared_vs_separate_gap": 0.019999999999999962,
+          "task_acc": [
+            0.378,
+            0.272,
+            0.6353333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.378,
+              0.39666666666666667,
+              0.37133333333333335
+            ],
+            [
+              0.25333333333333335,
+              0.272,
+              0.252
+            ],
+            [
+              0.6346666666666667,
+              0.6086666666666667,
+              0.6353333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.45824824000589554
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5671111111111111,
+          "source_worst": 0.3273333333333333,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.15857160091400146,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.18244444444444446,
+          "separate_graph_avg": 0.6835555555555556,
+          "shared_vs_separate_gap": 0.11644444444444446,
+          "task_acc": [
+            0.566,
+            0.3273333333333333,
+            0.808
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.566,
+              0.566,
+              0.566
+            ],
+            [
+              0.3273333333333333,
+              0.3273333333333333,
+              0.3273333333333333
+            ],
+            [
+              0.808,
+              0.808,
+              0.808
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6220225913853117
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5442222222222223,
+          "source_worst": 0.328,
+          "operator_stability": 0.0034077350671092668,
+          "operator_effect": 0.011685321728388468,
+          "rule_causal_fidelity": 0.08854173123836517,
+          "operator_specificity": 0.007777777777777883,
+          "random_graph_gap": 0.17488888888888893,
+          "separate_graph_avg": 0.6575555555555556,
+          "shared_vs_separate_gap": 0.11333333333333329,
+          "task_acc": [
+            0.526,
+            0.328,
+            0.7786666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.526,
+              0.51,
+              0.5266666666666666
+            ],
+            [
+              0.328,
+              0.328,
+              0.328
+            ],
+            [
+              0.7786666666666666,
+              0.7473333333333333,
+              0.7786666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5807108731863233
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5611111111111111,
+          "source_worst": 0.35333333333333333,
+          "operator_stability": 0.015123427845537663,
+          "operator_effect": 0.011798448860645294,
+          "rule_causal_fidelity": 0.16379138827323914,
+          "operator_specificity": 0.003555555555555534,
+          "random_graph_gap": 0.20600000000000002,
+          "separate_graph_avg": 0.6668888888888889,
+          "shared_vs_separate_gap": 0.10577777777777775,
+          "task_acc": [
+            0.558,
+            0.35333333333333333,
+            0.772
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.558,
+              0.552,
+              0.5533333333333333
+            ],
+            [
+              0.3486666666666667,
+              0.35333333333333333,
+              0.3506666666666667
+            ],
+            [
+              0.7673333333333333,
+              0.7733333333333333,
+              0.772
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6288027393666242
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5746666666666667,
+          "source_worst": 0.332,
+          "operator_stability": 0.011181063406790296,
+          "operator_effect": 0.004261775795991222,
+          "rule_causal_fidelity": 0.27083976566791534,
+          "operator_specificity": 0.009777777777777774,
+          "random_graph_gap": 0.21399999999999997,
+          "separate_graph_avg": 0.6693333333333333,
+          "shared_vs_separate_gap": 0.09466666666666668,
+          "task_acc": [
+            0.5553333333333333,
+            0.332,
+            0.8366666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5553333333333333,
+              0.5333333333333333,
+              0.5753333333333334
+            ],
+            [
+              0.32466666666666666,
+              0.332,
+              0.3406666666666667
+            ],
+            [
+              0.8146666666666667,
+              0.8006666666666666,
+              0.8366666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6796756405142177
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.568,
+          "source_worst": 0.314,
+          "operator_stability": 0.02124010616292556,
+          "operator_effect": 0.012224752455949783,
+          "rule_causal_fidelity": 0.31556373834609985,
+          "operator_specificity": -0.002777777777777768,
+          "random_graph_gap": 0.20644444444444437,
+          "separate_graph_avg": 0.6442222222222221,
+          "shared_vs_separate_gap": 0.07622222222222219,
+          "task_acc": [
+            0.566,
+            0.314,
+            0.824
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.566,
+              0.5566666666666666,
+              0.5773333333333334
+            ],
+            [
+              0.32266666666666666,
+              0.314,
+              0.32666666666666666
+            ],
+            [
+              0.8226666666666667,
+              0.8186666666666667,
+              0.824
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6872039454833334
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5357777777777778,
+          "source_worst": 0.3433333333333333,
+          "operator_stability": 0.012720062707861265,
+          "operator_effect": 0.012284265210231146,
+          "rule_causal_fidelity": 0.2776893079280853,
+          "operator_specificity": -0.00011111111111106187,
+          "random_graph_gap": 0.15333333333333338,
+          "separate_graph_avg": 0.662,
+          "shared_vs_separate_gap": 0.12622222222222224,
+          "task_acc": [
+            0.52,
+            0.3433333333333333,
+            0.744
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.52,
+              0.5193333333333333,
+              0.5326666666666666
+            ],
+            [
+              0.3453333333333333,
+              0.3433333333333333,
+              0.3406666666666667
+            ],
+            [
+              0.7386666666666667,
+              0.7386666666666667,
+              0.744
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6185172099377381
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5175555555555555,
+          "source_worst": 0.312,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.1747586727142334,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.1413333333333333,
+          "separate_graph_avg": 0.6395555555555555,
+          "shared_vs_separate_gap": 0.122,
+          "task_acc": [
+            0.478,
+            0.312,
+            0.7626666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.478,
+              0.478,
+              0.478
+            ],
+            [
+              0.312,
+              0.312,
+              0.312
+            ],
+            [
+              0.7626666666666667,
+              0.7626666666666667,
+              0.7626666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5686164907031589
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5046666666666667,
+          "source_worst": 0.30266666666666664,
+          "operator_stability": 0.007554124730328719,
+          "operator_effect": 0.011937543749809265,
+          "rule_causal_fidelity": 0.14829044044017792,
+          "operator_specificity": -0.006000000000000005,
+          "random_graph_gap": 0.13,
+          "separate_graph_avg": 0.6662222222222222,
+          "shared_vs_separate_gap": 0.16155555555555545,
+          "task_acc": [
+            0.524,
+            0.30266666666666664,
+            0.6873333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.524,
+              0.5246666666666666,
+              0.528
+            ],
+            [
+              0.30333333333333334,
+              0.30266666666666664,
+              0.308
+            ],
+            [
+              0.7046666666666667,
+              0.6953333333333334,
+              0.6873333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5353555414723026
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5013333333333333,
+          "source_worst": 0.31466666666666665,
+          "operator_stability": 0.013408477883785963,
+          "operator_effect": 0.011915845796465874,
+          "rule_causal_fidelity": 0.14607805013656616,
+          "operator_specificity": -0.006000000000000005,
+          "random_graph_gap": 0.13177777777777772,
+          "separate_graph_avg": 0.6226666666666667,
+          "shared_vs_separate_gap": 0.1213333333333334,
+          "task_acc": [
+            0.514,
+            0.31466666666666665,
+            0.6753333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.514,
+              0.5186666666666667,
+              0.5253333333333333
+            ],
+            [
+              0.31666666666666665,
+              0.31466666666666665,
+              0.31333333333333335
+            ],
+            [
+              0.6846666666666666,
+              0.6853333333333333,
+              0.6753333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5418552363548841
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5022222222222222,
+          "source_worst": 0.35,
+          "operator_stability": 0.02541474997997284,
+          "operator_effect": 0.003964349161833525,
+          "rule_causal_fidelity": 0.25426043570041656,
+          "operator_specificity": -0.012666666666666604,
+          "random_graph_gap": 0.14755555555555555,
+          "separate_graph_avg": 0.6353333333333333,
+          "shared_vs_separate_gap": 0.13311111111111107,
+          "task_acc": [
+            0.572,
+            0.35,
+            0.5846666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.572,
+              0.574,
+              0.566
+            ],
+            [
+              0.3486666666666667,
+              0.35,
+              0.332
+            ],
+            [
+              0.646,
+              0.6226666666666667,
+              0.5846666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5733394497510668
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5237777777777778,
+          "source_worst": 0.34,
+          "operator_stability": 0.024123029472927254,
+          "operator_effect": 0.012231245947380861,
+          "rule_causal_fidelity": 0.24258489906787872,
+          "operator_specificity": -0.00011111111111117289,
+          "random_graph_gap": 0.14400000000000002,
+          "separate_graph_avg": 0.6155555555555555,
+          "shared_vs_separate_gap": 0.09177777777777774,
+          "task_acc": [
+            0.5213333333333333,
+            0.34,
+            0.71
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5213333333333333,
+              0.5126666666666667,
+              0.5213333333333333
+            ],
+            [
+              0.3353333333333333,
+              0.34,
+              0.3273333333333333
+            ],
+            [
+              0.7206666666666667,
+              0.726,
+              0.71
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6052157121680264
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.49266666666666664,
+          "source_worst": 0.32,
+          "operator_stability": 0.03166199754923582,
+          "operator_effect": 0.012426639596621195,
+          "rule_causal_fidelity": 0.0803321972489357,
+          "operator_specificity": -0.0045555555555555904,
+          "random_graph_gap": 0.11266666666666669,
+          "separate_graph_avg": 0.5906666666666667,
+          "shared_vs_separate_gap": 0.09800000000000003,
+          "task_acc": [
+            0.49666666666666665,
+            0.32,
+            0.6613333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.49666666666666665,
+              0.49866666666666665,
+              0.5
+            ],
+            [
+              0.32,
+              0.32,
+              0.32066666666666666
+            ],
+            [
+              0.672,
+              0.672,
+              0.6613333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5149580995586183
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.42111111111111116,
+          "source_worst": 0.27066666666666667,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.13123919069766998,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.0357777777777778,
+          "separate_graph_avg": 0.4431111111111112,
+          "shared_vs_separate_gap": 0.02200000000000002,
+          "task_acc": [
+            0.374,
+            0.27066666666666667,
+            0.6186666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.374,
+              0.374,
+              0.374
+            ],
+            [
+              0.27066666666666667,
+              0.27066666666666667,
+              0.27066666666666667
+            ],
+            [
+              0.6186666666666667,
+              0.6186666666666667,
+              0.6186666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4622073127648566
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.42444444444444446,
+          "source_worst": 0.2693333333333333,
+          "operator_stability": 0.015452036323646704,
+          "operator_effect": 0.011709404177963734,
+          "rule_causal_fidelity": -0.06220737844705582,
+          "operator_specificity": 0.007111111111111124,
+          "random_graph_gap": 0.04400000000000004,
+          "separate_graph_avg": 0.43111111111111117,
+          "shared_vs_separate_gap": 0.00666666666666671,
+          "task_acc": [
+            0.362,
+            0.2693333333333333,
+            0.642
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.362,
+              0.4026666666666667,
+              0.36466666666666664
+            ],
+            [
+              0.252,
+              0.2693333333333333,
+              0.25333333333333335
+            ],
+            [
+              0.642,
+              0.5893333333333334,
+              0.642
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4169297526481334
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.4166666666666667,
+          "source_worst": 0.264,
+          "operator_stability": 0.0039601724517221255,
+          "operator_effect": 0.0117715106656154,
+          "rule_causal_fidelity": 0.02386307902634144,
+          "operator_specificity": 0.0045555555555555904,
+          "random_graph_gap": 0.06688888888888894,
+          "separate_graph_avg": 0.40244444444444444,
+          "shared_vs_separate_gap": -0.014222222222222247,
+          "task_acc": [
+            0.36666666666666664,
+            0.264,
+            0.6193333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.36666666666666664,
+              0.4046666666666667,
+              0.382
+            ],
+            [
+              0.24266666666666667,
+              0.264,
+              0.25133333333333335
+            ],
+            [
+              0.6313333333333333,
+              0.5606666666666666,
+              0.6193333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4417324280855226
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.4222222222222222,
+          "source_worst": 0.296,
+          "operator_stability": 0.04098874796181917,
+          "operator_effect": 0.002536618228380879,
+          "rule_causal_fidelity": 0.2544781416654587,
+          "operator_specificity": 0.008777777777777773,
+          "random_graph_gap": 0.04733333333333334,
+          "separate_graph_avg": 0.4388888888888889,
+          "shared_vs_separate_gap": 0.016666666666666663,
+          "task_acc": [
+            0.39066666666666666,
+            0.296,
+            0.58
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.39066666666666666,
+              0.384,
+              0.386
+            ],
+            [
+              0.23,
+              0.296,
+              0.288
+            ],
+            [
+              0.632,
+              0.5606666666666666,
+              0.58
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5070872685672281
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.418,
+          "source_worst": 0.24133333333333334,
+          "operator_stability": 0.07129187385241191,
+          "operator_effect": 0.012563723139464855,
+          "rule_causal_fidelity": 0.14183025434613228,
+          "operator_specificity": -0.0012222222222222356,
+          "random_graph_gap": 0.033333333333333326,
+          "separate_graph_avg": 0.43733333333333335,
+          "shared_vs_separate_gap": 0.01933333333333337,
+          "task_acc": [
+            0.36666666666666664,
+            0.24133333333333334,
+            0.646
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.36666666666666664,
+              0.376,
+              0.36866666666666664
+            ],
+            [
+              0.24066666666666667,
+              0.24133333333333334,
+              0.24066666666666667
+            ],
+            [
+              0.6453333333333333,
+              0.644,
+              0.646
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4639080792192038
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.42511111111111105,
+          "source_worst": 0.26666666666666666,
+          "operator_stability": 0.10548911616206169,
+          "operator_effect": 0.012459297974904379,
+          "rule_causal_fidelity": 0.03257763711735606,
+          "operator_specificity": 0.00744444444444442,
+          "random_graph_gap": 0.04111111111111099,
+          "separate_graph_avg": 0.4504444444444444,
+          "shared_vs_separate_gap": 0.025333333333333374,
+          "task_acc": [
+            0.37333333333333335,
+            0.26666666666666666,
+            0.6353333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.37333333333333335,
+              0.3953333333333333,
+              0.36533333333333334
+            ],
+            [
+              0.25266666666666665,
+              0.26666666666666666,
+              0.254
+            ],
+            [
+              0.6333333333333333,
+              0.6053333333333333,
+              0.6353333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.44083885249810895
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5795555555555555,
+          "source_worst": 0.354,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.15462732315063477,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.20355555555555543,
+          "separate_graph_avg": 0.6706666666666666,
+          "shared_vs_separate_gap": 0.09111111111111114,
+          "task_acc": [
+            0.5826666666666667,
+            0.354,
+            0.802
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5826666666666667,
+              0.5826666666666667,
+              0.5826666666666667
+            ],
+            [
+              0.354,
+              0.354,
+              0.354
+            ],
+            [
+              0.802,
+              0.802,
+              0.802
+            ]
+          ],
+          "eligible": false,
+          "score": 0.644894863611857
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5535555555555556,
+          "source_worst": 0.30466666666666664,
+          "operator_stability": 0.008678561425767839,
+          "operator_effect": 0.011609748005867004,
+          "rule_causal_fidelity": 0.13962280750274658,
+          "operator_specificity": -0.0012222222222222356,
+          "random_graph_gap": 0.19355555555555554,
+          "separate_graph_avg": 0.6742222222222223,
+          "shared_vs_separate_gap": 0.1206666666666667,
+          "task_acc": [
+            0.5593333333333333,
+            0.30466666666666664,
+            0.7966666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5593333333333333,
+              0.5633333333333334,
+              0.56
+            ],
+            [
+              0.302,
+              0.30466666666666664,
+              0.304
+            ],
+            [
+              0.798,
+              0.8013333333333333,
+              0.7966666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6059405266739262
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5573333333333333,
+          "source_worst": 0.3253333333333333,
+          "operator_stability": 0.008608831403156122,
+          "operator_effect": 0.01196002804984649,
+          "rule_causal_fidelity": 0.1531132012605667,
+          "operator_specificity": 0.0041111111111111764,
+          "random_graph_gap": 0.19111111111111112,
+          "separate_graph_avg": 0.6788888888888889,
+          "shared_vs_separate_gap": 0.12155555555555553,
+          "task_acc": [
+            0.5326666666666666,
+            0.3253333333333333,
+            0.814
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5326666666666666,
+              0.518,
+              0.5253333333333333
+            ],
+            [
+              0.3273333333333333,
+              0.3253333333333333,
+              0.3233333333333333
+            ],
+            [
+              0.818,
+              0.8073333333333333,
+              0.814
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6143179645856471
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.51,
+          "source_worst": 0.32066666666666666,
+          "operator_stability": 0.04254784435033798,
+          "operator_effect": 0.004291856816659371,
+          "rule_causal_fidelity": 0.21032599359750748,
+          "operator_specificity": 0.0024444444444444713,
+          "random_graph_gap": 0.1557777777777778,
+          "separate_graph_avg": 0.6733333333333333,
+          "shared_vs_separate_gap": 0.16333333333333333,
+          "task_acc": [
+            0.5253333333333333,
+            0.32066666666666666,
+            0.684
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5253333333333333,
+              0.496,
+              0.5273333333333333
+            ],
+            [
+              0.3273333333333333,
+              0.32066666666666666,
+              0.32666666666666666
+            ],
+            [
+              0.684,
+              0.684,
+              0.684
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5633037988239733
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5728888888888889,
+          "source_worst": 0.3353333333333333,
+          "operator_stability": 0.01811598256851236,
+          "operator_effect": 0.012193633864323298,
+          "rule_causal_fidelity": 0.27645864337682724,
+          "operator_specificity": 0.003666666666666707,
+          "random_graph_gap": 0.1866666666666667,
+          "separate_graph_avg": 0.6642222222222222,
+          "shared_vs_separate_gap": 0.09133333333333327,
+          "task_acc": [
+            0.566,
+            0.3353333333333333,
+            0.8173333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.566,
+              0.542,
+              0.562
+            ],
+            [
+              0.33666666666666667,
+              0.3353333333333333,
+              0.3413333333333333
+            ],
+            [
+              0.812,
+              0.8213333333333334,
+              0.8173333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6732455269815856
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5488888888888889,
+          "source_worst": 0.3393333333333333,
+          "operator_stability": 0.012459127698093653,
+          "operator_effect": 0.01217623706907034,
+          "rule_causal_fidelity": 0.039403729140758514,
+          "operator_specificity": 0.0003333333333332966,
+          "random_graph_gap": 0.17177777777777775,
+          "separate_graph_avg": 0.6404444444444445,
+          "shared_vs_separate_gap": 0.09155555555555561,
+          "task_acc": [
+            0.5493333333333333,
+            0.3393333333333333,
+            0.758
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5493333333333333,
+              0.544,
+              0.5573333333333333
+            ],
+            [
+              0.3453333333333333,
+              0.3393333333333333,
+              0.3433333333333333
+            ],
+            [
+              0.754,
+              0.7473333333333333,
+              0.758
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5735153320803659
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5042222222222222,
+          "source_worst": 0.32266666666666666,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.1665341705083847,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.11777777777777781,
+          "separate_graph_avg": 0.63,
+          "shared_vs_separate_gap": 0.12577777777777777,
+          "task_acc": [
+            0.49333333333333335,
+            0.32266666666666666,
+            0.6966666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.49333333333333335,
+              0.49333333333333335,
+              0.49333333333333335
+            ],
+            [
+              0.32266666666666666,
+              0.32266666666666666,
+              0.32266666666666666
+            ],
+            [
+              0.6966666666666667,
+              0.6966666666666667,
+              0.6966666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5459824733747378
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5026666666666667,
+          "source_worst": 0.324,
+          "operator_stability": 0.008513856446370482,
+          "operator_effect": 0.011936519605418047,
+          "rule_causal_fidelity": 0.14187119901180267,
+          "operator_specificity": -0.0031111111111110645,
+          "random_graph_gap": 0.12777777777777782,
+          "separate_graph_avg": 0.6466666666666666,
+          "shared_vs_separate_gap": 0.1439999999999999,
+          "task_acc": [
+            0.4826666666666667,
+            0.324,
+            0.7013333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4826666666666667,
+              0.484,
+              0.4846666666666667
+            ],
+            [
+              0.326,
+              0.324,
+              0.32133333333333336
+            ],
+            [
+              0.7073333333333334,
+              0.7113333333333334,
+              0.7013333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5359851709776868
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.49755555555555553,
+          "source_worst": 0.3,
+          "operator_stability": 0.007029084023088217,
+          "operator_effect": 0.011955227392415205,
+          "rule_causal_fidelity": 0.14009061455726624,
+          "operator_specificity": -0.0038888888888889417,
+          "random_graph_gap": 0.12866666666666665,
+          "separate_graph_avg": 0.6442222222222223,
+          "shared_vs_separate_gap": 0.14666666666666672,
+          "task_acc": [
+            0.486,
+            0.3,
+            0.7066666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.486,
+              0.476,
+              0.4886666666666667
+            ],
+            [
+              0.3006666666666667,
+              0.3,
+              0.30466666666666664
+            ],
+            [
+              0.7166666666666667,
+              0.722,
+              0.7066666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5297038018093754
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5042222222222222,
+          "source_worst": 0.326,
+          "operator_stability": 0.009981354077657064,
+          "operator_effect": 0.003944058204069734,
+          "rule_causal_fidelity": 0.2710544466972351,
+          "operator_specificity": -0.004888888888888943,
+          "random_graph_gap": 0.134,
+          "separate_graph_avg": 0.638,
+          "shared_vs_separate_gap": 0.13377777777777777,
+          "task_acc": [
+            0.4673333333333333,
+            0.326,
+            0.7193333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4673333333333333,
+              0.468,
+              0.4746666666666667
+            ],
+            [
+              0.3313333333333333,
+              0.326,
+              0.33
+            ],
+            [
+              0.7273333333333334,
+              0.7233333333333334,
+              0.7193333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5787634982953365
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5246666666666666,
+          "source_worst": 0.30666666666666664,
+          "operator_stability": 0.04133937523389856,
+          "operator_effect": 0.01226786927630504,
+          "rule_causal_fidelity": 0.2955167442560196,
+          "operator_specificity": -0.0007777777777778772,
+          "random_graph_gap": 0.15377777777777774,
+          "separate_graph_avg": 0.6268888888888888,
+          "shared_vs_separate_gap": 0.10222222222222221,
+          "task_acc": [
+            0.524,
+            0.30666666666666664,
+            0.7433333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.524,
+              0.5146666666666667,
+              0.5293333333333333
+            ],
+            [
+              0.30333333333333334,
+              0.30666666666666664,
+              0.30133333333333334
+            ],
+            [
+              0.756,
+              0.748,
+              0.7433333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6216563147793626
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5264444444444445,
+          "source_worst": 0.332,
+          "operator_stability": 0.015494314022362232,
+          "operator_effect": 0.012395036096374193,
+          "rule_causal_fidelity": 0.0944967195391655,
+          "operator_specificity": 0.000888888888888939,
+          "random_graph_gap": 0.15000000000000008,
+          "separate_graph_avg": 0.6186666666666666,
+          "shared_vs_separate_gap": 0.0922222222222221,
+          "task_acc": [
+            0.5206666666666667,
+            0.332,
+            0.7266666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5206666666666667,
+              0.5213333333333333,
+              0.5166666666666667
+            ],
+            [
+              0.33,
+              0.332,
+              0.328
+            ],
+            [
+              0.7266666666666667,
+              0.7306666666666667,
+              0.7266666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.565119382387317
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.41888888888888887,
+          "source_worst": 0.2673333333333333,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.13484551012516022,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.03422222222222221,
+          "separate_graph_avg": 0.44111111111111106,
+          "shared_vs_separate_gap": 0.0222222222222222,
+          "task_acc": [
+            0.36533333333333334,
+            0.2673333333333333,
+            0.624
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.36533333333333334,
+              0.36533333333333334,
+              0.36533333333333334
+            ],
+            [
+              0.2673333333333333,
+              0.2673333333333333,
+              0.2673333333333333
+            ],
+            [
+              0.624,
+              0.624,
+              0.624
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4606225419264369
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.4262222222222222,
+          "source_worst": 0.26866666666666666,
+          "operator_stability": 0.027832835912704468,
+          "operator_effect": 0.011717449563244978,
+          "rule_causal_fidelity": -0.060307033360004425,
+          "operator_specificity": 0.009888888888888836,
+          "random_graph_gap": 0.03888888888888892,
+          "separate_graph_avg": 0.43022222222222223,
+          "shared_vs_separate_gap": 0.0040000000000000036,
+          "task_acc": [
+            0.37,
+            0.26866666666666666,
+            0.64
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.37,
+              0.402,
+              0.366
+            ],
+            [
+              0.24933333333333332,
+              0.26866666666666666,
+              0.24666666666666667
+            ],
+            [
+              0.642,
+              0.592,
+              0.64
+            ]
+          ],
+          "eligible": false,
+          "score": 0.41936217409315213
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.418,
+          "source_worst": 0.266,
+          "operator_stability": 0.01820814221476515,
+          "operator_effect": 0.011754803669949373,
+          "rule_causal_fidelity": -0.020304430276155472,
+          "operator_specificity": 0.004444444444444362,
+          "random_graph_gap": 0.06355555555555548,
+          "separate_graph_avg": 0.40711111111111115,
+          "shared_vs_separate_gap": -0.010888888888888837,
+          "task_acc": [
+            0.36466666666666664,
+            0.266,
+            0.6233333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.36466666666666664,
+              0.4013333333333333,
+              0.38
+            ],
+            [
+              0.24466666666666667,
+              0.266,
+              0.25333333333333335
+            ],
+            [
+              0.6386666666666667,
+              0.5633333333333334,
+              0.6233333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4289518914676456
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.42733333333333334,
+          "source_worst": 0.3006666666666667,
+          "operator_stability": 0.026850178527335327,
+          "operator_effect": 0.002507967253526052,
+          "rule_causal_fidelity": 0.3149638921022415,
+          "operator_specificity": 0.0145555555555556,
+          "random_graph_gap": 0.058888888888888935,
+          "separate_graph_avg": 0.43955555555555553,
+          "shared_vs_separate_gap": 0.01222222222222219,
+          "task_acc": [
+            0.38866666666666666,
+            0.3006666666666667,
+            0.5926666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.38866666666666666,
+              0.378,
+              0.38533333333333336
+            ],
+            [
+              0.23533333333333334,
+              0.3006666666666667,
+              0.2886666666666667
+            ],
+            [
+              0.6333333333333333,
+              0.556,
+              0.5926666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5357842516075901
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.4186666666666667,
+          "source_worst": 0.24533333333333332,
+          "operator_stability": 0.021523635368794203,
+          "operator_effect": 0.012539811432361603,
+          "rule_causal_fidelity": 0.14776202570647,
+          "operator_specificity": 0.0011111111111111738,
+          "random_graph_gap": 0.036888888888888915,
+          "separate_graph_avg": 0.43177777777777776,
+          "shared_vs_separate_gap": 0.013111111111111073,
+          "task_acc": [
+            0.37,
+            0.24533333333333332,
+            0.6406666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.37,
+              0.37533333333333335,
+              0.37066666666666664
+            ],
+            [
+              0.242,
+              0.24533333333333332,
+              0.242
+            ],
+            [
+              0.64,
+              0.6353333333333333,
+              0.6406666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4693784683156842
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.4266666666666667,
+          "source_worst": 0.26866666666666666,
+          "operator_stability": 0.033159647757808365,
+          "operator_effect": 0.012463098081449667,
+          "rule_causal_fidelity": -0.03097914857789874,
+          "operator_specificity": 0.00888888888888889,
+          "random_graph_gap": 0.04533333333333334,
+          "separate_graph_avg": 0.4477777777777778,
+          "shared_vs_separate_gap": 0.02111111111111108,
+          "task_acc": [
+            0.378,
+            0.26866666666666666,
+            0.6333333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.378,
+              0.392,
+              0.36933333333333335
+            ],
+            [
+              0.25866666666666666,
+              0.26866666666666666,
+              0.24666666666666667
+            ],
+            [
+              0.6306666666666667,
+              0.6093333333333333,
+              0.6333333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.42580016458329234
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.22666666666666666,
+        "dart_zero": 0.14333333333333334,
+        "dart_adapted": 0.16266666666666665,
+        "operator_permutation_control": 0.144,
+        "mlp_control": 0.45266666666666666,
+        "gain_zero": -8.333333333333332,
+        "gain_adapt": -6.4,
+        "vs_mlp_adapt": -29.000000000000004,
+        "operator_state": {
+          "raw": [
+            -1.0978920459747314,
+            -0.35422903299331665,
+            6.532908936041082e-11,
+            6.532908936041082e-11
+          ]
+        }
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.9993333333333333,
+        "dart_zero": 0.682,
+        "dart_adapted": 0.852,
+        "operator_permutation_control": 0.6833333333333333,
+        "mlp_control": 0.9993333333333333,
+        "gain_zero": -31.733333333333324,
+        "gain_adapt": -14.73333333333333,
+        "vs_mlp_adapt": -14.73333333333333,
+        "operator_state": {
+          "raw": [
+            -1.089277982711792,
+            -0.07058240473270416,
+            6.532908936041082e-11,
+            6.532908936041082e-11
+          ]
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial"
+        ],
+        "operator_mode": "difference",
+        "source_avg": 0.6344444444444445,
+        "source_worst": 0.37066666666666664,
+        "operator_stability": 0.014801223762333393,
+        "operator_effect": 0.004616670620938142,
+        "rule_causal_fidelity": 0.2242165356874466,
+        "operator_specificity": 0.007000000000000006,
+        "random_graph_gap": 0.2164444444444445,
+        "separate_graph_avg": 0.7186666666666667,
+        "shared_vs_separate_gap": 0.0842222222222222,
+        "task_acc": [
+          0.7173333333333334,
+          0.37066666666666664,
+          0.8153333333333334
+        ],
+        "operator_permutation_matrix": [
+          [
+            0.7173333333333334,
+            0.6953333333333334,
+            0.708
+          ],
+          [
+            0.38266666666666665,
+            0.37066666666666664,
+            0.36733333333333335
+          ],
+          [
+            0.7966666666666666,
+            0.8146666666666667,
+            0.8153333333333334
+          ]
+        ],
+        "eligible": false,
+        "score": 0.7280474612993748
+      },
+      "candidates": [
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5897777777777778,
+          "source_worst": 0.38533333333333336,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.10230809450149536,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.16088888888888897,
+          "separate_graph_avg": 0.7040000000000001,
+          "shared_vs_separate_gap": 0.11422222222222222,
+          "task_acc": [
+            0.6433333333333333,
+            0.38533333333333336,
+            0.7406666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6433333333333333,
+              0.6433333333333333,
+              0.6433333333333333
+            ],
+            [
+              0.38533333333333336,
+              0.38533333333333336,
+              0.38533333333333336
+            ],
+            [
+              0.7406666666666667,
+              0.7406666666666667,
+              0.7406666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6229768727948932
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.586,
+          "source_worst": 0.37133333333333335,
+          "operator_stability": 0.009185871206379185,
+          "operator_effect": 0.011602908993760744,
+          "rule_causal_fidelity": 0.14843353629112244,
+          "operator_specificity": 0.017555555555555546,
+          "random_graph_gap": 0.1508888888888888,
+          "separate_graph_avg": 0.6948888888888889,
+          "shared_vs_separate_gap": 0.10888888888888892,
+          "task_acc": [
+            0.6593333333333333,
+            0.37133333333333335,
+            0.7273333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6593333333333333,
+              0.6493333333333333,
+              0.626
+            ],
+            [
+              0.37733333333333335,
+              0.37133333333333335,
+              0.3486666666666667
+            ],
+            [
+              0.7,
+              0.7093333333333334,
+              0.7273333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6379993861252895
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5553333333333333,
+          "source_worst": 0.3426666666666667,
+          "operator_stability": 0.007437722447017829,
+          "operator_effect": 0.011500691063702106,
+          "rule_causal_fidelity": 0.15241123735904694,
+          "operator_specificity": 0.016666666666666607,
+          "random_graph_gap": 0.12822222222222218,
+          "separate_graph_avg": 0.7084444444444444,
+          "shared_vs_separate_gap": 0.1531111111111111,
+          "task_acc": [
+            0.648,
+            0.3426666666666667,
+            0.6753333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.648,
+              0.6433333333333333,
+              0.6206666666666667
+            ],
+            [
+              0.3486666666666667,
+              0.3426666666666667,
+              0.31466666666666665
+            ],
+            [
+              0.6486666666666666,
+              0.656,
+              0.6753333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5915662526450471
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.6344444444444445,
+          "source_worst": 0.37066666666666664,
+          "operator_stability": 0.014801223762333393,
+          "operator_effect": 0.004616670620938142,
+          "rule_causal_fidelity": 0.2242165356874466,
+          "operator_specificity": 0.007000000000000006,
+          "random_graph_gap": 0.2164444444444445,
+          "separate_graph_avg": 0.7186666666666667,
+          "shared_vs_separate_gap": 0.0842222222222222,
+          "task_acc": [
+            0.7173333333333334,
+            0.37066666666666664,
+            0.8153333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.7173333333333334,
+              0.6953333333333334,
+              0.708
+            ],
+            [
+              0.38266666666666665,
+              0.37066666666666664,
+              0.36733333333333335
+            ],
+            [
+              0.7966666666666666,
+              0.8146666666666667,
+              0.8153333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.7280474612993748
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.6013333333333334,
+          "source_worst": 0.36733333333333335,
+          "operator_stability": 0.009155121321479479,
+          "operator_effect": 0.012278539749483267,
+          "rule_causal_fidelity": 0.3060457706451416,
+          "operator_specificity": 0.00033333333333340764,
+          "random_graph_gap": 0.18155555555555558,
+          "separate_graph_avg": 0.7062222222222223,
+          "shared_vs_separate_gap": 0.10488888888888892,
+          "task_acc": [
+            0.676,
+            0.36733333333333335,
+            0.7606666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.676,
+              0.6773333333333333,
+              0.6786666666666666
+            ],
+            [
+              0.37,
+              0.36733333333333335,
+              0.36533333333333334
+            ],
+            [
+              0.7566666666666667,
+              0.758,
+              0.7606666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.7050788454892984
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.49333333333333335,
+          "source_worst": 0.3466666666666667,
+          "operator_stability": 0.008171962884565195,
+          "operator_effect": 0.012143198090294996,
+          "rule_causal_fidelity": 0.35124722123146057,
+          "operator_specificity": 0.00033333333333340764,
+          "random_graph_gap": 0.061111111111111116,
+          "separate_graph_avg": 0.638,
+          "shared_vs_separate_gap": 0.14466666666666667,
+          "task_acc": [
+            0.582,
+            0.3466666666666667,
+            0.5513333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.582,
+              0.568,
+              0.5606666666666666
+            ],
+            [
+              0.3546666666666667,
+              0.3466666666666667,
+              0.3413333333333333
+            ],
+            [
+              0.5706666666666667,
+              0.5626666666666666,
+              0.5513333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5705634238607602
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5333333333333333,
+          "source_worst": 0.3253333333333333,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.10437741875648499,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.09799999999999998,
+          "separate_graph_avg": 0.6693333333333333,
+          "shared_vs_separate_gap": 0.136,
+          "task_acc": [
+            0.6293333333333333,
+            0.3253333333333333,
+            0.6453333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6293333333333333,
+              0.6293333333333333,
+              0.6293333333333333
+            ],
+            [
+              0.3253333333333333,
+              0.3253333333333333,
+              0.3253333333333333
+            ],
+            [
+              0.6453333333333333,
+              0.6453333333333333,
+              0.6453333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5489465589602788
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5202222222222223,
+          "source_worst": 0.35333333333333333,
+          "operator_stability": 0.011247703495124975,
+          "operator_effect": 0.011716685257852077,
+          "rule_causal_fidelity": 0.10936938971281052,
+          "operator_specificity": -0.0022222222222222365,
+          "random_graph_gap": 0.09422222222222226,
+          "separate_graph_avg": 0.666,
+          "shared_vs_separate_gap": 0.14577777777777778,
+          "task_acc": [
+            0.6266666666666667,
+            0.35333333333333333,
+            0.5806666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6266666666666667,
+              0.626,
+              0.6206666666666667
+            ],
+            [
+              0.35333333333333333,
+              0.35333333333333333,
+              0.3433333333333333
+            ],
+            [
+              0.5986666666666667,
+              0.5926666666666667,
+              0.5806666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5351460974802988
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5446666666666666,
+          "source_worst": 0.36666666666666664,
+          "operator_stability": 0.0033624692587181926,
+          "operator_effect": 0.011680198833346367,
+          "rule_causal_fidelity": 0.11944974958896637,
+          "operator_specificity": 0.0024444444444443603,
+          "random_graph_gap": 0.11955555555555558,
+          "separate_graph_avg": 0.6646666666666666,
+          "shared_vs_separate_gap": 0.12,
+          "task_acc": [
+            0.62,
+            0.36666666666666664,
+            0.6473333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.62,
+              0.6173333333333333,
+              0.6046666666666667
+            ],
+            [
+              0.36933333333333335,
+              0.36666666666666664,
+              0.366
+            ],
+            [
+              0.6493333333333333,
+              0.6466666666666666,
+              0.6473333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5765536213683585
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5322222222222223,
+          "source_worst": 0.354,
+          "operator_stability": 0.008879329854001602,
+          "operator_effect": 0.004335645275811355,
+          "rule_causal_fidelity": 0.22409352660179138,
+          "operator_specificity": 0.028444444444444494,
+          "random_graph_gap": 0.13177777777777783,
+          "separate_graph_avg": 0.6782222222222222,
+          "shared_vs_separate_gap": 0.1459999999999999,
+          "task_acc": [
+            0.574,
+            0.354,
+            0.6686666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.574,
+              0.5446666666666666,
+              0.49933333333333335
+            ],
+            [
+              0.368,
+              0.354,
+              0.33066666666666666
+            ],
+            [
+              0.63,
+              0.65,
+              0.6686666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5974561825496869
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5277777777777778,
+          "source_worst": 0.352,
+          "operator_stability": 0.004675277896846334,
+          "operator_effect": 0.012144010824461779,
+          "rule_causal_fidelity": 0.2652330696582794,
+          "operator_specificity": 0.000888888888888939,
+          "random_graph_gap": 0.10533333333333333,
+          "separate_graph_avg": 0.6557777777777778,
+          "shared_vs_separate_gap": 0.128,
+          "task_acc": [
+            0.5873333333333334,
+            0.352,
+            0.644
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5873333333333334,
+              0.5806666666666667,
+              0.5793333333333334
+            ],
+            [
+              0.35733333333333334,
+              0.352,
+              0.352
+            ],
+            [
+              0.646,
+              0.646,
+              0.644
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5975248558544864
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5168888888888888,
+          "source_worst": 0.352,
+          "operator_stability": 0.009471137852718433,
+          "operator_effect": 0.012380649956564108,
+          "rule_causal_fidelity": 0.29390548169612885,
+          "operator_specificity": 0.0032222222222222374,
+          "random_graph_gap": 0.08977777777777768,
+          "separate_graph_avg": 0.6133333333333334,
+          "shared_vs_separate_gap": 0.09644444444444455,
+          "task_acc": [
+            0.608,
+            0.352,
+            0.5906666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.608,
+              0.606,
+              0.5966666666666667
+            ],
+            [
+              0.35133333333333333,
+              0.352,
+              0.3453333333333333
+            ],
+            [
+              0.5926666666666667,
+              0.59,
+              0.5906666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5998565197801009
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.41844444444444445,
+          "source_worst": 0.342,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.07620134949684143,
+          "operator_specificity": 0.0,
+          "random_graph_gap": -0.008222222222222242,
+          "separate_graph_avg": 0.4328888888888889,
+          "shared_vs_separate_gap": 0.014444444444444426,
+          "task_acc": [
+            0.45466666666666666,
+            0.342,
+            0.45866666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.45466666666666666,
+              0.45466666666666666,
+              0.45466666666666666
+            ],
+            [
+              0.342,
+              0.342,
+              0.342
+            ],
+            [
+              0.45866666666666667,
+              0.45866666666666667,
+              0.45866666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4339181826268302
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.414,
+          "source_worst": 0.3546666666666667,
+          "operator_stability": 0.03366404368231694,
+          "operator_effect": 0.011447121078769365,
+          "rule_causal_fidelity": 0.08632971346378326,
+          "operator_specificity": -0.0006666666666667043,
+          "random_graph_gap": -0.0040000000000000036,
+          "separate_graph_avg": 0.4268888888888889,
+          "shared_vs_separate_gap": 0.012888888888888894,
+          "task_acc": [
+            0.45,
+            0.3546666666666667,
+            0.43733333333333335
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.45,
+              0.45466666666666666,
+              0.416
+            ],
+            [
+              0.3526666666666667,
+              0.3546666666666667,
+              0.3373333333333333
+            ],
+            [
+              0.4613333333333333,
+              0.466,
+              0.43733333333333335
+            ]
+          ],
+          "eligible": false,
+          "score": 0.43550709331206144
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.39111111111111113,
+          "source_worst": 0.35733333333333334,
+          "operator_stability": 0.00700870940151314,
+          "operator_effect": 0.011696500393251577,
+          "rule_causal_fidelity": 0.1358373761177063,
+          "operator_specificity": -0.005777777777777715,
+          "random_graph_gap": -0.019555555555555548,
+          "separate_graph_avg": 0.3397777777777778,
+          "shared_vs_separate_gap": -0.05133333333333334,
+          "task_acc": [
+            0.4,
+            0.35733333333333334,
+            0.416
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4,
+              0.424,
+              0.332
+            ],
+            [
+              0.35333333333333333,
+              0.35733333333333334,
+              0.3293333333333333
+            ],
+            [
+              0.4693333333333333,
+              0.47333333333333333,
+              0.416
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4255634656720775
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.39866666666666667,
+          "source_worst": 0.352,
+          "operator_stability": 0.02533338141317169,
+          "operator_effect": 0.0025469934723029533,
+          "rule_causal_fidelity": 0.18054411187767982,
+          "operator_specificity": -0.0013333333333332975,
+          "random_graph_gap": -0.03466666666666668,
+          "separate_graph_avg": 0.3593333333333333,
+          "shared_vs_separate_gap": -0.03933333333333339,
+          "task_acc": [
+            0.438,
+            0.352,
+            0.406
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.438,
+              0.418,
+              0.37
+            ],
+            [
+              0.34933333333333333,
+              0.352,
+              0.32066666666666666
+            ],
+            [
+              0.462,
+              0.48,
+              0.406
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4424919492508161
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.42088888888888887,
+          "source_worst": 0.3453333333333333,
+          "operator_stability": 0.043915826827287674,
+          "operator_effect": 0.012496153824031353,
+          "rule_causal_fidelity": 0.2640710175037384,
+          "operator_specificity": -0.00033333333333335213,
+          "random_graph_gap": 0.0044444444444444176,
+          "separate_graph_avg": 0.42711111111111116,
+          "shared_vs_separate_gap": 0.006222222222222296,
+          "task_acc": [
+            0.45866666666666667,
+            0.3453333333333333,
+            0.45866666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.45866666666666667,
+              0.4573333333333333,
+              0.464
+            ],
+            [
+              0.3453333333333333,
+              0.3453333333333333,
+              0.346
+            ],
+            [
+              0.458,
+              0.45666666666666667,
+              0.45866666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4997368394358373
+        },
+        {
+          "motif": "sequential",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.4242222222222222,
+          "source_worst": 0.3466666666666667,
+          "operator_stability": 0.06773397877501945,
+          "operator_effect": 0.012425797991454601,
+          "rule_causal_fidelity": 0.25979188829660416,
+          "operator_specificity": 0.0005555555555555869,
+          "random_graph_gap": 0.0006666666666667043,
+          "separate_graph_avg": 0.43133333333333335,
+          "shared_vs_separate_gap": 0.007111111111111124,
+          "task_acc": [
+            0.4633333333333333,
+            0.3466666666666667,
+            0.46266666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4633333333333333,
+              0.46,
+              0.46266666666666667
+            ],
+            [
+              0.3413333333333333,
+              0.3466666666666667,
+              0.3373333333333333
+            ],
+            [
+              0.464,
+              0.4766666666666667,
+              0.46266666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5008314361876994
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5557777777777778,
+          "source_worst": 0.368,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.08930671215057373,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.1213333333333334,
+          "separate_graph_avg": 0.6928888888888888,
+          "shared_vs_separate_gap": 0.13711111111111096,
+          "task_acc": [
+            0.5606666666666666,
+            0.368,
+            0.7386666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5606666666666666,
+              0.5606666666666666,
+              0.5606666666666666
+            ],
+            [
+              0.368,
+              0.368,
+              0.368
+            ],
+            [
+              0.7386666666666667,
+              0.7386666666666667,
+              0.7386666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5694653469785056
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5366666666666666,
+          "source_worst": 0.37733333333333335,
+          "operator_stability": 0.006786787261565526,
+          "operator_effect": 0.01142251119017601,
+          "rule_causal_fidelity": 0.13055352866649628,
+          "operator_specificity": 0.02055555555555555,
+          "random_graph_gap": 0.1111111111111111,
+          "separate_graph_avg": 0.7255555555555556,
+          "shared_vs_separate_gap": 0.188888888888889,
+          "task_acc": [
+            0.6153333333333333,
+            0.37733333333333335,
+            0.6173333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6153333333333333,
+              0.5653333333333334,
+              0.558
+            ],
+            [
+              0.37933333333333336,
+              0.37733333333333335,
+              0.372
+            ],
+            [
+              0.6033333333333334,
+              0.6186666666666667,
+              0.6173333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5540805463895864
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5871111111111111,
+          "source_worst": 0.36933333333333335,
+          "operator_stability": 0.004197889473289251,
+          "operator_effect": 0.011800104131301245,
+          "rule_causal_fidelity": 0.12729418277740479,
+          "operator_specificity": 0.018333333333333424,
+          "random_graph_gap": 0.17288888888888893,
+          "separate_graph_avg": 0.7262222222222222,
+          "shared_vs_separate_gap": 0.13911111111111107,
+          "task_acc": [
+            0.6726666666666666,
+            0.36933333333333335,
+            0.7193333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6726666666666666,
+              0.6586666666666666,
+              0.6373333333333333
+            ],
+            [
+              0.37866666666666665,
+              0.36933333333333335,
+              0.3413333333333333
+            ],
+            [
+              0.6886666666666666,
+              0.708,
+              0.7193333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6309371593418056
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5913333333333334,
+          "source_worst": 0.3546666666666667,
+          "operator_stability": 0.013890939764678478,
+          "operator_effect": 0.004541502955059211,
+          "rule_causal_fidelity": 0.22740259766578674,
+          "operator_specificity": 0.010777777777777775,
+          "random_graph_gap": 0.17822222222222223,
+          "separate_graph_avg": 0.7095555555555556,
+          "shared_vs_separate_gap": 0.11822222222222223,
+          "task_acc": [
+            0.67,
+            0.3546666666666667,
+            0.7493333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.67,
+              0.6446666666666667,
+              0.6506666666666666
+            ],
+            [
+              0.358,
+              0.3546666666666667,
+              0.3446666666666667
+            ],
+            [
+              0.7413333333333333,
+              0.744,
+              0.7493333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6687697825207728
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5706666666666668,
+          "source_worst": 0.36,
+          "operator_stability": 0.005779770823816459,
+          "operator_effect": 0.012322896470626196,
+          "rule_causal_fidelity": 0.2881341427564621,
+          "operator_specificity": 0.004777777777777881,
+          "random_graph_gap": 0.13733333333333342,
+          "separate_graph_avg": 0.7006666666666667,
+          "shared_vs_separate_gap": 0.1299999999999999,
+          "task_acc": [
+            0.684,
+            0.36,
+            0.668
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.684,
+              0.6666666666666666,
+              0.678
+            ],
+            [
+              0.35933333333333334,
+              0.36,
+              0.35733333333333334
+            ],
+            [
+              0.674,
+              0.66,
+              0.668
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6528231217419771
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5784444444444444,
+          "source_worst": 0.3526666666666667,
+          "operator_stability": 0.008831217729796966,
+          "operator_effect": 0.012311475041011969,
+          "rule_causal_fidelity": 0.3427378386259079,
+          "operator_specificity": 0.0031111111111110645,
+          "random_graph_gap": 0.14933333333333326,
+          "separate_graph_avg": 0.6584444444444445,
+          "shared_vs_separate_gap": 0.08000000000000007,
+          "task_acc": [
+            0.7,
+            0.3526666666666667,
+            0.6826666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.7,
+              0.6993333333333334,
+              0.702
+            ],
+            [
+              0.35133333333333333,
+              0.3526666666666667,
+              0.348
+            ],
+            [
+              0.672,
+              0.6793333333333333,
+              0.6826666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6920636283994797
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5208888888888888,
+          "source_worst": 0.3293333333333333,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.08713359385728836,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.08266666666666661,
+          "separate_graph_avg": 0.6411111111111111,
+          "shared_vs_separate_gap": 0.12022222222222223,
+          "task_acc": [
+            0.6206666666666667,
+            0.3293333333333333,
+            0.6126666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6206666666666667,
+              0.6206666666666667,
+              0.6206666666666667
+            ],
+            [
+              0.3293333333333333,
+              0.3293333333333333,
+              0.3293333333333333
+            ],
+            [
+              0.6126666666666667,
+              0.6126666666666667,
+              0.6126666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5314400781571864
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5148888888888888,
+          "source_worst": 0.32133333333333336,
+          "operator_stability": 0.005661833332851529,
+          "operator_effect": 0.011736416878799597,
+          "rule_causal_fidelity": 0.12879709899425507,
+          "operator_specificity": 0.0067777777777777715,
+          "random_graph_gap": 0.08688888888888885,
+          "separate_graph_avg": 0.6713333333333334,
+          "shared_vs_separate_gap": 0.1564444444444446,
+          "task_acc": [
+            0.5866666666666667,
+            0.32133333333333336,
+            0.6366666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5866666666666667,
+              0.588,
+              0.5713333333333334
+            ],
+            [
+              0.32266666666666666,
+              0.32133333333333336,
+              0.31666666666666665
+            ],
+            [
+              0.622,
+              0.628,
+              0.6366666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5333940366745409
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5215555555555556,
+          "source_worst": 0.3473333333333333,
+          "operator_stability": 0.008959401786948243,
+          "operator_effect": 0.011718079137305418,
+          "rule_causal_fidelity": 0.11873851716518402,
+          "operator_specificity": 0.012222222222222245,
+          "random_graph_gap": 0.09400000000000003,
+          "separate_graph_avg": 0.6622222222222222,
+          "shared_vs_separate_gap": 0.1406666666666666,
+          "task_acc": [
+            0.6093333333333333,
+            0.3473333333333333,
+            0.608
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6093333333333333,
+              0.59,
+              0.566
+            ],
+            [
+              0.354,
+              0.3473333333333333,
+              0.3353333333333333
+            ],
+            [
+              0.6053333333333333,
+              0.6053333333333333,
+              0.608
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5441237114645955
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5364444444444444,
+          "source_worst": 0.344,
+          "operator_stability": 0.012931991213311752,
+          "operator_effect": 0.004275090837230285,
+          "rule_causal_fidelity": 0.20733099430799484,
+          "operator_specificity": 0.017444444444444374,
+          "random_graph_gap": 0.11222222222222217,
+          "separate_graph_avg": 0.6573333333333333,
+          "shared_vs_separate_gap": 0.12088888888888893,
+          "task_acc": [
+            0.5806666666666667,
+            0.344,
+            0.6846666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5806666666666667,
+              0.546,
+              0.5206666666666667
+            ],
+            [
+              0.3466666666666667,
+              0.344,
+              0.3333333333333333
+            ],
+            [
+              0.6886666666666666,
+              0.6786666666666666,
+              0.6846666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5952794508068718
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5448888888888889,
+          "source_worst": 0.34933333333333333,
+          "operator_stability": 0.008181374132012328,
+          "operator_effect": 0.012176085573931536,
+          "rule_causal_fidelity": 0.24944641441106796,
+          "operator_specificity": 0.0015555555555555323,
+          "random_graph_gap": 0.1091111111111111,
+          "separate_graph_avg": 0.642888888888889,
+          "shared_vs_separate_gap": 0.09800000000000009,
+          "task_acc": [
+            0.5993333333333334,
+            0.34933333333333333,
+            0.686
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5993333333333334,
+              0.5986666666666667,
+              0.5986666666666667
+            ],
+            [
+              0.348,
+              0.34933333333333333,
+              0.3433333333333333
+            ],
+            [
+              0.686,
+              0.6853333333333333,
+              0.686
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6185158927149657
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5148888888888888,
+          "source_worst": 0.35133333333333333,
+          "operator_stability": 0.020693877323841054,
+          "operator_effect": 0.012430960622926554,
+          "rule_causal_fidelity": 0.17783913016319275,
+          "operator_specificity": 0.0009999999999998899,
+          "random_graph_gap": 0.08222222222222214,
+          "separate_graph_avg": 0.6246666666666667,
+          "shared_vs_separate_gap": 0.10977777777777786,
+          "task_acc": [
+            0.5926666666666667,
+            0.35133333333333333,
+            0.6006666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5926666666666667,
+              0.5846666666666667,
+              0.5793333333333334
+            ],
+            [
+              0.35533333333333333,
+              0.35133333333333333,
+              0.35133333333333333
+            ],
+            [
+              0.6066666666666667,
+              0.606,
+              0.6006666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5572663831423967
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.42,
+          "source_worst": 0.3413333333333333,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.07697457075119019,
+          "operator_specificity": 0.0,
+          "random_graph_gap": -0.007111111111111179,
+          "separate_graph_avg": 0.4288888888888889,
+          "shared_vs_separate_gap": 0.00888888888888889,
+          "task_acc": [
+            0.46066666666666667,
+            0.3413333333333333,
+            0.458
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.46066666666666667,
+              0.46066666666666667,
+              0.46066666666666667
+            ],
+            [
+              0.3413333333333333,
+              0.3413333333333333,
+              0.3413333333333333
+            ],
+            [
+              0.458,
+              0.458,
+              0.458
+            ]
+          ],
+          "eligible": false,
+          "score": 0.43737237122535705
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.41244444444444445,
+          "source_worst": 0.3466666666666667,
+          "operator_stability": 0.017031921539455652,
+          "operator_effect": 0.01146680023521185,
+          "rule_causal_fidelity": 0.08111606538295746,
+          "operator_specificity": -0.004666666666666708,
+          "random_graph_gap": -0.011333333333333306,
+          "separate_graph_avg": 0.42088888888888887,
+          "shared_vs_separate_gap": 0.008444444444444421,
+          "task_acc": [
+            0.452,
+            0.3466666666666667,
+            0.43866666666666665
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.452,
+              0.45866666666666667,
+              0.4206666666666667
+            ],
+            [
+              0.3466666666666667,
+              0.3466666666666667,
+              0.334
+            ],
+            [
+              0.4666666666666667,
+              0.476,
+              0.43866666666666665
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4306681729835023
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.39799999999999996,
+          "source_worst": 0.358,
+          "operator_stability": 0.010117155965417624,
+          "operator_effect": 0.011694071193536123,
+          "rule_causal_fidelity": 0.1362118124961853,
+          "operator_specificity": -0.0007777777777777661,
+          "random_graph_gap": -0.020444444444444487,
+          "separate_graph_avg": 0.3433333333333333,
+          "shared_vs_separate_gap": -0.05466666666666664,
+          "task_acc": [
+            0.414,
+            0.358,
+            0.422
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.414,
+              0.432,
+              0.3333333333333333
+            ],
+            [
+              0.35333333333333333,
+              0.358,
+              0.326
+            ],
+            [
+              0.4693333333333333,
+              0.4786666666666667,
+              0.422
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4335920988723304
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.39866666666666667,
+          "source_worst": 0.352,
+          "operator_stability": 0.021036730768779915,
+          "operator_effect": 0.0025606609415262938,
+          "rule_causal_fidelity": 0.2560933977365494,
+          "operator_specificity": -0.0007777777777777661,
+          "random_graph_gap": -0.030888888888888855,
+          "separate_graph_avg": 0.3546666666666667,
+          "shared_vs_separate_gap": -0.043999999999999984,
+          "task_acc": [
+            0.44333333333333336,
+            0.352,
+            0.40066666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.44333333333333336,
+              0.41733333333333333,
+              0.37066666666666664
+            ],
+            [
+              0.352,
+              0.352,
+              0.31666666666666665
+            ],
+            [
+              0.46066666666666667,
+              0.47933333333333333,
+              0.40066666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4662421184621937
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.41933333333333334,
+          "source_worst": 0.3413333333333333,
+          "operator_stability": 0.044517748368283115,
+          "operator_effect": 0.012541500541071096,
+          "rule_causal_fidelity": 0.27449265122413635,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.0011111111111111183,
+          "separate_graph_avg": 0.43022222222222223,
+          "shared_vs_separate_gap": 0.010888888888888892,
+          "task_acc": [
+            0.4553333333333333,
+            0.3413333333333333,
+            0.4613333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4553333333333333,
+              0.45466666666666666,
+              0.45466666666666666
+            ],
+            [
+              0.3413333333333333,
+              0.3413333333333333,
+              0.34
+            ],
+            [
+              0.46266666666666667,
+              0.46266666666666667,
+              0.4613333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4993979093372905
+        },
+        {
+          "motif": "parallel_sum",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.424,
+          "source_worst": 0.3486666666666667,
+          "operator_stability": 0.03369744184116522,
+          "operator_effect": 0.012409227279325327,
+          "rule_causal_fidelity": 0.25531356036663055,
+          "operator_specificity": 0.002222222222222181,
+          "random_graph_gap": 0.0,
+          "separate_graph_avg": 0.42511111111111116,
+          "shared_vs_separate_gap": 0.0011111111111111738,
+          "task_acc": [
+            0.46066666666666667,
+            0.3486666666666667,
+            0.46266666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.46066666666666667,
+              0.4533333333333333,
+              0.45866666666666667
+            ],
+            [
+              0.344,
+              0.3486666666666667,
+              0.3433333333333333
+            ],
+            [
+              0.464,
+              0.4673333333333333,
+              0.46266666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5010132299796657
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5877777777777777,
+          "source_worst": 0.372,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.08352779597043991,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.15044444444444438,
+          "separate_graph_avg": 0.6937777777777777,
+          "shared_vs_separate_gap": 0.10599999999999998,
+          "task_acc": [
+            0.706,
+            0.372,
+            0.6853333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.706,
+              0.706,
+              0.706
+            ],
+            [
+              0.372,
+              0.372,
+              0.372
+            ],
+            [
+              0.6853333333333333,
+              0.6853333333333333,
+              0.6853333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6147872276800208
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5773333333333334,
+          "source_worst": 0.362,
+          "operator_stability": 0.011983510572463274,
+          "operator_effect": 0.01167607835183541,
+          "rule_causal_fidelity": 0.1306992769241333,
+          "operator_specificity": 0.016888888888888953,
+          "random_graph_gap": 0.13666666666666666,
+          "separate_graph_avg": 0.6886666666666666,
+          "shared_vs_separate_gap": 0.11133333333333328,
+          "task_acc": [
+            0.6286666666666667,
+            0.362,
+            0.7413333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6286666666666667,
+              0.6033333333333334,
+              0.596
+            ],
+            [
+              0.358,
+              0.362,
+              0.362
+            ],
+            [
+              0.7086666666666667,
+              0.7346666666666667,
+              0.7413333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6196900837189041
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5788888888888889,
+          "source_worst": 0.37066666666666664,
+          "operator_stability": 0.013680799553791681,
+          "operator_effect": 0.011570917442440987,
+          "rule_causal_fidelity": 0.11147186160087585,
+          "operator_specificity": 0.0067777777777777715,
+          "random_graph_gap": 0.1444444444444445,
+          "separate_graph_avg": 0.6948888888888889,
+          "shared_vs_separate_gap": 0.11599999999999999,
+          "task_acc": [
+            0.64,
+            0.37066666666666664,
+            0.726
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.64,
+              0.6386666666666667,
+              0.632
+            ],
+            [
+              0.366,
+              0.37066666666666664,
+              0.36666666666666664
+            ],
+            [
+              0.7106666666666667,
+              0.7186666666666667,
+              0.726
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6137116405410734
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.564,
+          "source_worst": 0.35733333333333334,
+          "operator_stability": 0.013571794300029675,
+          "operator_effect": 0.004539042556037505,
+          "rule_causal_fidelity": 0.23377303034067154,
+          "operator_specificity": 0.016999999999999904,
+          "random_graph_gap": 0.15533333333333327,
+          "separate_graph_avg": 0.7053333333333334,
+          "shared_vs_separate_gap": 0.14133333333333342,
+          "task_acc": [
+            0.6026666666666667,
+            0.35733333333333334,
+            0.732
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6026666666666667,
+              0.5593333333333333,
+              0.5566666666666666
+            ],
+            [
+              0.366,
+              0.35733333333333334,
+              0.36133333333333334
+            ],
+            [
+              0.7233333333333334,
+              0.7153333333333334,
+              0.732
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6334027654856069
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5826666666666667,
+          "source_worst": 0.36666666666666664,
+          "operator_stability": 0.010306368737171093,
+          "operator_effect": 0.012365078243116537,
+          "rule_causal_fidelity": 0.27093811333179474,
+          "operator_specificity": 0.00033333333333340764,
+          "random_graph_gap": 0.14999999999999997,
+          "separate_graph_avg": 0.7137777777777777,
+          "shared_vs_separate_gap": 0.13111111111111107,
+          "task_acc": [
+            0.672,
+            0.36666666666666664,
+            0.7093333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.672,
+              0.6673333333333333,
+              0.6666666666666666
+            ],
+            [
+              0.37133333333333335,
+              0.36666666666666664,
+              0.366
+            ],
+            [
+              0.7106666666666667,
+              0.712,
+              0.7093333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6614484179582281
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "affine_polynomial",
+            "polynomial"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.5273333333333333,
+          "source_worst": 0.3453333333333333,
+          "operator_stability": 0.0141478863855203,
+          "operator_effect": 0.012264783183733622,
+          "rule_causal_fidelity": 0.2157384157180786,
+          "operator_specificity": 0.005666666666666709,
+          "random_graph_gap": 0.0935555555555555,
+          "separate_graph_avg": 0.6926666666666667,
+          "shared_vs_separate_gap": 0.16533333333333333,
+          "task_acc": [
+            0.5513333333333333,
+            0.3453333333333333,
+            0.6853333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5513333333333333,
+              0.54,
+              0.5346666666666666
+            ],
+            [
+              0.346,
+              0.3453333333333333,
+              0.3473333333333333
+            ],
+            [
+              0.6786666666666666,
+              0.6833333333333333,
+              0.6853333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5682067977485392
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.5162222222222222,
+          "source_worst": 0.35733333333333334,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.12474120408296585,
+          "operator_specificity": 0.0,
+          "random_graph_gap": 0.08777777777777779,
+          "separate_graph_avg": 0.6562222222222222,
+          "shared_vs_separate_gap": 0.1399999999999999,
+          "task_acc": [
+            0.614,
+            0.35733333333333334,
+            0.5773333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.614,
+              0.614,
+              0.614
+            ],
+            [
+              0.35733333333333334,
+              0.35733333333333334,
+              0.35733333333333334
+            ],
+            [
+              0.5773333333333334,
+              0.5773333333333334,
+              0.5773333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5343890278915564
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.5102222222222222,
+          "source_worst": 0.33866666666666667,
+          "operator_stability": 0.007651107696195443,
+          "operator_effect": 0.011676265858113766,
+          "rule_causal_fidelity": 0.11738036572933197,
+          "operator_specificity": 0.004555555555555646,
+          "random_graph_gap": 0.0808888888888889,
+          "separate_graph_avg": 0.6884444444444444,
+          "shared_vs_separate_gap": 0.17822222222222217,
+          "task_acc": [
+            0.6293333333333333,
+            0.33866666666666667,
+            0.5626666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.6293333333333333,
+              0.6186666666666667,
+              0.602
+            ],
+            [
+              0.3446666666666667,
+              0.33866666666666667,
+              0.3273333333333333
+            ],
+            [
+              0.57,
+              0.5713333333333334,
+              0.5626666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5177933273752945
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.5508888888888889,
+          "source_worst": 0.3466666666666667,
+          "operator_stability": 0.004903220726797978,
+          "operator_effect": 0.011701449441413084,
+          "rule_causal_fidelity": 0.0814017802476883,
+          "operator_specificity": 0.005555555555555536,
+          "random_graph_gap": 0.11755555555555552,
+          "separate_graph_avg": 0.6522222222222223,
+          "shared_vs_separate_gap": 0.10133333333333339,
+          "task_acc": [
+            0.61,
+            0.3466666666666667,
+            0.696
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.61,
+              0.61,
+              0.6033333333333334
+            ],
+            [
+              0.3446666666666667,
+              0.3466666666666667,
+              0.33866666666666667
+            ],
+            [
+              0.688,
+              0.6873333333333334,
+              0.696
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5763090848238518
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.5377777777777778,
+          "source_worst": 0.3506666666666667,
+          "operator_stability": 0.02057206630706787,
+          "operator_effect": 0.00423079061632355,
+          "rule_causal_fidelity": 0.24284668266773224,
+          "operator_specificity": 0.007888888888888945,
+          "random_graph_gap": 0.11822222222222228,
+          "separate_graph_avg": 0.6722222222222222,
+          "shared_vs_separate_gap": 0.13444444444444437,
+          "task_acc": [
+            0.5966666666666667,
+            0.3506666666666667,
+            0.666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5966666666666667,
+              0.5793333333333334,
+              0.5633333333333334
+            ],
+            [
+              0.36466666666666664,
+              0.3506666666666667,
+              0.35
+            ],
+            [
+              0.6653333333333333,
+              0.6566666666666666,
+              0.666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.6029830678372128
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.5124444444444445,
+          "source_worst": 0.33,
+          "operator_stability": 0.014300649364789328,
+          "operator_effect": 0.012203499674797058,
+          "rule_causal_fidelity": 0.23903483152389526,
+          "operator_specificity": -0.002666666666666706,
+          "random_graph_gap": 0.07977777777777778,
+          "separate_graph_avg": 0.6333333333333334,
+          "shared_vs_separate_gap": 0.12088888888888893,
+          "task_acc": [
+            0.622,
+            0.33,
+            0.5853333333333334
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.622,
+              0.6226666666666667,
+              0.622
+            ],
+            [
+              0.33,
+              0.33,
+              0.332
+            ],
+            [
+              0.5906666666666667,
+              0.5933333333333334,
+              0.5853333333333334
+            ]
+          ],
+          "eligible": false,
+          "score": 0.5688409744083881
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "low_rank",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.49266666666666664,
+          "source_worst": 0.332,
+          "operator_stability": 0.007862878167846551,
+          "operator_effect": 0.01240249319622914,
+          "rule_causal_fidelity": 0.30374765396118164,
+          "operator_specificity": -0.002666666666666706,
+          "random_graph_gap": 0.06355555555555559,
+          "separate_graph_avg": 0.5713333333333334,
+          "shared_vs_separate_gap": 0.07866666666666672,
+          "task_acc": [
+            0.5853333333333334,
+            0.332,
+            0.5606666666666666
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.5853333333333334,
+              0.5846666666666667,
+              0.578
+            ],
+            [
+              0.33066666666666666,
+              0.332,
+              0.3273333333333333
+            ],
+            [
+              0.5753333333333334,
+              0.576,
+              0.5606666666666666
+            ]
+          ],
+          "eligible": false,
+          "score": 0.575006892390011
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "identity",
+          "source_avg": 0.4222222222222222,
+          "source_worst": 0.3446666666666667,
+          "operator_stability": 0.0,
+          "operator_effect": 0.0,
+          "rule_causal_fidelity": 0.07960003614425659,
+          "operator_specificity": 0.0,
+          "random_graph_gap": -0.0028888888888888298,
+          "separate_graph_avg": 0.4315555555555555,
+          "shared_vs_separate_gap": 0.009333333333333305,
+          "task_acc": [
+            0.4613333333333333,
+            0.3446666666666667,
+            0.46066666666666667
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.4613333333333333,
+              0.4613333333333333,
+              0.4613333333333333
+            ],
+            [
+              0.3446666666666667,
+              0.3446666666666667,
+              0.3446666666666667
+            ],
+            [
+              0.46066666666666667,
+              0.46066666666666667,
+              0.46066666666666667
+            ]
+          ],
+          "eligible": false,
+          "score": 0.44132667750994364
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "scale",
+          "source_avg": 0.41511111111111115,
+          "source_worst": 0.3526666666666667,
+          "operator_stability": 0.01671524536019812,
+          "operator_effect": 0.011451903420190016,
+          "rule_causal_fidelity": 0.09412753582000732,
+          "operator_specificity": -0.0028888888888888298,
+          "random_graph_gap": 0.0006666666666667043,
+          "separate_graph_avg": 0.42333333333333334,
+          "shared_vs_separate_gap": 0.008222222222222186,
+          "task_acc": [
+            0.45466666666666666,
+            0.3526666666666667,
+            0.438
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.45466666666666666,
+              0.4613333333333333,
+              0.43333333333333335
+            ],
+            [
+              0.3433333333333333,
+              0.3526666666666667,
+              0.336
+            ],
+            [
+              0.4646666666666667,
+              0.4693333333333333,
+              0.438
+            ]
+          ],
+          "eligible": false,
+          "score": 0.44073604625903073
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "negate",
+          "source_avg": 0.39622222222222225,
+          "source_worst": 0.3586666666666667,
+          "operator_stability": 0.004071312335630258,
+          "operator_effect": 0.011697596870362759,
+          "rule_causal_fidelity": 0.13866543769836426,
+          "operator_specificity": -0.0015555555555555323,
+          "random_graph_gap": -0.016888888888888898,
+          "separate_graph_avg": 0.34555555555555556,
+          "shared_vs_separate_gap": -0.05066666666666669,
+          "task_acc": [
+            0.402,
+            0.3586666666666667,
+            0.428
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.402,
+              0.4246666666666667,
+              0.332
+            ],
+            [
+              0.3546666666666667,
+              0.3586666666666667,
+              0.328
+            ],
+            [
+              0.4726666666666667,
+              0.4746666666666667,
+              0.428
+            ]
+          ],
+          "eligible": false,
+          "score": 0.43324538195117485
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "difference",
+          "source_avg": 0.3997777777777778,
+          "source_worst": 0.3526666666666667,
+          "operator_stability": 0.01629949112733205,
+          "operator_effect": 0.0025440127744028964,
+          "rule_causal_fidelity": 0.23953600227832794,
+          "operator_specificity": 0.0016666666666667052,
+          "random_graph_gap": -0.029111111111111088,
+          "separate_graph_avg": 0.3564444444444444,
+          "shared_vs_separate_gap": -0.04333333333333339,
+          "task_acc": [
+            0.44333333333333336,
+            0.3526666666666667,
+            0.4033333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.44333333333333336,
+              0.41133333333333333,
+              0.37333333333333335
+            ],
+            [
+              0.3466666666666667,
+              0.3526666666666667,
+              0.31866666666666665
+            ],
+            [
+              0.46266666666666667,
+              0.476,
+              0.4033333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.4634390692663255
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "product",
+          "source_avg": 0.4184444444444444,
+          "source_worst": 0.3373333333333333,
+          "operator_stability": 0.06381940401236837,
+          "operator_effect": 0.01252372811237971,
+          "rule_causal_fidelity": 0.29373493790626526,
+          "operator_specificity": -0.00033333333333335213,
+          "random_graph_gap": -0.0026666666666666505,
+          "separate_graph_avg": 0.4275555555555555,
+          "shared_vs_separate_gap": 0.009111111111111125,
+          "task_acc": [
+            0.45866666666666667,
+            0.3373333333333333,
+            0.4593333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.45866666666666667,
+              0.4573333333333333,
+              0.46
+            ],
+            [
+              0.3393333333333333,
+              0.3373333333333333,
+              0.3406666666666667
+            ],
+            [
+              0.458,
+              0.4573333333333333,
+              0.4593333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.503695707255403
+        },
+        {
+          "motif": "residual_parallel",
+          "nodes": [
+            "polynomial",
+            "diagonal"
+          ],
+          "operator_mode": "mix",
+          "source_avg": 0.4257777777777778,
+          "source_worst": 0.35,
+          "operator_stability": 0.018752869839469593,
+          "operator_effect": 0.012420170940458775,
+          "rule_causal_fidelity": 0.24488909542560577,
+          "operator_specificity": 0.002777777777777768,
+          "random_graph_gap": 0.0026666666666666505,
+          "separate_graph_avg": 0.4304444444444444,
+          "shared_vs_separate_gap": 0.004666666666666597,
+          "task_acc": [
+            0.462,
+            0.35,
+            0.4653333333333333
+          ],
+          "operator_permutation_matrix": [
+            [
+              0.462,
+              0.4553333333333333,
+              0.4613333333333333
+            ],
+            [
+              0.338,
+              0.35,
+              0.342
+            ],
+            [
+              0.464,
+              0.47733333333333333,
+              0.4653333333333333
+            ]
+          ],
+          "eligible": false,
+          "score": 0.49958197649097275
+        }
+      ],
+      "related_holdout": {
+        "task": "sub",
+        "teacher": 0.16533333333333333,
+        "dart_zero": 0.11266666666666666,
+        "dart_adapted": 0.14333333333333334,
+        "operator_permutation_control": 0.12,
+        "mlp_control": 0.41533333333333333,
+        "gain_zero": -5.266666666666667,
+        "gain_adapt": -2.1999999999999993,
+        "vs_mlp_adapt": -27.200000000000003,
+        "operator_state": {
+          "raw": [
+            -1.0573593378067017,
+            -0.492476224899292,
+            6.532908936041082e-11,
+            6.532908936041082e-11
+          ]
+        }
+      },
+      "contrast_holdout": {
+        "task": "sort",
+        "teacher": 0.998,
+        "dart_zero": 0.6113333333333333,
+        "dart_adapted": 0.6946666666666667,
+        "operator_permutation_control": 0.6233333333333333,
+        "mlp_control": 0.998,
+        "gain_zero": -38.66666666666667,
+        "gain_adapt": -30.333333333333336,
+        "vs_mlp_adapt": -30.333333333333336,
+        "operator_state": {
+          "raw": [
+            -1.109940528869629,
+            -0.40108656883239746,
+            6.532908936041082e-11,
+            6.532908936041082e-11
+          ]
+        }
+      }
+    }
+  ],
+  "summary": {
+    "related_holdout": {
+      "sub": {
+        "teacher": 0.196,
+        "dart_zero": 0.128,
+        "dart_adapted": 0.153,
+        "operator_permutation_control": 0.132,
+        "mlp_control": 0.434,
+        "gain_zero": -6.799999999999999,
+        "gain_adapt": -4.3,
+        "vs_mlp_adapt": -28.1
+      }
+    },
+    "contrast_holdout": {
+      "sort": {
+        "teacher": 0.9986666666666666,
+        "dart_zero": 0.6466666666666667,
+        "dart_adapted": 0.7733333333333333,
+        "operator_permutation_control": 0.6533333333333333,
+        "mlp_control": 0.9986666666666666,
+        "gain_zero": -35.199999999999996,
+        "gain_adapt": -22.53333333333333,
+        "vs_mlp_adapt": -22.53333333333333
+      }
+    },
+    "source": {
+      "avg_accuracy": 0.6061111111111112,
+      "avg_operator_stability": 0.013374673047413427,
+      "avg_operator_effect": 0.004479975672438741,
+      "avg_rule_causal_fidelity": 0.24520869553089142,
+      "avg_operator_specificity": 0.008388888888888946,
+      "avg_random_graph_gap": 0.22100000000000006,
+      "avg_separate_graph_accuracy": 0.6881111111111111,
+      "avg_shared_vs_separate_gap": 0.08199999999999996
+    }
+  }
+}
