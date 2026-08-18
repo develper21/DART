@@ -1,0 +1,133 @@
+{
+  "version": "DART-3.1",
+  "parent_version": "DART-3.0",
+  "protocol": {
+    "joint_source_primitive_training": true,
+    "balanced_source_selection": true,
+    "same_state_program_necessity": true,
+    "target_train_validation_test_split": true,
+    "untouched_target_test_for_final_selection": true,
+    "target_program_necessity_on_same_state": true,
+    "deterministic_probe_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.9803333282470703,
+      "dart_zero": 0.2266666665673256,
+      "dart_program": 0.3996666520833969,
+      "program_validation": 0.39250001311302185,
+      "program_permutation_control": 0.1939999982714653,
+      "random_program_control": 0.22166665643453598
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 1.0,
+      "dart_program": 0.299333319067955
+    }
+  },
+  "source": {
+    "avg_balanced_source_score": 0.5101111059387525,
+    "avg_source_mean_accuracy": 0.5238888810078304,
+    "avg_source_worst_accuracy": 0.4963333308696747,
+    "avg_program_source_mean": 0.5374444474776586,
+    "avg_program_source_worst": 0.5166666656732559,
+    "avg_program_necessity": 0.013020833333333332,
+    "avg_target_program_necessity": 0.08984375,
+    "avg_program_length": 1.0
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "motif": "residual_parallel",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial"
+        ],
+        "program": [
+          "shift"
+        ],
+        "source_avg_balanced": 0.5259999930858612,
+        "source_mean_accuracy": 0.5379999876022339,
+        "source_worst_accuracy": 0.5139999985694885,
+        "source_verifier_accuracies": [
+          0.5139999985694885,
+          0.5806666612625122,
+          0.5193333029747009
+        ],
+        "program_source_mean": 0.5560000141461691,
+        "program_source_worst": 0.5393333435058594,
+        "program_source_task_accuracies": [
+          0.5393333435058594,
+          0.5533333420753479,
+          0.5753333568572998
+        ],
+        "program_necessity": 0.005208333333333333,
+        "target_program_necessity": 0.109375
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.9779999852180481,
+          "dart_zero": 0.20800000429153442,
+          "dart_program": 0.39533331990242004,
+          "program_validation": 0.3891666829586029,
+          "program_permutation_control": 0.20266667008399963,
+          "random_program_control": 0.257999986410141
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.2933333218097687
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "motif": "sequential",
+        "nodes": [
+          "affine_polynomial",
+          "polynomial"
+        ],
+        "program": [
+          "scale"
+        ],
+        "source_avg_balanced": 0.4942222187916438,
+        "source_mean_accuracy": 0.5097777744134268,
+        "source_worst_accuracy": 0.47866666316986084,
+        "source_verifier_accuracies": [
+          0.47866666316986084,
+          0.49133333563804626,
+          0.559333324432373
+        ],
+        "program_source_mean": 0.5188888808091482,
+        "program_source_worst": 0.49399998784065247,
+        "program_source_task_accuracies": [
+          0.5246666669845581,
+          0.49399998784065247,
+          0.5379999876022339
+        ],
+        "program_necessity": 0.020833333333333332,
+        "target_program_necessity": 0.0703125
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.9826666712760925,
+          "dart_zero": 0.24533332884311676,
+          "dart_program": 0.4039999842643738,
+          "program_validation": 0.3958333432674408,
+          "program_permutation_control": 0.18533332645893097,
+          "random_program_control": 0.18533332645893097
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 1.0,
+          "dart_program": 0.30533331632614136
+        }
+      }
+    }
+  ]
+}
