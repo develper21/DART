@@ -1,0 +1,96 @@
+{
+  "version": "DART-3.5",
+  "parent_version": "DART-3.4",
+  "protocol": {
+    "structured_law_induction": true,
+    "law_to_program_compilation": true,
+    "discovery_regimes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "untouched_final_regime": "E",
+    "target_test_untouched": true,
+    "deterministic_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.14099999517202377,
+      "dart_zero": 0.029999999329447746,
+      "dart_program": 0.2929999902844429
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 0.11966666579246521,
+      "dart_program": 0.28733332455158234
+    }
+  },
+  "records": [
+    {
+      "seed": 1,
+      "law": {
+        "relation": "sum",
+        "symmetry": "symmetric",
+        "scale": "homogeneous",
+        "offset": "translation_sensitive"
+      },
+      "program": [
+        "negate",
+        "difference"
+      ],
+      "A_to_D": [
+        1.0,
+        1.0,
+        0.9953333139419556,
+        1.0
+      ],
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.11866666376590729,
+          "dart_zero": 0.020666666328907013,
+          "dart_program": 0.20466665923595428
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.12333333492279053,
+          "dart_program": 0.29733332991600037
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "law": {
+        "relation": "sum",
+        "symmetry": "symmetric",
+        "scale": "homogeneous",
+        "offset": "translation_sensitive"
+      },
+      "program": [
+        "negate",
+        "difference"
+      ],
+      "A_to_D": [
+        1.0,
+        1.0,
+        0.9793333411216736,
+        0.9953333139419556
+      ],
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.16333332657814026,
+          "dart_zero": 0.03933333232998848,
+          "dart_program": 0.3813333213329315
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.11599999666213989,
+          "dart_program": 0.2773333191871643
+        }
+      }
+    }
+  ]
+}
