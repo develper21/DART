@@ -1,0 +1,116 @@
+{
+  "version": "DART-3.3",
+  "parent_version": "DART-3.2",
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.5340000092983246,
+      "dart_zero": 0.28733332455158234,
+      "dart_program": 0.041333332657814026,
+      "program_validation_B": 0.8354166746139526,
+      "program_permutation_control": 0.22066666185855865,
+      "random_program_control": 0.4363333210349083
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 0.4176666736602783,
+      "dart_program": 0.3413333296775818
+    }
+  },
+  "source": {
+    "avg_program_necessity": 0.004111111164093018,
+    "avg_program_cf_fidelity": 0.75,
+    "avg_program_length": 2.0
+  },
+  "target_invariance": {
+    "avg_A_accuracy": 0.9766666889190674,
+    "avg_B_accuracy": 0.8354166746139526,
+    "avg_necessity_A": 0.5675000213086605,
+    "avg_necessity_B": 0.6202083341777325,
+    "avg_cf_fidelity_A": 0.6408011949334329,
+    "avg_cf_fidelity_B": 0.6735931480670636,
+    "avg_program_invariance": 0.9244165732307275
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "program": [
+          "difference",
+          "swap"
+        ],
+        "program_length": 2,
+        "target_adaptation_accuracy": 0.9758333563804626,
+        "target_validation_accuracy": 0.8525000214576721,
+        "target_necessity_A": 0.582916684448719,
+        "target_necessity_B": 0.6341666765511036,
+        "target_cf_fidelity_A": 0.6722611178185948,
+        "target_cf_fidelity_B": 0.6750219357086873,
+        "target_program_invariance": 0.9408852850282441,
+        "source_program": [
+          "scale"
+        ]
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.527999997138977,
+          "dart_zero": 0.312666654586792,
+          "dart_program": 0.04066666588187218,
+          "program_validation_B": 0.8525000214576721,
+          "program_permutation_control": 0.21199999749660492,
+          "random_program_control": 0.6433333158493042
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.40533334016799927,
+          "dart_program": 0.3400000035762787
+        }
+      },
+      "source": {
+        "program_necessity": 0.00511111319065094,
+        "program_cf_fidelity": 0.6666666666666666
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "program": [
+          "swap",
+          "difference"
+        ],
+        "program_length": 2,
+        "target_adaptation_accuracy": 0.9775000214576721,
+        "target_validation_accuracy": 0.8183333277702332,
+        "target_necessity_A": 0.552083358168602,
+        "target_necessity_B": 0.6062499918043613,
+        "target_cf_fidelity_A": 0.609341272048271,
+        "target_cf_fidelity_B": 0.6721643604254399,
+        "target_program_invariance": 0.9079478614332109,
+        "source_program": [
+          "scale"
+        ]
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.5400000214576721,
+          "dart_zero": 0.2619999945163727,
+          "dart_program": 0.041999999433755875,
+          "program_validation_B": 0.8183333277702332,
+          "program_permutation_control": 0.2293333262205124,
+          "random_program_control": 0.2293333262205124
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.4300000071525574,
+          "dart_program": 0.3426666557788849
+        }
+      },
+      "source": {
+        "program_necessity": 0.003111109137535095,
+        "program_cf_fidelity": 0.8333333333333334
+      }
+    }
+  ]
+}
