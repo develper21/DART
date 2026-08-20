@@ -1,0 +1,126 @@
+{
+  "version": "DART-3.6",
+  "parent_version": "DART-3.5",
+  "protocol": {
+    "semantic_law_validation": true,
+    "oracle_probes": true,
+    "law_to_program_compilation": true,
+    "discovery_regimes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "untouched_final_regime": "E",
+    "wrong_law_control": true,
+    "random_law_control": true,
+    "target_test_untouched": true,
+    "deterministic_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.14099999517202377,
+      "dart_zero": 0.005666666431352496,
+      "dart_program": 0.28333333134651184,
+      "wrong_law_control": 0.11166666448116302,
+      "random_law_control": 0.15133333206176758
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 0.11966666579246521,
+      "dart_program": 0.30799999833106995
+    }
+  },
+  "law": {
+    "semantic_fidelity": 1.0,
+    "relations": [
+      "difference",
+      "difference"
+    ],
+    "programs": [
+      [
+        "difference",
+        "swap"
+      ],
+      [
+        "difference",
+        "swap"
+      ]
+    ]
+  },
+  "records": [
+    {
+      "seed": 1,
+      "law": {
+        "relation": "difference",
+        "symmetry": "antisymmetric",
+        "scale": "homogeneous",
+        "offset": "translation_invariant",
+        "complexity": 4
+      },
+      "program": [
+        "difference",
+        "swap"
+      ],
+      "semantic_law_fidelity": 1.0,
+      "discovery_A_to_D": [
+        0.9819999933242798,
+        0.9493333101272583,
+        0.9566666483879089,
+        0.9806666374206543
+      ],
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.11866666376590729,
+          "dart_zero": 0.007333333138376474,
+          "dart_program": 0.27666667103767395,
+          "wrong_law_control": 0.09933333098888397,
+          "random_law_control": 0.1653333306312561
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.12333333492279053,
+          "dart_program": 0.3386666774749756
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "law": {
+        "relation": "difference",
+        "symmetry": "antisymmetric",
+        "scale": "homogeneous",
+        "offset": "translation_invariant",
+        "complexity": 4
+      },
+      "program": [
+        "difference",
+        "swap"
+      ],
+      "semantic_law_fidelity": 1.0,
+      "discovery_A_to_D": [
+        0.9773333072662354,
+        0.9166666865348816,
+        0.972000002861023,
+        1.0
+      ],
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.16333332657814026,
+          "dart_zero": 0.003999999724328518,
+          "dart_program": 0.28999999165534973,
+          "wrong_law_control": 0.12399999797344208,
+          "random_law_control": 0.13733333349227905
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.11599999666213989,
+          "dart_program": 0.2773333191871643
+        }
+      }
+    }
+  ]
+}
