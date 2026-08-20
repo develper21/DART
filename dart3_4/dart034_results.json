@@ -1,0 +1,153 @@
+{
+  "version": "DART-3.4",
+  "parent_version": "DART-3.3",
+  "protocol": {
+    "discovery_regimes": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "untouched_final_regime": "E",
+    "joint_source_primitive_training": true,
+    "multi_regime_program_selection": true,
+    "cross_regime_necessity": true,
+    "cross_regime_cf_fidelity": true,
+    "untouched_final_test": true,
+    "deterministic_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher": 0.14366666600108147,
+      "dart_zero": 0.6883333325386047,
+      "dart_program": 0.16833333671092987,
+      "program_permutation_control": 0.08433333225548267,
+      "random_program_control": 0.09533333033323288
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher": 0.11266666650772095,
+      "dart_program": 0.3163333237171173
+    }
+  },
+  "source": {
+    "avg_program_necessity": 0.007666665439804396,
+    "avg_program_cf_fidelity": 0.3333333333333333
+  },
+  "target_multi_regime": {
+    "avg_program_invariance": 0.7083256256458622,
+    "avg_A": 0.9916666746139526,
+    "avg_B": 0.9620833396911621,
+    "avg_C": 0.9583333432674408,
+    "avg_D": 0.9879166781902313,
+    "avg_necessity": 0.802708336210344,
+    "avg_cf_fidelity": 0.43074654259597267
+  },
+  "records": [
+    {
+      "seed": 1,
+      "winner": {
+        "program": [
+          "difference",
+          "swap"
+        ],
+        "program_length": 2,
+        "target_regime_accuracy_A_to_D": [
+          0.9833333492279053,
+          0.9424999952316284,
+          0.9333333373069763,
+          0.9850000143051147
+        ],
+        "target_necessity_A_to_D": [
+          0.6262499988079071,
+          0.7979166600853205,
+          0.8266666661947966,
+          0.9291666797362268
+        ],
+        "target_cf_fidelity_A_to_D": [
+          0.6812095753277012,
+          0.5720454194179944,
+          0.26823339960884307,
+          0.13577235808923632
+        ],
+        "program_invariance": 0.6999931416116922,
+        "source_program": [
+          "identity",
+          "shift"
+        ]
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.12266666442155838,
+          "dart_zero": 0.6033333539962769,
+          "dart_program": 0.1393333375453949,
+          "program_permutation_control": 0.10866666585206985,
+          "random_program_control": 0.07333333045244217
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.11666666716337204,
+          "dart_program": 0.3179999887943268
+        }
+      },
+      "source": {
+        "program_necessity": 0.00022222225864728293,
+        "program_cf_fidelity": 0.6666666666666666
+      }
+    },
+    {
+      "seed": 2,
+      "winner": {
+        "program": [
+          "negate",
+          "difference"
+        ],
+        "program_length": 2,
+        "target_regime_accuracy_A_to_D": [
+          1.0,
+          0.9816666841506958,
+          0.9833333492279053,
+          0.9908333420753479
+        ],
+        "target_necessity_A_to_D": [
+          0.6187499910593033,
+          0.8191666752099991,
+          0.8679166762158275,
+          0.9358333423733711
+        ],
+        "target_cf_fidelity_A_to_D": [
+          0.6601223399658797,
+          0.6320439186558457,
+          0.35103199353293246,
+          0.1455133361693483
+        ],
+        "program_invariance": 0.7166581096800322,
+        "source_program": [
+          "scale",
+          "scale"
+        ]
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher": 0.16466666758060455,
+          "dart_zero": 0.7733333110809326,
+          "dart_program": 0.19733333587646484,
+          "program_permutation_control": 0.05999999865889549,
+          "random_program_control": 0.11733333021402359
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher": 0.10866666585206985,
+          "dart_program": 0.31466665863990784
+        }
+      },
+      "source": {
+        "program_necessity": 0.015111108620961508,
+        "program_cf_fidelity": 0.0
+      }
+    }
+  ]
+}
