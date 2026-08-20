@@ -1,0 +1,449 @@
+{
+  "version": "DART-3.9",
+  "parent_version": "DART-3.8",
+  "protocol": {
+    "multi_holdout_rotation": true,
+    "exact_oracle_gate": true,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "symbolic_verification": true,
+    "randomized_verification": true,
+    "minimal_verified_program_selection": true,
+    "cross_seed_stability_check": true,
+    "hidden_problem_diagnostics": true,
+    "explicit_anomaly_reporting": true,
+    "untouched_final_regimes": [
+      "E",
+      "F"
+    ],
+    "neural_component_is_diagnostic_only": true
+  },
+  "holdout_summary": {
+    "add": {
+      "seed_count": 2,
+      "programs": [
+        [
+          "sum"
+        ],
+        [
+          "sum"
+        ]
+      ],
+      "program_stability": true,
+      "all_exact": true
+    },
+    "compose": {
+      "seed_count": 2,
+      "programs": [
+        [
+          "compose"
+        ],
+        [
+          "compose"
+        ]
+      ],
+      "program_stability": true,
+      "all_exact": true
+    },
+    "mul": {
+      "seed_count": 2,
+      "programs": [
+        [
+          "product"
+        ],
+        [
+          "product"
+        ]
+      ],
+      "program_stability": true,
+      "all_exact": true
+    },
+    "sub": {
+      "seed_count": 2,
+      "programs": [
+        [
+          "difference"
+        ],
+        [
+          "difference"
+        ]
+      ],
+      "program_stability": true,
+      "all_exact": true
+    }
+  },
+  "verified_holdout_count": 8,
+  "total_holdout_experiments": 8,
+  "all_verified": true,
+  "anomalies": [],
+  "records": [
+    {
+      "seed": 1,
+      "holdouts": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "sum",
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "sum"
+          ],
+          "verified_count": 4,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 21,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.11266666650772095,
+            "dart_verified_program": 0.17533333599567413
+          },
+          "anomalies": []
+        },
+        {
+          "task": "compose",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "composed_affine_difference",
+            "symmetry": "asymmetric",
+            "scaling": "affine",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "compose"
+          ],
+          "verified_count": 1,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 21,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.02199999988079071,
+            "dart_verified_program": 0.16599999368190765
+          },
+          "anomalies": []
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "product",
+            "symmetry": "symmetric",
+            "scaling": "quadratic_like",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "product"
+          ],
+          "verified_count": 2,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 7,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.01599999889731407,
+            "dart_verified_program": 0.07400000095367432
+          },
+          "anomalies": []
+        },
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "difference",
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "difference"
+          ],
+          "verified_count": 3,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 14,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.04533333331346512,
+            "dart_verified_program": 0.18066667020320892
+          },
+          "anomalies": []
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "holdouts": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "sum",
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "sum"
+          ],
+          "verified_count": 4,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 21,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.053999997675418854,
+            "dart_verified_program": 0.18533332645893097
+          },
+          "anomalies": []
+        },
+        {
+          "task": "compose",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "composed_affine_difference",
+            "symmetry": "asymmetric",
+            "scaling": "affine",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "compose"
+          ],
+          "verified_count": 1,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 21,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.02733333222568035,
+            "dart_verified_program": 0.15733332931995392
+          },
+          "anomalies": []
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "product",
+            "symmetry": "symmetric",
+            "scaling": "quadratic_like",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "product"
+          ],
+          "verified_count": 2,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 7,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.02266666665673256,
+            "dart_verified_program": 0.06666666269302368
+          },
+          "anomalies": []
+        },
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "difference",
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program": [
+            "difference"
+          ],
+          "verified_count": 3,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "audit_summary": {
+            "candidate_count": 14,
+            "best_nonverified": 0.0
+          },
+          "neural_diagnostic": {
+            "dart_zero": 0.0573333315551281,
+            "dart_verified_program": 0.171999990940094
+          },
+          "anomalies": []
+        }
+      ]
+    }
+  ]
+}
