@@ -1,0 +1,738 @@
+{
+  "version": "DART-4.0",
+  "parent_version": "DART-3.9",
+  "protocol": {
+    "open_primitive_library": true,
+    "program_graph_discovery": true,
+    "variable_arity_tasks": true,
+    "conditional_primitive_family": true,
+    "nested_composition": true,
+    "rotating_multi_holdout": true,
+    "exact_oracle_gate": true,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "far_ood_diagnostics": true,
+    "minimal_graph_selection": true,
+    "primitive_reuse_tracking": true,
+    "hidden_problem_diagnostics": true,
+    "explicit_anomaly_reporting": true,
+    "untouched_final_regimes": [
+      "E",
+      "F"
+    ],
+    "neural_component_is_diagnostic_only": true,
+    "deterministic_seeding": true
+  },
+  "holdout_summary": {
+    "sub": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:sub(0, 1) ; out=2",
+        "0:input0 -> 1:input1 -> 2:sub(0, 1) ; out=2"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    },
+    "sum3": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:input2 -> 3:add(0, 1) -> 4:add(3, 2) ; out=4",
+        "0:input0 -> 1:input1 -> 2:input2 -> 3:add(0, 1) -> 4:add(3, 2) ; out=4"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    },
+    "pairdiff3": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:input2 -> 3:sub(0, 1) -> 4:add(3, 2) ; out=4",
+        "0:input0 -> 1:input1 -> 2:input2 -> 3:sub(0, 1) -> 4:add(3, 2) ; out=4"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    },
+    "absdiff": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:sub(0, 1) -> 3:abs(2,) ; out=3",
+        "0:input0 -> 1:input1 -> 2:sub(0, 1) -> 3:abs(2,) ; out=3"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    },
+    "max": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:max(0, 1) ; out=2",
+        "0:input0 -> 1:input1 -> 2:max(0, 1) ; out=2"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    },
+    "min": {
+      "seed_count": 2,
+      "program_graphs": [
+        "0:input0 -> 1:input1 -> 2:min(0, 1) ; out=2",
+        "0:input0 -> 1:input1 -> 2:min(0, 1) ; out=2"
+      ],
+      "graph_stability": true,
+      "all_exact": true,
+      "min_far_ood": 1.0
+    }
+  },
+  "verified_holdout_count": 12,
+  "total_holdout_experiments": 12,
+  "all_verified": true,
+  "anomalies": [],
+  "records": [
+    {
+      "seed": 1,
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "arithmetic:sub",
+            "arity": 2,
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:sub(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "sub"
+          ],
+          "verified_graph_count": 7,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.06399999558925629,
+            "dart_verified_graph": 0.23933333158493042
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.49267578125
+          }
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_arithmetic:sum3",
+            "arity": 3,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:input2 -> 3:add(0, 1) -> 4:add(3, 2) ; out=4",
+          "program_nodes": 5,
+          "primitive_signature": [
+            "add"
+          ],
+          "verified_graph_count": 2,
+          "candidate_count": 1673,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.057999998331069946,
+            "dart_verified_graph": 0.23799999058246613
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.999755859375
+          }
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_composition:pairdiff3",
+            "arity": 3,
+            "symmetry": "asymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:input2 -> 3:sub(0, 1) -> 4:add(3, 2) ; out=4",
+          "program_nodes": 5,
+          "primitive_signature": [
+            "add",
+            "sub"
+          ],
+          "verified_graph_count": 1,
+          "candidate_count": 1673,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.09066666662693024,
+            "dart_verified_graph": 0.2280000001192093
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.999755859375
+          }
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:absdiff",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:sub(0, 1) -> 3:abs(2,) ; out=3",
+          "program_nodes": 4,
+          "primitive_signature": [
+            "abs",
+            "sub"
+          ],
+          "verified_graph_count": 2,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.06733333319425583,
+            "dart_verified_graph": 0.226666659116745
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.4946666657924652
+          }
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:max",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:max(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "max"
+          ],
+          "verified_graph_count": 19,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.29733332991600037,
+            "dart_verified_graph": 0.19333332777023315
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.7286666631698608
+          }
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:min",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:min(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "min"
+          ],
+          "verified_graph_count": 19,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.27666667103767395,
+            "dart_verified_graph": 0.19200000166893005
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.5613332986831665
+          }
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "arithmetic:sub",
+            "arity": 2,
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:sub(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "sub"
+          ],
+          "verified_graph_count": 7,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.07000000029802322,
+            "dart_verified_graph": 0.226666659116745
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.49169921875
+          }
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_arithmetic:sum3",
+            "arity": 3,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:input2 -> 3:add(0, 1) -> 4:add(3, 2) ; out=4",
+          "program_nodes": 5,
+          "primitive_signature": [
+            "add"
+          ],
+          "verified_graph_count": 2,
+          "candidate_count": 1673,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.06399999558925629,
+            "dart_verified_graph": 0.24066665768623352
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.999755859375
+          }
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_composition:pairdiff3",
+            "arity": 3,
+            "symmetry": "asymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:input2 -> 3:sub(0, 1) -> 4:add(3, 2) ; out=4",
+          "program_nodes": 5,
+          "primitive_signature": [
+            "add",
+            "sub"
+          ],
+          "verified_graph_count": 1,
+          "candidate_count": 1673,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.04266666620969772,
+            "dart_verified_graph": 0.226666659116745
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.999755859375
+          }
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:absdiff",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:sub(0, 1) -> 3:abs(2,) ; out=3",
+          "program_nodes": 4,
+          "primitive_signature": [
+            "abs",
+            "sub"
+          ],
+          "verified_graph_count": 2,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.03733333200216293,
+            "dart_verified_graph": 0.2253333330154419
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.49072265625
+          }
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:max",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:max(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "max"
+          ],
+          "verified_graph_count": 19,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.24666666984558105,
+            "dart_verified_graph": 0.17999999225139618
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.7386666536331177
+          }
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:min",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_consistency": 1.0,
+          "program_graph": "0:input0 -> 1:input1 -> 2:min(0, 1) ; out=2",
+          "program_nodes": 3,
+          "primitive_signature": [
+            "min"
+          ],
+          "verified_graph_count": 19,
+          "candidate_count": 687,
+          "exact_verification": {
+            "symbolic": 1.0,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 1.0
+          },
+          "far_ood_scores": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "neural_diagnostic": {
+            "dart_zero": 0.27000001072883606,
+            "dart_verified_graph": 0.20800000429153442
+          },
+          "anomalies": [],
+          "audit_summary": {
+            "best_nonverified_proof": 0.5373333096504211
+          }
+        }
+      ]
+    }
+  ]
+}
