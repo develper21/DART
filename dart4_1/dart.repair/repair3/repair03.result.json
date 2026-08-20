@@ -1,0 +1,1681 @@
+{
+  "repair_id": "repair03",
+  "parent_version": "DART-4.1",
+  "purpose": "canonical verification-state consistency repair",
+  "gates": {
+    "candidate_language_contains_expected_graph": true,
+    "exact_oracle_verification": true,
+    "library_insertion": true,
+    "reuse_probe": true,
+    "explicit_failure_reporting": true
+  },
+  "summary": {
+    "total_task_seed_audits": 12,
+    "expected_graphs_exactly_verified": 12,
+    "all_expected_graphs_verified": true,
+    "reuse_probe_all_passed": true,
+    "anomaly_count": 0,
+    "verification_state_consistent": true
+  },
+  "anomalies": [],
+  "runs": [
+    {
+      "seed": 1,
+      "tasks": [
+        {
+          "task": "sub",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 7,
+          "primitive_id": "P0",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 2,
+          "primitive_id": "P1",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "pairdiff3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 1,
+          "primitive_id": "P2",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "absdiff",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 3,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 2,
+          "primitive_id": "P3",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 14,
+          "primitive_id": "P4",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 14,
+          "primitive_id": "P5",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "sub"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "tasks": [
+            "sum3"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "tasks": [
+            "pairdiff3"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "tasks": [
+            "absdiff"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "max"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "min"
+          ],
+          "uses": 1,
+          "verified": true
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "tasks": [
+        {
+          "task": "sub",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 7,
+          "primitive_id": "P0",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 2,
+          "primitive_id": "P1",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "pairdiff3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 1,
+          "primitive_id": "P2",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "absdiff",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 3,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 2,
+          "primitive_id": "P3",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 14,
+          "primitive_id": "P4",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "raw_proof": 0.9999999403953552,
+            "proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06
+          },
+          "verified_candidate_count": 14,
+          "primitive_id": "P5",
+          "inserted_new": true,
+          "reused_existing": false,
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "sub"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "tasks": [
+            "sum3"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "tasks": [
+            "pairdiff3"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "tasks": [
+            "absdiff"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "max"
+          ],
+          "uses": 1,
+          "verified": true
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "tasks": [
+            "min"
+          ],
+          "uses": 1,
+          "verified": true
+        }
+      }
+    }
+  ],
+  "reuse_probe": {
+    "1": {
+      "first_id": "P0",
+      "first_new": true,
+      "second_id": "P0",
+      "second_new": false,
+      "reuse_success": true,
+      "library_size": 1,
+      "record": {
+        "nodes": [
+          [
+            "input0",
+            []
+          ],
+          [
+            "input1",
+            []
+          ],
+          [
+            "sub",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "output": 2,
+        "arity": 2,
+        "tasks": [
+          "sub",
+          "sub_reuse_probe"
+        ],
+        "uses": 2,
+        "verified": true
+      }
+    },
+    "2": {
+      "first_id": "P0",
+      "first_new": true,
+      "second_id": "P0",
+      "second_new": false,
+      "reuse_success": true,
+      "library_size": 1,
+      "record": {
+        "nodes": [
+          [
+            "input0",
+            []
+          ],
+          [
+            "input1",
+            []
+          ],
+          [
+            "sub",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "output": 2,
+        "arity": 2,
+        "tasks": [
+          "sub",
+          "sub_reuse_probe"
+        ],
+        "uses": 2,
+        "verified": true
+      }
+    }
+  }
+}

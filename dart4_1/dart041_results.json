@@ -1,0 +1,1115 @@
+{
+  "version": "DART-4.1",
+  "parent_version": "DART-4.0",
+  "protocol": {
+    "blind_primitive_discovery": true,
+    "reuse_before_invention": true,
+    "persistent_primitive_library": true,
+    "primitive_provenance": true,
+    "variable_arity": true,
+    "compositional_graph_discovery": true,
+    "exact_oracle_gate": true,
+    "verification_epsilon": 1e-06,
+    "canonical_verification_state": true,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "far_ood_diagnostics": true,
+    "hidden_failure_diagnostics": true,
+    "neural_component_is_diagnostic_only": true,
+    "deterministic_seeding": true
+  },
+  "summary": {
+    "verified_holdouts": 12,
+    "total_holdouts": 12,
+    "all_verified": true,
+    "new_primitives": 12,
+    "reused_primitives": 0,
+    "reuse_rate": 0.0,
+    "verification_state_consistent": true,
+    "verification_anomalies": 4
+  },
+  "anomalies": [
+    "seed=1 task=sum3: no_verified_composition_found",
+    "seed=1 task=pairdiff3: no_verified_composition_found",
+    "seed=2 task=sum3: no_verified_composition_found",
+    "seed=2 task=pairdiff3: no_verified_composition_found"
+  ],
+  "records": [
+    {
+      "seed": 1,
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "arithmetic:sub",
+            "arity": 2,
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P0",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_arithmetic:sum3",
+            "arity": 3,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P1",
+          "discovered_new": true,
+          "primitive_nodes": 5,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": [
+            "no_verified_composition_found"
+          ]
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_composition:pairdiff3",
+            "arity": 3,
+            "symmetry": "asymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P2",
+          "discovered_new": true,
+          "primitive_nodes": 5,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": [
+            "no_verified_composition_found"
+          ]
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:absdiff",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P3",
+          "discovered_new": true,
+          "primitive_nodes": 4,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:max",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P4",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:min",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P5",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "sub"
+          ],
+          "uses": 1
+        },
+        "P1": {
+          "arity": 3,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "discovered_from": [
+            "sum3"
+          ],
+          "uses": 1
+        },
+        "P2": {
+          "arity": 3,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "discovered_from": [
+            "pairdiff3"
+          ],
+          "uses": 1
+        },
+        "P3": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "discovered_from": [
+            "absdiff"
+          ],
+          "uses": 1
+        },
+        "P4": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "max"
+          ],
+          "uses": 1
+        },
+        "P5": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "min"
+          ],
+          "uses": 1
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "arithmetic:sub",
+            "arity": 2,
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P0",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_arithmetic:sum3",
+            "arity": 3,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P1",
+          "discovered_new": true,
+          "primitive_nodes": 5,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": [
+            "no_verified_composition_found"
+          ]
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "ternary_composition:pairdiff3",
+            "arity": 3,
+            "symmetry": "asymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P2",
+          "discovered_new": true,
+          "primitive_nodes": 5,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": [
+            "no_verified_composition_found"
+          ]
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:absdiff",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P3",
+          "discovered_new": true,
+          "primitive_nodes": 4,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:max",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P4",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "law": {
+            "relation": "selection:min",
+            "arity": 2,
+            "symmetry": "symmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "law_stability": 1.0,
+          "primitive_id": "P5",
+          "discovered_new": true,
+          "primitive_nodes": 3,
+          "primitive_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "exact_proof": 0.9999999403953552,
+          "exact_verified": true,
+          "verification_eps": 1e-06,
+          "proof_parts": [
+            0.9999999403953552,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "composition_verified": false,
+          "composition_graph": null,
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "sub"
+          ],
+          "uses": 1
+        },
+        "P1": {
+          "arity": 3,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "discovered_from": [
+            "sum3"
+          ],
+          "uses": 1
+        },
+        "P2": {
+          "arity": 3,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "discovered_from": [
+            "pairdiff3"
+          ],
+          "uses": 1
+        },
+        "P3": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "discovered_from": [
+            "absdiff"
+          ],
+          "uses": 1
+        },
+        "P4": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "max"
+          ],
+          "uses": 1
+        },
+        "P5": {
+          "arity": 2,
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "discovered_from": [
+            "min"
+          ],
+          "uses": 1
+        }
+      }
+    }
+  ]
+}

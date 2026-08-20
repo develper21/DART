@@ -1,0 +1,1299 @@
+{
+  "repair_id": "repair01",
+  "parent_version": "DART-4.1",
+  "purpose": "primitive discovery pipeline integrity",
+  "gates": {
+    "candidate_language_contains_expected_graph": true,
+    "exact_oracle_verification": true,
+    "library_insertion": true,
+    "reuse_probe": true,
+    "explicit_failure_reporting": true
+  },
+  "summary": {
+    "total_task_seed_audits": 12,
+    "expected_graphs_exactly_verified": 0,
+    "all_expected_graphs_verified": false,
+    "reuse_probe_all_passed": true,
+    "anomaly_count": 24
+  },
+  "anomalies": [
+    "seed=1 task=sub: expected_graph_failed_exact_verification",
+    "seed=1 task=sub: no_exact_candidate_in_current_language",
+    "seed=1 task=sum3: expected_graph_failed_exact_verification",
+    "seed=1 task=sum3: no_exact_candidate_in_current_language",
+    "seed=1 task=pairdiff3: expected_graph_failed_exact_verification",
+    "seed=1 task=pairdiff3: no_exact_candidate_in_current_language",
+    "seed=1 task=absdiff: expected_graph_failed_exact_verification",
+    "seed=1 task=absdiff: no_exact_candidate_in_current_language",
+    "seed=1 task=max: expected_graph_failed_exact_verification",
+    "seed=1 task=max: no_exact_candidate_in_current_language",
+    "seed=1 task=min: expected_graph_failed_exact_verification",
+    "seed=1 task=min: no_exact_candidate_in_current_language",
+    "seed=2 task=sub: expected_graph_failed_exact_verification",
+    "seed=2 task=sub: no_exact_candidate_in_current_language",
+    "seed=2 task=sum3: expected_graph_failed_exact_verification",
+    "seed=2 task=sum3: no_exact_candidate_in_current_language",
+    "seed=2 task=pairdiff3: expected_graph_failed_exact_verification",
+    "seed=2 task=pairdiff3: no_exact_candidate_in_current_language",
+    "seed=2 task=absdiff: expected_graph_failed_exact_verification",
+    "seed=2 task=absdiff: no_exact_candidate_in_current_language",
+    "seed=2 task=max: expected_graph_failed_exact_verification",
+    "seed=2 task=max: no_exact_candidate_in_current_language",
+    "seed=2 task=min: expected_graph_failed_exact_verification",
+    "seed=2 task=min: no_exact_candidate_in_current_language"
+  ],
+  "runs": [
+    {
+      "seed": 1,
+      "tasks": [
+        {
+          "task": "sub",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "sum3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "pairdiff3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "absdiff",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 3,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "max",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "min",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        }
+      ],
+      "library": {}
+    },
+    {
+      "seed": 2,
+      "tasks": [
+        {
+          "task": "sub",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "sum3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "pairdiff3",
+          "candidate_count": 1203,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 4,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "absdiff",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "best_candidate_output": 3,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "max",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        },
+        {
+          "task": "min",
+          "candidate_count": 434,
+          "expected_graph_present": true,
+          "expected_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "expected_graph_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "best_candidate": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "best_candidate_output": 2,
+          "best_candidate_verification": {
+            "symbolic": 0.9999999403953552,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "proof": 0.9999999403953552
+          },
+          "verified_candidate_count": 0,
+          "primitive_id": null,
+          "inserted_new": false,
+          "reused_existing": false,
+          "anomalies": [
+            "expected_graph_failed_exact_verification",
+            "no_exact_candidate_in_current_language"
+          ]
+        }
+      ],
+      "library": {}
+    }
+  ],
+  "reuse_probe": {
+    "1": {
+      "first_id": "P0",
+      "first_new": true,
+      "second_id": "P0",
+      "second_new": false,
+      "reuse_success": true,
+      "library_size": 1,
+      "record": {
+        "nodes": [
+          [
+            "input0",
+            []
+          ],
+          [
+            "input1",
+            []
+          ],
+          [
+            "sub",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "output": 2,
+        "arity": 2,
+        "tasks": [
+          "sub",
+          "sub_reuse_probe"
+        ],
+        "uses": 2,
+        "verified": true
+      }
+    },
+    "2": {
+      "first_id": "P0",
+      "first_new": true,
+      "second_id": "P0",
+      "second_new": false,
+      "reuse_success": true,
+      "library_size": 1,
+      "record": {
+        "nodes": [
+          [
+            "input0",
+            []
+          ],
+          [
+            "input1",
+            []
+          ],
+          [
+            "sub",
+            [
+              0,
+              1
+            ]
+          ]
+        ],
+        "output": 2,
+        "arity": 2,
+        "tasks": [
+          "sub",
+          "sub_reuse_probe"
+        ],
+        "uses": 2,
+        "verified": true
+      }
+    }
+  }
+}
