@@ -1,0 +1,1187 @@
+{
+  "version": "DART-4.5",
+  "parent_version": "DART-4.4",
+  "protocol": {
+    "long_horizon_planning": true,
+    "goal_directed_planning": true,
+    "goal_state_representation": true,
+    "residual_goal_scoring": true,
+    "one_step_goal_lookahead": true,
+    "workspace_intermediate_values": true,
+    "backtracking": true,
+    "adaptive_goal_guided_search": true,
+    "best_first_search": true,
+    "max_plan_depth": 4,
+    "max_search_states": 32,
+    "hierarchical_composition": true,
+    "branching_search": true,
+    "mixed_reuse_and_new_discovery": true,
+    "verified_subplan_memoization": true,
+    "primitive_references": true,
+    "frozen_pretest_library": true,
+    "exact_oracle_gate": true,
+    "verification_epsilon": 1e-06,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "far_ood_diagnostics": true,
+    "deterministic_seeding": true,
+    "json_safe_result_serialization": true
+  },
+  "summary": {
+    "verified_holdouts": 1,
+    "total_holdouts": 1,
+    "all_verified": true,
+    "direct_reuse": 0,
+    "hierarchical_reuse": 0,
+    "new_primitives": 1,
+    "mixed_reuse_new": 0,
+    "max_successful_depth": 1,
+    "backtracks": 0,
+    "reuse_rate": 0.0,
+    "hierarchical_reuse_rate": 0.0,
+    "attribution_failures": 0,
+    "source_library_complete": true,
+    "anomaly_count": 0,
+    "max_plan_depth": 4,
+    "max_search_states": 32
+  },
+  "anomalies": [],
+  "records": [
+    {
+      "seed": 1,
+      "status": "VERIFIED",
+      "source_records": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "primitive_id": "P0",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "primitive_id": "P1",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "primitive_id": "P2",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "primitive_id": "P3",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "primitive_id": "P4",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "primitive_id": "P5",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "primitive_id": "P6",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "compose",
+          "status": "VERIFIED",
+          "primitive_id": "P7",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        }
+      ],
+      "frozen_pretest_library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "36b1d0a7b1067d2ff6fc2b3f3a3067a5f046e70a93a3937abac22d0d2c6e3be1",
+          "source_task": "add",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "sub",
+            2,
+            "antisymmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "131d115b0b31300b2d6506063a8e4f5dd29df2253c2823aabb5cdc14bb6ca0e2",
+          "source_task": "sub",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "da5ab07ccfb3605228d020839e7e7e882e21dcbf8af274fb9376dd4e5a29f620",
+          "source_task": "mul",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "law": [
+            "absdiff",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "a8265c2681a05e5348fed1a911b08b39cb06ef4937b3c4fa130c8051019c0d2a",
+          "source_task": "absdiff",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "max",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "4bfa8e3dbcb04b4489e8fc1207f923f55e177b803808316dd310c640f05eccb2",
+          "source_task": "max",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "min",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "9f358a5f2c66d5cf20b3b037db120c42b58f1191a2b67a4d9015525c2c71e8e2",
+          "source_task": "min",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P6": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "law": [
+            "sum3",
+            3,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "14ce9d1faebea80b6e88211b7d773f9cc1b48d10f4b08dc92b4a7e17e0dc27aa",
+          "source_task": "sum3",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P7": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "6bc52f464fdbb06081f7af1a235d829de4eadc9001e7c41ac67561cdda3a4b59",
+          "source_task": "compose",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "holdouts": [
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P10",
+              "bindings": [
+                0,
+                1,
+                2
+              ],
+              "output_node": 4,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P10"
+          ],
+          "new_primitive_id": "P10",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                3,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 4,
+          "graph_nodes": 5,
+          "library_candidate_ids": [
+            "P6",
+            "P0",
+            "P1",
+            "P2",
+            "P3",
+            "P4",
+            "P5",
+            "P7"
+          ],
+          "search_diagnostics": {
+            "status": "NO_REUSE_SOLUTION",
+            "reuse": {
+              "status": "NO_REUSE_SOLUTION",
+              "evaluated_states": 32,
+              "expanded_states": 32,
+              "pruned_states": 12792,
+              "backtracks": 0,
+              "dead_ends": 0,
+              "best_goal_score": 1.0,
+              "elapsed_sec": 18.587320041999646,
+              "search_exhausted": true
+            },
+            "mixed": {
+              "status": "NO_MIXED_SOLUTION",
+              "evaluated_states": 32
+            },
+            "search_exhausted": true
+          },
+          "fallback_reason": "no_verified_goal_directed_or_mixed_solution",
+          "goal_state": {
+            "task": "pairdiff3",
+            "arity": 3,
+            "relation": "pairdiff3",
+            "symmetry": "asymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_sensitive"
+          },
+          "algorithm_certificate": {
+            "task": "pairdiff3",
+            "mode": "new_primitive",
+            "depth": 1,
+            "references": [
+              {
+                "primitive_id": "P10",
+                "bindings": [
+                  0,
+                  1,
+                  2
+                ],
+                "output_node": 4,
+                "invocation_index": 0
+              }
+            ],
+            "new_primitive_id": "P10",
+            "verification": {
+              "raw_proof": 0.9999999403953552,
+              "exact_verified": true,
+              "verification_eps": 1e-06
+            }
+          },
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "36b1d0a7b1067d2ff6fc2b3f3a3067a5f046e70a93a3937abac22d0d2c6e3be1",
+          "source_task": "add",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "sub",
+            2,
+            "antisymmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "131d115b0b31300b2d6506063a8e4f5dd29df2253c2823aabb5cdc14bb6ca0e2",
+          "source_task": "sub",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "da5ab07ccfb3605228d020839e7e7e882e21dcbf8af274fb9376dd4e5a29f620",
+          "source_task": "mul",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "law": [
+            "absdiff",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "a8265c2681a05e5348fed1a911b08b39cb06ef4937b3c4fa130c8051019c0d2a",
+          "source_task": "absdiff",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "max",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "4bfa8e3dbcb04b4489e8fc1207f923f55e177b803808316dd310c640f05eccb2",
+          "source_task": "max",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "min",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "9f358a5f2c66d5cf20b3b037db120c42b58f1191a2b67a4d9015525c2c71e8e2",
+          "source_task": "min",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P6": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "law": [
+            "sum3",
+            3,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "14ce9d1faebea80b6e88211b7d773f9cc1b48d10f4b08dc92b4a7e17e0dc27aa",
+          "source_task": "sum3",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P7": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "6bc52f464fdbb06081f7af1a235d829de4eadc9001e7c41ac67561cdda3a4b59",
+          "source_task": "compose",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P8": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                3,
+                1
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "law": [
+            "pairdiff3",
+            3,
+            "asymmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "ec2fd558ae79253c0e1eb1c8d2be3a140eede13efdbd1ab3156a761cdfa7dabf",
+          "source_task": "pairdiff3",
+          "discovered_seed": 3501,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P9": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                3,
+                1
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "law": [
+            "pairdiff3",
+            3,
+            "asymmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "4f3f5c90fefba2d477a69c6f9116dee2a3814225692897aeec20acc1b9484418",
+          "source_task": "pairdiff3",
+          "discovered_seed": 3501,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P10": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                3,
+                1
+              ]
+            ]
+          ],
+          "output": 4,
+          "arity": 3,
+          "law": [
+            "pairdiff3",
+            3,
+            "asymmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "7042ec07944f25d2262ae67a294b88061299a9fb30eb11fd0cc5b1f5252f4a23",
+          "source_task": "pairdiff3",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "anomalies": []
+    }
+  ]
+}
