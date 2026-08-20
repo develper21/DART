@@ -1,0 +1,2013 @@
+{
+  "version": "DART-4.3",
+  "parent_version": "DART-4.2",
+  "protocol": {
+    "first_class_primitive_references": true,
+    "semantic_graph_separate_from_reference_graph": true,
+    "interface_compatibility_pruning": true,
+    "direct_reuse": true,
+    "hierarchical_reuse": true,
+    "new_primitive_fallback": true,
+    "source_library_completeness_gate": true,
+    "frozen_pretest_library": true,
+    "algorithm_certificates": true,
+    "provenance_ledger": true,
+    "exact_oracle_gate": true,
+    "verification_epsilon": 1e-06,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "far_ood_diagnostics": true,
+    "deterministic_seeding": true
+  },
+  "summary": {
+    "verified_holdouts": 12,
+    "total_holdouts": 12,
+    "all_verified": true,
+    "direct_reuse": 0,
+    "hierarchical_reuse": 4,
+    "mixed_reuse_new": 0,
+    "new_primitives": 8,
+    "reuse_rate": 0.3333333333333333,
+    "hierarchical_reuse_rate": 0.3333333333333333,
+    "attribution_failures": 0,
+    "source_library_complete": true,
+    "anomaly_count": 0
+  },
+  "anomalies": [],
+  "records": [
+    {
+      "seed": 1,
+      "status": "VERIFIED",
+      "source_records": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "primitive_id": "P0",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "primitive_id": "P1",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "compose",
+          "status": "VERIFIED",
+          "primitive_id": "P2",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        }
+      ],
+      "frozen_pretest_library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "36b1d0a7b1067d2ff6fc2b3f3a3067a5f046e70a93a3937abac22d0d2c6e3be1",
+          "source_task": "add",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": [
+            "sum3",
+            "pairdiff3"
+          ]
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "c309720c4d75b99b5f82ea9651668ca1bf79d54badb9351caa5867a5bf50f641",
+          "source_task": "mul",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "9874222464f0744f187f71f69818f164099b548bfaa6d06da6930cf39c2eeb0d",
+          "source_task": "compose",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P3",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P3"
+          ],
+          "new_primitive_id": "P3",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 12,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "mode": "hierarchical_reuse",
+          "references": [
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            },
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                3,
+                2
+              ],
+              "output_node": 4,
+              "invocation_index": 1
+            }
+          ],
+          "used_primitive_ids": [
+            "P0"
+          ],
+          "new_primitive_id": null,
+          "discovered_new": false,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 4,
+          "graph_nodes": 5,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 31,
+          "fallback_reason": null,
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "mode": "hierarchical_reuse",
+          "references": [
+            {
+              "primitive_id": "P3",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            },
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                3,
+                2
+              ],
+              "output_node": 4,
+              "invocation_index": 1
+            }
+          ],
+          "used_primitive_ids": [
+            "P0",
+            "P3"
+          ],
+          "new_primitive_id": null,
+          "discovered_new": false,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 4,
+          "graph_nodes": 5,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 7,
+          "fallback_reason": null,
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P4",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P4"
+          ],
+          "new_primitive_id": "P4",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 3,
+          "graph_nodes": 4,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 20,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P5",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P5"
+          ],
+          "new_primitive_id": "P5",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P4",
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 30,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P6",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P6"
+          ],
+          "new_primitive_id": "P6",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P5",
+            "P4",
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 42,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "36b1d0a7b1067d2ff6fc2b3f3a3067a5f046e70a93a3937abac22d0d2c6e3be1",
+          "source_task": "add",
+          "discovered_seed": 1,
+          "uses": 3,
+          "reused_by": [
+            "sum3",
+            "pairdiff3"
+          ]
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "c309720c4d75b99b5f82ea9651668ca1bf79d54badb9351caa5867a5bf50f641",
+          "source_task": "mul",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "9874222464f0744f187f71f69818f164099b548bfaa6d06da6930cf39c2eeb0d",
+          "source_task": "compose",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "sub",
+            2,
+            "antisymmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "ee9b644c1da00be5755d11a5e096dbe725c8afd95a1a4c21c008343480184ff7",
+          "source_task": "sub",
+          "discovered_seed": 1,
+          "uses": 1,
+          "reused_by": [
+            "pairdiff3"
+          ]
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "law": [
+            "absdiff",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "52e6bd1c9be29a8d92073b44c6b0793c90ec51b498800dad9c9bbed32488b18a",
+          "source_task": "absdiff",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "max",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "3882e49e9843e7794fb1d842d317f76eea74cbe67ed9c5db8d17842bbe811f63",
+          "source_task": "max",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P6": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "min",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "8809ee1aa7d0cfefdc651dffe693a35b1e4182d6a421d4a0954a38a99cc20b26",
+          "source_task": "min",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "anomalies": []
+    },
+    {
+      "seed": 2,
+      "status": "VERIFIED",
+      "source_records": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "primitive_id": "P0",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "primitive_id": "P1",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "compose",
+          "status": "VERIFIED",
+          "primitive_id": "P2",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        }
+      ],
+      "frozen_pretest_library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "5dace74fbcf618c762659bcf2c324073ab576e7ecdc564e5bab4d031f1ae2cb4",
+          "source_task": "add",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": [
+            "sum3",
+            "pairdiff3"
+          ]
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "da5ab07ccfb3605228d020839e7e7e882e21dcbf8af274fb9376dd4e5a29f620",
+          "source_task": "mul",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "3fbff3452362d2ce79cef6a6f3fb79c3c64d936b46ace8fce10efba4a6f07f4a",
+          "source_task": "compose",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "holdouts": [
+        {
+          "task": "sub",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P3",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P3"
+          ],
+          "new_primitive_id": "P3",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 12,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "sum3",
+          "status": "VERIFIED",
+          "mode": "hierarchical_reuse",
+          "references": [
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            },
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                3,
+                2
+              ],
+              "output_node": 4,
+              "invocation_index": 1
+            }
+          ],
+          "used_primitive_ids": [
+            "P0"
+          ],
+          "new_primitive_id": null,
+          "discovered_new": false,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 4,
+          "graph_nodes": 5,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 31,
+          "fallback_reason": null,
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "pairdiff3",
+          "status": "VERIFIED",
+          "mode": "hierarchical_reuse",
+          "references": [
+            {
+              "primitive_id": "P3",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            },
+            {
+              "primitive_id": "P0",
+              "bindings": [
+                3,
+                2
+              ],
+              "output_node": 4,
+              "invocation_index": 1
+            }
+          ],
+          "used_primitive_ids": [
+            "P0",
+            "P3"
+          ],
+          "new_primitive_id": null,
+          "discovered_new": false,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "input2",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "add",
+              [
+                3,
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 4,
+          "graph_nodes": 5,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 7,
+          "fallback_reason": null,
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "absdiff",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P4",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 3,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P4"
+          ],
+          "new_primitive_id": "P4",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "semantic_graph_output": 3,
+          "graph_nodes": 4,
+          "library_candidate_ids": [
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 20,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "max",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P5",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P5"
+          ],
+          "new_primitive_id": "P5",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P4",
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 30,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        },
+        {
+          "task": "min",
+          "status": "VERIFIED",
+          "mode": "new_primitive",
+          "references": [
+            {
+              "primitive_id": "P6",
+              "bindings": [
+                0,
+                1
+              ],
+              "output_node": 2,
+              "invocation_index": 0
+            }
+          ],
+          "used_primitive_ids": [
+            "P6"
+          ],
+          "new_primitive_id": "P6",
+          "discovered_new": true,
+          "semantic_graph": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "semantic_graph_output": 2,
+          "graph_nodes": 3,
+          "library_candidate_ids": [
+            "P5",
+            "P4",
+            "P3",
+            "P2",
+            "P1",
+            "P0"
+          ],
+          "reuse_plan_count": 42,
+          "fallback_reason": "no_verified_existing_reference_plan",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          },
+          "anomalies": []
+        }
+      ],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "5dace74fbcf618c762659bcf2c324073ab576e7ecdc564e5bab4d031f1ae2cb4",
+          "source_task": "add",
+          "discovered_seed": 2,
+          "uses": 3,
+          "reused_by": [
+            "sum3",
+            "pairdiff3"
+          ]
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "da5ab07ccfb3605228d020839e7e7e882e21dcbf8af274fb9376dd4e5a29f620",
+          "source_task": "mul",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P2": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "const_1",
+              []
+            ],
+            [
+              "const_2",
+              []
+            ],
+            [
+              "const_3",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              "add",
+              [
+                5,
+                2
+              ]
+            ],
+            [
+              "mul",
+              [
+                1,
+                4
+              ]
+            ],
+            [
+              "sub",
+              [
+                7,
+                2
+              ]
+            ],
+            [
+              "sub",
+              [
+                6,
+                8
+              ]
+            ]
+          ],
+          "output": 9,
+          "arity": 2,
+          "law": [
+            "compose",
+            2,
+            "asymmetric",
+            "affine",
+            "translation_sensitive"
+          ],
+          "fingerprint": "3fbff3452362d2ce79cef6a6f3fb79c3c64d936b46ace8fce10efba4a6f07f4a",
+          "source_task": "compose",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P3": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "sub",
+            2,
+            "antisymmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "8d40e5470404e73d0208ab493e3052e3b167820c1ccc7c40b0ea17dc629895f6",
+          "source_task": "sub",
+          "discovered_seed": 2,
+          "uses": 1,
+          "reused_by": [
+            "pairdiff3"
+          ]
+        },
+        "P4": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "sub",
+              [
+                0,
+                1
+              ]
+            ],
+            [
+              "abs",
+              [
+                2
+              ]
+            ]
+          ],
+          "output": 3,
+          "arity": 2,
+          "law": [
+            "absdiff",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_invariant"
+          ],
+          "fingerprint": "fc8017f136c8a737283f9ef1059e6acdd17a938f5a7e44cd09db8bc1f768e6db",
+          "source_task": "absdiff",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P5": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "max",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "max",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "7d0e5e1ccb725963a22325b80270737818abc28f253035ea415474cea55abe55",
+          "source_task": "max",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P6": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "min",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "min",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "19aa7a3d12398707e618b380e78b61518c4b3022b5f822cbf0d9ca8897517aa2",
+          "source_task": "min",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "anomalies": []
+    }
+  ]
+}

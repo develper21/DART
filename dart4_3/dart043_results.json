@@ -1,0 +1,313 @@
+{
+  "version": "DART-4.3",
+  "parent_version": "DART-4.2",
+  "protocol": {
+    "first_class_primitive_references": true,
+    "semantic_graph_separate_from_reference_graph": true,
+    "interface_compatibility_pruning": true,
+    "direct_reuse": true,
+    "hierarchical_reuse": true,
+    "new_primitive_fallback": true,
+    "source_library_completeness_gate": true,
+    "frozen_pretest_library": true,
+    "algorithm_certificates": true,
+    "provenance_ledger": true,
+    "exact_oracle_gate": true,
+    "verification_epsilon": 1e-06,
+    "multi_regime_verification": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F"
+    ],
+    "far_ood_diagnostics": true,
+    "deterministic_seeding": true
+  },
+  "summary": {
+    "verified_holdouts": 0,
+    "total_holdouts": 0,
+    "all_verified": false,
+    "direct_reuse": 0,
+    "hierarchical_reuse": 0,
+    "mixed_reuse_new": 0,
+    "new_primitives": 0,
+    "reuse_rate": 0.0,
+    "hierarchical_reuse_rate": 0.0,
+    "attribution_failures": 0,
+    "source_library_complete": false,
+    "anomaly_count": 0
+  },
+  "anomalies": [],
+  "records": [
+    {
+      "seed": 1,
+      "status": "SOURCE_LIBRARY_INCOMPLETE",
+      "source_records": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "primitive_id": "P0",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "primitive_id": "P1",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "compose",
+          "status": "SOURCE_DISCOVERY_FAILED"
+        }
+      ],
+      "holdouts": [],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "36b1d0a7b1067d2ff6fc2b3f3a3067a5f046e70a93a3937abac22d0d2c6e3be1",
+          "source_task": "add",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "c309720c4d75b99b5f82ea9651668ca1bf79d54badb9351caa5867a5bf50f641",
+          "source_task": "mul",
+          "discovered_seed": 1,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "anomalies": [
+        "source_library_incomplete"
+      ]
+    },
+    {
+      "seed": 2,
+      "status": "SOURCE_LIBRARY_INCOMPLETE",
+      "source_records": [
+        {
+          "task": "add",
+          "status": "VERIFIED",
+          "primitive_id": "P0",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "mul",
+          "status": "VERIFIED",
+          "primitive_id": "P1",
+          "verification": {
+            "raw_proof": 0.9999999403953552,
+            "exact_verified": true,
+            "verification_eps": 1e-06,
+            "regimes": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            },
+            "randomized": {
+              "A": 1.0,
+              "B": 1.0,
+              "C": 1.0,
+              "D": 1.0,
+              "E": 1.0,
+              "F": 1.0
+            }
+          }
+        },
+        {
+          "task": "compose",
+          "status": "SOURCE_DISCOVERY_FAILED"
+        }
+      ],
+      "holdouts": [],
+      "library": {
+        "P0": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "add",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "add",
+            2,
+            "symmetric",
+            "homogeneous",
+            "translation_sensitive"
+          ],
+          "fingerprint": "5dace74fbcf618c762659bcf2c324073ab576e7ecdc564e5bab4d031f1ae2cb4",
+          "source_task": "add",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        },
+        "P1": {
+          "nodes": [
+            [
+              "input0",
+              []
+            ],
+            [
+              "input1",
+              []
+            ],
+            [
+              "mul",
+              [
+                0,
+                1
+              ]
+            ]
+          ],
+          "output": 2,
+          "arity": 2,
+          "law": [
+            "mul",
+            2,
+            "symmetric",
+            "quadratic_like",
+            "translation_sensitive"
+          ],
+          "fingerprint": "da5ab07ccfb3605228d020839e7e7e882e21dcbf8af274fb9376dd4e5a29f620",
+          "source_task": "mul",
+          "discovered_seed": 2,
+          "uses": 0,
+          "reused_by": []
+        }
+      },
+      "anomalies": [
+        "source_library_incomplete"
+      ]
+    }
+  ]
+}
