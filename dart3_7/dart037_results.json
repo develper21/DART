@@ -1,0 +1,153 @@
+{
+  "version": "DART-3.7",
+  "parent_version": "DART-3.6",
+  "protocol": {
+    "exact_semantic_execution": true,
+    "symbolic_identity_battery": true,
+    "semantic_law_validation": true,
+    "deterministic_law_to_program_compilation": true,
+    "frozen_primitive_neural_diagnostic": true,
+    "wrong_law_control": true,
+    "random_law_control": true,
+    "wrong_primitive_control": true,
+    "untouched_final_regime": "E",
+    "deterministic_seeding": true
+  },
+  "related_holdout": {
+    "sub": {
+      "teacher_neural_diagnostic": 0.14099999517202377,
+      "dart_zero_neural": 0.2486666664481163,
+      "dart_program_neural": 0.13199999928474426,
+      "wrong_primitive_neural": 0.12599999457597733
+    }
+  },
+  "contrast_holdout": {
+    "sort": {
+      "teacher_neural_diagnostic": 0.11966666579246521,
+      "dart_program_neural": 0.357000008225441
+    }
+  },
+  "semantic_execution": {
+    "avg_law_consistency_A_to_D": 1.0,
+    "avg_semantic_law_fidelity": 1.0,
+    "avg_exact_semantic_agreement": 0.0939597338438034,
+    "avg_wrong_law_exact_agreement": 0.08053691685199738,
+    "avg_random_law_exact_agreement": 0.003355704713612795
+  },
+  "records": [
+    {
+      "seed": 1,
+      "selected_law": {
+        "relation": "difference",
+        "symmetry": "antisymmetric",
+        "scaling": "homogeneous",
+        "translation": "translation_invariant",
+        "complexity": 4
+      },
+      "compiled_program": [
+        "difference",
+        "swap"
+      ],
+      "semantic_consistency_A_to_D": 1.0,
+      "semantic_law_fidelity": 1.0,
+      "exact_semantic_agreement": 0.0939597338438034,
+      "identity_battery": {
+        "exact_function_agreement": 0.0939597338438034,
+        "zero_input_agreement": 0.08053691685199738,
+        "swap_identity_agreement": 0.0939597338438034,
+        "scale_identity_agreement": 0.0939597338438034,
+        "translation_identity_agreement": 0.0939597338438034,
+        "semantic_identity_mean": 0.0912751704454422
+      },
+      "wrong_law_exact_agreement": 0.08053691685199738,
+      "random_law_exact_agreement": 0.00671140942722559,
+      "holdout_semantic_checks": {
+        "sub": {
+          "oracle_law": {
+            "relation": "difference",
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant",
+            "complexity": 4
+          },
+          "compiled_program": [
+            "difference",
+            "swap"
+          ],
+          "exact_agreement": 0.0939597338438034
+        }
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher_neural_diagnostic": 0.11866666376590729,
+          "dart_zero_neural": 0.27666667103767395,
+          "dart_program_neural": 0.1313333362340927,
+          "wrong_primitive_neural": 0.12799999117851257
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher_neural_diagnostic": 0.12333333492279053,
+          "dart_program_neural": 0.3580000102519989
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "selected_law": {
+        "relation": "difference",
+        "symmetry": "antisymmetric",
+        "scaling": "homogeneous",
+        "translation": "translation_invariant",
+        "complexity": 4
+      },
+      "compiled_program": [
+        "difference",
+        "swap"
+      ],
+      "semantic_consistency_A_to_D": 1.0,
+      "semantic_law_fidelity": 1.0,
+      "exact_semantic_agreement": 0.0939597338438034,
+      "identity_battery": {
+        "exact_function_agreement": 0.0939597338438034,
+        "zero_input_agreement": 0.08053691685199738,
+        "swap_identity_agreement": 0.0939597338438034,
+        "scale_identity_agreement": 0.0939597338438034,
+        "translation_identity_agreement": 0.0939597338438034,
+        "semantic_identity_mean": 0.0912751704454422
+      },
+      "wrong_law_exact_agreement": 0.08053691685199738,
+      "random_law_exact_agreement": 0.0,
+      "holdout_semantic_checks": {
+        "sub": {
+          "oracle_law": {
+            "relation": "difference",
+            "symmetry": "antisymmetric",
+            "scaling": "homogeneous",
+            "translation": "translation_invariant",
+            "complexity": 4
+          },
+          "compiled_program": [
+            "difference",
+            "swap"
+          ],
+          "exact_agreement": 0.0939597338438034
+        }
+      },
+      "related_holdout": {
+        "sub": {
+          "teacher_neural_diagnostic": 0.16333332657814026,
+          "dart_zero_neural": 0.22066666185855865,
+          "dart_program_neural": 0.1326666623353958,
+          "wrong_primitive_neural": 0.12399999797344208
+        }
+      },
+      "contrast_holdout": {
+        "sort": {
+          "teacher_neural_diagnostic": 0.11599999666213989,
+          "dart_program_neural": 0.35600000619888306
+        }
+      }
+    }
+  ]
+}
